@@ -196,6 +196,10 @@
                     <textarea name="notes" placeholder="Special services, licenses, tagline, favorite color — anything helps!" rows="3"></textarea>
                 </div>
                 
+                <!-- Honeypot - invisible to humans, bots fill it -->
+                <div style="position:absolute;left:-9999px;top:-9999px;">
+                    <input type="text" name="website_url" tabindex="-1" autocomplete="off">
+                </div>
                 <button type="submit" class="btn-submit" id="submitBtn">🚀 Build My Website Now</button>
                 <p class="note">Your custom website will be generated in under 60 seconds</p>
             </form>
@@ -244,9 +248,25 @@
         const overlay = document.getElementById('buildingOverlay');
         
         btn.disabled = true;
+        
+        // Honeypot check
+        const hp = form.querySelector('input[name="website_url"]');
+        if (hp && hp.value) { 
+            // Bot detected - show fake success, do nothing
+            setTimeout(function() {
+                document.getElementById('formSection').querySelector('form').style.display = 'none';
+                document.getElementById('formSection').querySelector('h2').style.display = 'none';
+                document.getElementById('formSection').querySelector('.subtitle').style.display = 'none';
+                document.getElementById('successResult').classList.add('active');
+                document.getElementById('resultBusiness').textContent = 'your business';
+            }, 3000);
+            return;
+        }
+        
         overlay.classList.add('active');
         
         const formData = new FormData(form);
+        formData.delete('website_url'); // Remove honeypot from submission
         const data = Object.fromEntries(formData);
         
         // 1. Send to FormSubmit for email notification
