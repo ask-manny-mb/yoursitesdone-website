@@ -219,6 +219,39 @@ h3 { font-size: 1.25rem; font-weight: 700; }
 .footer-links p { font-size: 0.9rem; }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; font-size: 0.8rem; }
 
+/* === Mock Browser === */
+.ba-mock-browser { border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.mock-browser-bar { background: #e8ecf1; padding: 10px 14px; display: flex; align-items: center; gap: 8px; }
+.mock-dot { width: 10px; height: 10px; border-radius: 50%; background: #c8cdd5; display: inline-block; }
+.mock-url { font-size: 0.7rem; color: #8a94a6; background: #fff; padding: 4px 12px; border-radius: 4px; flex: 1; margin-left: 8px; }
+.mock-browser-body { flex: 1; padding: 20px; overflow: hidden; }
+.mock-google { background: #fff; text-align: center; }
+.mock-google-logo { font-size: 2rem; font-weight: 700; color: #4285F4; margin-bottom: 20px; }
+.mock-search-result { text-align: left; padding: 12px; border: 1px solid #eee; border-radius: 8px; margin-bottom: 12px; }
+.mock-result-url { font-size: 0.7rem; color: #5a6578; }
+.mock-result-title { font-size: 1rem; color: #1a0dab; font-weight: 500; margin: 4px 0; }
+.mock-result-desc { font-size: 0.8rem; color: #5a6578; }
+.mock-no-site-box { background: #fff3e0; color: #e65100; font-size: 0.8rem; padding: 10px 14px; border-radius: 6px; font-weight: 600; }
+.mock-newsite { background: linear-gradient(135deg, #1a3a5c 0%, #0d2137 100%); padding: 0; }
+.mock-site-hero { padding: 20px; text-align: center; color: #fff; }
+.mock-site-nav { font-size: 0.8rem; font-weight: 700; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.15); }
+.mock-site-hero h4 { font-size: 1.2rem; font-weight: 800; margin-bottom: 4px; }
+.mock-site-hero p { font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-bottom: 12px; }
+.mock-site-btn { display: inline-block; background: #e8722a; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 8px 20px; border-radius: 6px; }
+.mock-site-features { display: flex; justify-content: center; gap: 16px; padding: 12px; background: rgba(255,255,255,0.06); }
+.mock-site-features span { font-size: 0.65rem; color: rgba(255,255,255,0.8); }
+
+/* === Two-column pricing === */
+.pricing-two { grid-template-columns: repeat(2, 1fr); max-width: 820px; margin: 0 auto; }
+.price-note { font-size: 0.8rem; color: #8a94a6; margin-top: 12px; }
+
+/* === Early Access === */
+.early-access-box { max-width: 680px; margin: 0 auto; background: linear-gradient(135deg, #fff8f0 0%, #fff 100%); border: 2px solid #e8722a; border-radius: 20px; padding: 48px 40px; text-align: center; }
+.early-access-content h3 { font-size: 1.4rem; color: #1a1a2e; margin-bottom: 12px; }
+.early-access-content p { font-size: 1rem; color: #5a6578; margin-bottom: 24px; }
+.early-access-perks { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; text-align: left; max-width: 380px; margin-left: auto; margin-right: auto; }
+.early-access-perks li { font-size: 1rem; color: #1a1a2e; font-weight: 500; }
+
 /* === Mobile === */
 @media (max-width: 768px) {
     .section { padding: 64px 0; }
