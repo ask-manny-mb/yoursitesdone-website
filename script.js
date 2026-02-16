@@ -28,10 +28,10 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     const phone = fd.get('phone');
     const message = fd.get('message');
     const body = `Name: ${name}%0ABusiness: ${business}%0AEmail: ${email}%0APhone: ${phone}%0AMessage: ${message}`;
-    window.location.href = `mailto:yoursitesdone@gmail.com?subject=New Website Inquiry - ${business}&body=${body}`;
+    window.location.href = `mailto:info@yoursitesdone.com?subject=New Website Inquiry - ${business}&body=${body}`;
     
     // Show confirmation
-    this.innerHTML = '<p style="padding:40px;font-size:1.2rem;">✅ Opening your email client... If it doesn\'t open, email us at <a href="mailto:yoursitesdone@gmail.com" style="color:#e8722a;text-decoration:underline;">yoursitesdone@gmail.com</a></p>';
+    this.innerHTML = '<p style="padding:40px;font-size:1.2rem;">✅ Opening your email client... If it doesn\'t open, email us at <a href="mailto:info@yoursitesdone.com" style="color:#e8722a;text-decoration:underline;">info@yoursitesdone.com</a></p>';
 });
 
 // Smooth scroll for anchor links
