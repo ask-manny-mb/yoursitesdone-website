@@ -18,20 +18,36 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     });
 });
 
-// Contact form - mailto fallback
+// Contact form - FormSubmit.co (free, no signup)
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    const fd = new FormData(this);
-    const name = fd.get('name');
-    const business = fd.get('business');
-    const email = fd.get('email');
-    const phone = fd.get('phone');
-    const message = fd.get('message');
-    const body = `Name: ${name}%0ABusiness: ${business}%0AEmail: ${email}%0APhone: ${phone}%0AMessage: ${message}`;
-    window.location.href = `mailto:info@yoursitesdone.com?subject=New Website Inquiry - ${business}&body=${body}`;
-    
-    // Show confirmation
-    this.innerHTML = '<p style="padding:40px;font-size:1.2rem;">✅ Opening your email client... If it doesn\'t open, email us at <a href="mailto:info@yoursitesdone.com" style="color:#e8722a;text-decoration:underline;">info@yoursitesdone.com</a></p>';
+    const form = this;
+    const btn = form.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    const formData = new FormData(form);
+    formData.append('_subject', 'New Website Inquiry - ' + formData.get('business'));
+    formData.append('_captcha', 'false');
+    formData.append('_template', 'table');
+
+    fetch('https://formsubmit.co/ajax/hello@yoursitesdone.com', {
+        method: 'POST',
+        body: formData
+    }).then(response => response.json()).then(data => {
+        if (data.success) {
+            form.innerHTML = '<p style="padding:40px;font-size:1.2rem;text-align:center;">✅ <strong>Got it!</strong> We\'ll send you your free website preview within 48 hours.</p>';
+        } else {
+            btn.textContent = originalText;
+            btn.disabled = false;
+            alert('Something went wrong. Please email us at hello@yoursitesdone.com');
+        }
+    }).catch(() => {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        alert('Something went wrong. Please email us at hello@yoursitesdone.com');
+    });
 });
 
 // Smooth scroll for anchor links
