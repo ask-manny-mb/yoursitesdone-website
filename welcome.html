@@ -204,19 +204,34 @@
         <!-- Building overlay -->
         <div class="building-overlay" id="buildingOverlay">
             <div class="spinner"></div>
-            <h2>Building your website...</h2>
-            <p>We're generating a custom, professional site for your business. This usually takes about 30-60 seconds.</p>
+            <h2>Got it! We're on it.</h2>
+            <p>Your custom website is being built right now. Check your email in about 5 minutes for a link to your new site.</p>
         </div>
         
         <!-- Success result (shown after build) -->
         <div class="form-card success-result" id="successResult">
             <div style="font-size: 3rem; margin-bottom: 8px;">🎉</div>
-            <h2>Your Website is Live!</h2>
-            <p>We built a custom, professional website for <strong id="resultBusiness"></strong>. Take a look — it's already online and ready to go.</p>
-            <a href="#" class="preview-btn" id="previewLink" target="_blank">View Your Website →</a>
-            <p style="margin-top: 24px; font-size: 0.9rem; color: #888;">
-                We'll be in touch within 24 hours to discuss your custom domain, any changes you'd like, and next steps. 
-                Check your email for a confirmation with all the details.
+            <h2>You're all set!</h2>
+            <p>We're building a custom, professional website for <strong id="resultBusiness"></strong> right now.</p>
+            
+            <div style="background: linear-gradient(135deg, #f0f7ff 0%, #e8f0fe 100%); border-radius: 12px; padding: 24px; margin: 24px 0; text-align: left;">
+                <h3 style="margin: 0 0 12px; font-size: 1.1rem; color: #2563eb;">📧 Check your email in about 5 minutes</h3>
+                <p style="margin: 0; font-size: 0.95rem; color: #444; line-height: 1.6;">
+                    We'll send you a link to your brand new website along with everything you need to know about next steps. It's being custom-built for your business as we speak.
+                </p>
+            </div>
+            
+            <div style="background: #f9fafb; border-radius: 10px; padding: 20px; text-align: left;">
+                <p style="font-weight: 600; margin: 0 0 8px; color: #1a1a1a;">What to expect:</p>
+                <ul style="margin: 0; padding-left: 20px; color: #555; font-size: 0.9rem; line-height: 1.8;">
+                    <li>📧 <strong>~5 minutes:</strong> Email with a link to your live website preview</li>
+                    <li>📞 <strong>Within 24 hours:</strong> We'll reach out to discuss your custom domain and any tweaks</li>
+                    <li>🚀 <strong>3-5 business days:</strong> Your final site goes live on your own domain</li>
+                </ul>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 0.85rem; color: #999; text-align: center;">
+                Questions? Email us anytime at <a href="mailto:hello@yoursitesdone.com" style="color: #2563eb;">hello@yoursitesdone.com</a>
             </p>
         </div>
     </div>
@@ -256,7 +271,7 @@
         
         const previewUrl = 'https://yoursitesdone.com/previews/' + slug + '.html';
         
-        // Show building animation for 8 seconds (feels real, gives time for dramatic effect)
+        // Show confirmation after brief pause
         setTimeout(function() {
             overlay.classList.remove('active');
             document.getElementById('formSection').querySelector('form').style.display = 'none';
@@ -266,8 +281,7 @@
             const result = document.getElementById('successResult');
             result.classList.add('active');
             document.getElementById('resultBusiness').textContent = data.business;
-            document.getElementById('previewLink').href = previewUrl;
-        }, 8000);
+        }, 3000);
     });
     </script>
 </body>
