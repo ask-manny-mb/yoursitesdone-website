@@ -49,22 +49,35 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     );
     formData.append('_replyto', formData.get('email'));
 
+    const businessName = formData.get('business') || '';
+
+    // Submit form in background
     fetch('https://formsubmit.co/ajax/066d281035499cd4b28f68af25a44250', {
         method: 'POST',
         body: formData
-    }).then(response => response.json()).then(data => {
-        if (data.success) {
+    }).catch(() => {});
+
+    // Check if we have a preview ready
+    fetch('previews/index.json')
+        .then(r => r.json())
+        .then(index => {
+            const key = businessName.toLowerCase().trim();
+            const slug = index[key];
+            if (slug) {
+                form.innerHTML = '<div style="padding:40px;text-align:center;">' +
+                    '<p style="font-size:2rem;margin-bottom:12px;">🎉</p>' +
+                    '<p style="font-size:1.4rem;font-weight:700;margin-bottom:8px;">Your Website is Ready!</p>' +
+                    '<p style="font-size:1rem;color:#555;margin-bottom:24px;">We already built a free preview for <strong>' + businessName + '</strong></p>' +
+                    '<a href="previews/' + slug + '.html" style="display:inline-block;background:#2563eb;color:#fff;padding:16px 36px;border-radius:50px;font-size:1.1rem;font-weight:700;text-decoration:none;box-shadow:0 6px 20px rgba(37,99,235,0.3);transition:transform 0.2s;">View Your Website →</a>' +
+                    '<p style="margin-top:16px;font-size:0.85rem;color:#888;">No strings attached — it\'s yours to preview for free</p>' +
+                    '</div>';
+            } else {
+                form.innerHTML = '<p style="padding:40px;font-size:1.2rem;text-align:center;">✅ <strong>Got it!</strong> We\'re building your free website preview now. You\'ll hear from us within 48 hours!</p>';
+            }
+        })
+        .catch(() => {
             form.innerHTML = '<p style="padding:40px;font-size:1.2rem;text-align:center;">✅ <strong>Got it!</strong> We\'ll send you your free website preview within 48 hours.</p>';
-        } else {
-            btn.textContent = originalText;
-            btn.disabled = false;
-            alert('Something went wrong. Please email us at hello@yoursitesdone.com');
-        }
-    }).catch(() => {
-        btn.textContent = originalText;
-        btn.disabled = false;
-        alert('Something went wrong. Please email us at hello@yoursitesdone.com');
-    });
+        });
 });
 
 // Smooth scroll for anchor links

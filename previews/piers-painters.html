@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piers Painters — Hermosa Beach | Professional Painter Services</title>
+    <meta name="description" content="Piers Painters in Hermosa Beach. Transform Your Space — Expert Painting, Stunning Results. Call (424) 255-3780 today!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --primary: #8b5cf6;
+            --primary-dark: #7c3aed;
+            --primary-light: #ede9fe;
+            --text: #1a1a2e;
+            --text-light: #555;
+            --bg: #ffffff;
+            --bg-alt: #f8f9fc;
+            --radius: 12px;
+        }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; }
+
+        /* Preview Banner */
+        .preview-banner {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 0.9rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .preview-banner span { opacity: 0.9; }
+        .preview-banner a {
+            background: #fff;
+            color: #1a1a2e;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .preview-banner a:hover { transform: scale(1.05); box-shadow: 0 4px 15px rgba(255,255,255,0.3); }
+
+        /* Header */
+        .header {
+            background: var(--bg);
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 48px;
+            z-index: 999;
+        }
+        .logo { font-size: 1.3rem; font-weight: 800; color: var(--primary); }
+        .header-phone { display: flex; align-items: center; gap: 8px; }
+        .header-phone a {
+            background: var(--primary);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+        }
+        .header-phone a:hover { background: var(--primary-dark); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: #fff;
+            padding: 80px 24px;
+            text-align: center;
+        }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 16px; line-height: 1.15; }
+        .hero p { font-size: 1.25rem; opacity: 0.92; max-width: 600px; margin: 0 auto 32px; }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            color: var(--primary-dark);
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+        .hero-rating { margin-top: 24px; opacity: 0.9; font-size: 1rem; }
+        .stars { color: #ffd700; letter-spacing: 2px; }
+
+        /* Section */
+        .section { padding: 72px 24px; max-width: 1100px; margin: 0 auto; }
+        .section-alt { background: var(--bg-alt); }
+        .section-title { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 12px; color: var(--text); }
+        .section-subtitle { text-align: center; color: var(--text-light); margin-bottom: 48px; font-size: 1.05rem; }
+
+        /* Services Grid */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .service-card {
+            background: var(--bg);
+            border: 1px solid #e8eaf0;
+            border-radius: var(--radius);
+            padding: 32px 24px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+        .service-icon { font-size: 2.5rem; margin-bottom: 16px; }
+        .service-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
+        .service-card p { color: var(--text-light); font-size: 0.95rem; }
+
+        /* Reviews */
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .review-card {
+            background: var(--bg);
+            border: 1px solid #e8eaf0;
+            border-radius: var(--radius);
+            padding: 28px;
+        }
+        .review-stars { color: #ffd700; font-size: 1.1rem; margin-bottom: 12px; }
+        .review-text { font-size: 0.95rem; color: var(--text); margin-bottom: 16px; line-height: 1.7; font-style: italic; }
+        .review-author { font-weight: 600; font-size: 0.9rem; color: var(--text-light); }
+
+        /* Contact */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: #fff;
+            padding: 72px 24px;
+            text-align: center;
+        }
+        .contact-section h2 { font-size: 2rem; font-weight: 800; margin-bottom: 12px; }
+        .contact-section p { opacity: 0.9; margin-bottom: 32px; font-size: 1.05rem; }
+        .contact-info { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; margin-bottom: 32px; }
+        .contact-item { display: flex; align-items: center; gap: 10px; font-size: 1.05rem; }
+        .contact-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            color: var(--primary-dark);
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        .contact-cta:hover { transform: translateY(-2px); }
+
+        /* Hours */
+        .hours-section { margin-top: 32px; }
+        .hours-section h3 { font-size: 1.15rem; margin-bottom: 12px; font-weight: 600; }
+
+        /* Footer */
+        .footer {
+            background: #1a1a2e;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 0.85rem;
+        }
+        .footer a { color: #fff; font-weight: 600; }
+        .footer-cta { margin-top: 12px; }
+        .footer-cta a {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 8px;
+        }
+
+        /* Floating Call Button */
+        .float-call {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: var(--primary);
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            z-index: 998;
+            transition: transform 0.2s;
+        }
+        .float-call:hover { transform: scale(1.1); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero { padding: 60px 20px; }
+            .section { padding: 48px 20px; }
+            .header { top: 60px; }
+            .preview-banner { font-size: 0.8rem; padding: 10px 16px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .reviews-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preview Banner -->
+    <div class="preview-banner">
+        <span>✨ This is a <strong>FREE preview</strong> built by YourSitesDone.com — Love it?</span>
+        <a href="https://yoursitesdone.com/#contact">Claim Your Website →</a>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">Piers Painters</div>
+        <div class="header-phone">
+            <a href="tel:(424) 255-3780">📞 Call Now</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Piers Painters</h1>
+        <p>Transform Your Space — Expert Painting, Stunning Results</p>
+        <a href="tel:(424) 255-3780" class="hero-cta">📞 Call (424) 255-3780</a>
+        <div class="hero-rating">
+            <span class="stars">★★★★★</span><br>
+            <strong>5</strong> stars · 5 Google Reviews
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section-alt">
+        <div class="section">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Professional painter services in Hermosa Beach and surrounding areas</p>
+            <div class="services-grid">
+                                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Interior Painting</h3>
+                    <p>Transform your rooms with expert interior painting</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Exterior Painting</h3>
+                    <p>Boost curb appeal with professional exterior work</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🪟</div>
+                    <h3>Cabinet Refinishing</h3>
+                    <p>Give your cabinets a brand new look</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🖌️</div>
+                    <h3>Deck & Fence Staining</h3>
+                    <p>Protect and beautify outdoor wood</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Commercial Painting</h3>
+                    <p>Professional commercial painting services</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Color Consultation</h3>
+                    <p>Free expert color matching and consultation</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-subtitle">Rated 5 stars from 5 reviews on Google</p>
+        <div class="reviews-grid">
+                        <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"They painted our entire interior and it looks absolutely stunning. Professional crew, clean work, and finished ahead of schedule!"</p>
+                <p class="review-author">— Lisa M.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Great attention to detail. They even helped us pick the perfect colors. Our house looks brand new!"</p>
+                <p class="review-author">— James W.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Used them for our exterior painting. The prep work was thorough and the results are beautiful. Fair price too."</p>
+                <p class="review-author">— Karen P.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section">
+        <h2>Ready to Get Started?</h2>
+        <p>Call us today for a free estimate — we're here to help!</p>
+        <div class="contact-info">
+            <div class="contact-item">📞 (424) 255-3780</div>
+            <div class="contact-item">📍 Hermosa Beach, CA</div>
+        </div>
+        <a href="tel:(424) 255-3780" class="contact-cta">📞 Call (424) 255-3780</a>
+        
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Piers Painters · Hermosa Beach, CA</p>
+        <p style="margin-top:8px;">Website by <a href="https://yoursitesdone.com" target="_blank">YourSitesDone.com</a></p>
+        <div class="footer-cta">
+            <p>Want a website like this for your business?</p>
+            <a href="https://yoursitesdone.com/#contact">Get Your Free Website →</a>
+        </div>
+    </footer>
+
+    <!-- Floating Call Button -->
+    <a href="tel:(424) 255-3780" class="float-call">📞</a>
+</body>
+</html>
