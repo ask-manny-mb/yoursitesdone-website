@@ -32,7 +32,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     formData.append('_captcha', 'false');
     formData.append('_template', 'table');
 
-    fetch('https://formsubmit.co/ajax/hello@yoursitesdone.com', {
+    fetch('https://formsubmit.co/ajax/066d281035499cd4b28f68af25a44250', {
         method: 'POST',
         body: formData
     }).then(response => response.json()).then(data => {
