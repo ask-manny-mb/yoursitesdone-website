@@ -33,15 +33,20 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     formData.append('_template', 'table');
     formData.append('_autoresponse', 
         'Hi ' + formData.get('name') + '! 👋\n\n' +
-        'Thanks for reaching out to YourSitesDone! We received your request and we\'re excited to get started.\n\n' +
-        '📋 HERE\'S WHAT HAPPENS NEXT:\n\n' +
-        '1. Our team reviews your business details (usually within a few hours)\n' +
-        '2. We research your industry, competitors, and local market\n' +
-        '3. We design a custom, mobile-friendly website tailored to your business\n' +
-        '4. You\'ll receive an email with a live preview link — completely free to review\n\n' +
-        '⏰ TIMELINE: Your free website preview will be ready within 48 hours.\n\n' +
-        '💡 NO COMMITMENT: You\'re under zero obligation. If you love it, we\'ll talk about making it yours. If not, no hard feelings.\n\n' +
-        'Questions in the meantime? Just reply to this email or reach us at hello@yoursitesdone.com\n\n' +
+        'Thanks for checking out YourSitesDone! Your custom website preview should be loading on your screen right now.\n\n' +
+        '🎉 LOVE WHAT YOU SEE? Here\'s how to make it yours:\n\n' +
+        '1. REVIEW your preview — click around, check it on your phone, show your team\n' +
+        '2. CONFIRM your details — we\'ll verify your business info, phone, hours, and reviews\n' +
+        '3. CHOOSE A PLAN — pick Starter ($49/mo) or Growth ($149/mo with review management)\n' +
+        '4. GO LIVE — we connect your custom domain, finalize your content, and launch. Typical turnaround: 3-5 business days.\n\n' +
+        '💡 WHAT\'S INCLUDED WHEN YOU GO LIVE:\n' +
+        '• Your own custom domain (e.g. yourbusiness.com)\n' +
+        '• Professional email setup\n' +
+        '• Mobile-friendly design\n' +
+        '• Google Business optimization\n' +
+        '• Click-to-call buttons\n' +
+        '• Hosting, maintenance & support\n\n' +
+        'Questions? Just reply to this email or reach us at hello@yoursitesdone.com\n\n' +
         'Talk soon,\n' +
         'The YourSitesDone Team\n' +
         'yoursitesdone.com\n' +
