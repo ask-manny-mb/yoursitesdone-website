@@ -201,7 +201,7 @@
                         <li>✓ Contact form & click-to-call</li>
                         <li>✓ Kickoff call + revisions until you love it</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary btn-block">Claim Your Spot →</a>
+                    <a href="#contact" class="btn btn-primary btn-block" data-plan="starter">Claim Your Spot →</a>
                     <p class="price-note">*$500 setup fee waived for our first 20 founding clients in exchange for an honest testimonial/review</p>
                 </div>
                 <div class="price-card">
@@ -218,7 +218,7 @@
                         <li>✓ Priority support</li>
                         <li>✓ Modifications on kickoff call within 48hrs</li>
                     </ul>
-                    <a href="#contact" class="btn btn-outline btn-block">Get Started</a>
+                    <a href="#contact" class="btn btn-outline btn-block" data-plan="growth">Get Started</a>
                 </div>
             </div>
         </div>
@@ -374,8 +374,11 @@
     <section id="contact" class="section section-cta">
         <div class="container">
             <div class="cta-content">
-                <h2>See Your New Website — Instantly</h2>
-                <p>Enter your business info below. We'll generate a custom, professional website for your business in seconds — completely free to preview.</p>
+                <div id="planBanner" style="display:none;background:rgba(249,115,22,0.15);border:2px solid #f97316;border-radius:12px;padding:16px 24px;margin-bottom:24px;text-align:center;">
+                    <p id="planBannerText" style="font-size:1.1rem;font-weight:700;color:#f97316;margin:0;"></p>
+                </div>
+                <h2 id="formHeading">See Your New Website — Instantly</h2>
+                <p id="formSubheading">Enter your business info below. We'll generate a custom, professional website for your business in seconds — completely free to preview.</p>
                 <form class="contact-form" id="contactForm">
                     <div class="form-row">
                         <input type="text" name="name" placeholder="Your Name" required>

@@ -159,7 +159,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
 <span class="scenario-num" style="background:var(--blue-dim);color:var(--blue)">Scenario 1</span>
 <div>
 <div class="scenario-title">Starter Purchase — They Find Us</div>
-<div class="scenario-desc">Traditional agency model · $29/mo (setup waived for founding clients) · We build after payment</div>
+<div class="scenario-desc">Form first → preview → payment · $29/mo (setup $500 waived for first 20) · Every email includes preview link</div>
 </div>
 </div>
 <div class="flow">
@@ -173,24 +173,78 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
 <div class="step"><div class="step-dot user"></div><div class="step-card user">
 <div class="step-label user">User Action</div>
 <div class="step-title">2. Browses Site & Reads Pricing</div>
-<div class="step-detail">Sees hero section, portfolio, testimonials. Scrolls to pricing — compares Starter vs Growth plans.</div>
+<div class="step-detail">Sees hero section, portfolio, testimonials. Scrolls to pricing — compares Starter ($29/mo) vs Growth ($79/mo). Setup $500 waived for first 20 customers.</div>
 </div></div>
 
 <div class="step"><div class="step-dot user"></div><div class="step-card user">
 <div class="step-label user">User Action</div>
 <div class="step-title">3. Clicks "Get Started" on Starter Plan</div>
-<div class="step-detail">CTA button on the Starter pricing card triggers Stripe Checkout.</div>
+<div class="step-detail">CTA button scrolls the page down to the <strong>contact form</strong> — does NOT go to Stripe directly.</div>
+</div></div>
+
+<div class="step"><div class="step-dot user"></div><div class="step-card user">
+<div class="step-label user">User Action</div>
+<div class="step-title">4. Fills Out Contact Form</div>
+<div class="step-detail">
+<strong>Required fields:</strong>
+<ul>
+<li><strong>Name</strong></li>
+<li><strong>Business Name</strong></li>
+<li><strong>Email</strong></li>
+<li><strong>Phone</strong></li>
+<li><strong>Business Type</strong> — dropdown: Plumbing, Electrical, HVAC, Landscaping, Cleaning, Handyman, Painting, Roofing, Auto Repair, Contractor/General, Other</li>
+<li>If "Other" selected → text input appears</li>
+<li><strong>Services Offered</strong> — text input, placeholder: <em>"e.g. drain cleaning, water heaters, emergency repairs"</em></li>
+</ul>
+<strong>Optional fields:</strong>
+<ul>
+<li>Google Business Link</li>
+<li>Yelp Link</li>
+</ul>
+<div style="margin-top:6px;padding:8px 12px;background:var(--yellow-dim);border-radius:6px;font-size:.8rem">
+💡 <em>"Add your Google or Yelp link and we'll feature your real reviews on your site"</em>
+</div>
+</div>
+</div></div>
+
+<div class="step"><div class="step-dot decision"></div><div class="step-card decision">
+<div class="step-label decision">Decision Point</div>
+<div class="step-title">5. Form Submitted → Success Screen</div>
+<div class="step-detail">After form submission, the success screen shows:</div>
+<div class="branches">
+<div class="branch yes">
+<div class="branch-label">✅ Preview Exists (Pre-Built)</div>
+<ul>
+<li>🎉 "Your Website is Ready!" + preview link</li>
+<li>Both Stripe buy buttons shown below preview</li>
+</ul>
+</div>
+<div class="branch no" style="background:var(--yellow-dim);border-color:var(--yellow)">
+<div class="branch-label" style="color:var(--yellow)">⏳ No Preview Yet</div>
+<ul>
+<li>"We're building your custom site now!"</li>
+<li>Both Stripe buy buttons still shown</li>
+</ul>
+</div>
+</div>
+<div class="step-detail" style="margin-top:10px">
+<strong>Both buttons always visible:</strong>
+<ul>
+<li>🟢 <strong>Starter — $29/mo</strong> (setup $500 waived for first 20)</li>
+<li>🔵 <strong>Growth — $79/mo</strong> (setup $500 waived for first 20)</li>
+</ul>
+</div>
 </div></div>
 
 <div class="step"><div class="step-dot payment"></div><div class="step-card payment">
 <div class="step-label payment">Payment</div>
-<div class="step-title">4. Stripe Checkout Popup</div>
+<div class="step-title">6. Clicks Starter Buy → Stripe Checkout</div>
 <div class="step-detail">
-Customer sees:
+Customer clicks the Starter buy button → Stripe Checkout opens:
 <ul>
-<li><strong>$29/mo recurring</strong></li>
-<li><strong>$29/mo recurring</strong> (hosting + maintenance)</li>
+<li><strong>$29/mo recurring</strong> (setup $500 waived for first 20)</li>
 <li>Collects: name, email, card number, billing address</li>
+<li>Form data already stored and associated with this Stripe customer</li>
 <li>Powered by Stripe — PCI compliant, secure</li>
 </ul>
 </div>
@@ -198,32 +252,33 @@ Customer sees:
 
 <div class="step"><div class="step-dot payment"></div><div class="step-card payment">
 <div class="step-label payment">Payment</div>
-<div class="step-title">5. Payment Succeeds</div>
-<div class="step-detail">Stripe processes card → subscription created → one-time charge confirmed. Customer sees success screen.</div>
+<div class="step-title">7. Payment Succeeds</div>
+<div class="step-detail">Stripe processes card → subscription created. Customer sees confirmation.</div>
 </div></div>
 
 <div class="step"><div class="step-dot notify"></div><div class="step-card notify">
 <div class="step-label notify">Notifications</div>
-<div class="step-title">6. Notification Cascade</div>
+<div class="step-title">8. Notification Cascade</div>
 <div class="step-detail">Four things happen simultaneously:</div>
 <div class="substeps">
 <div class="substep"><span class="substep-icon">💳</span>Stripe sends payment receipt to customer's email</div>
-<div class="substep"><span class="substep-icon">📧</span>Stripe webhook → <code>hello@yoursitesdone.com</code> receives "New Starter purchase" notification</div>
-<div class="substep"><span class="substep-icon">🤖</span>Manny's email monitor cron detects the Stripe notification → processes it</div>
-<div class="substep"><span class="substep-icon">📱</span>Manny sends Matt a Telegram message: "💰 New Starter purchase — [Customer Name] — $500 + $29/mo"</div>
+<div class="substep"><span class="substep-icon">📧</span>Stripe webhook → <code>hello@yoursitesdone.com</code> receives "New Starter purchase" + form data</div>
+<div class="substep"><span class="substep-icon">🤖</span>Manny detects Stripe notification → auto-generates preview if not already built</div>
+<div class="substep"><span class="substep-icon">📱</span>Matt gets Telegram: "💰 New Starter purchase — [Customer Name] — $29/mo"</div>
 </div>
 </div></div>
 
 <div class="step"><div class="step-dot email"></div><div class="step-card email">
 <div class="step-label email">Email Sent</div>
-<div class="step-title">7. Welcome Email — Starter</div>
+<div class="step-title">9. Welcome Email — Starter (includes preview link)</div>
 <div class="step-detail">
 From: <code>hello@yoursitesdone.com</code><br>
 Contents:
 <ul>
-<li>Plan confirmation: Starter — $29/mo (setup waived for founding clients)</li>
+<li>Big green CTA: <span class="highlight">"View Your Website →"</span> — <strong>custom preview link always included</strong></li>
+<li>Plan confirmation: Starter — $29/mo (setup $500 waived)</li>
 <li>"Your kickoff call will be scheduled within 48 hours"</li>
-<li>What to prepare: business name, logo, photos, domain ideas, service list</li>
+<li>What to prepare: domain ideas, logo, additional photos</li>
 <li>Direct reply line if questions</li>
 </ul>
 </div>
@@ -231,36 +286,23 @@ Contents:
 
 <div class="step"><div class="step-dot internal"></div><div class="step-card internal">
 <div class="step-label internal">Internal</div>
-<div class="step-title">8. Schedule Kickoff Call</div>
+<div class="step-title">10. Schedule Kickoff Call</div>
 <div class="step-detail">Matt or Philly reaches out manually via Calendly link or email to schedule 20-min kickoff call within 48 hours.</div>
 </div></div>
 
 <div class="step"><div class="step-dot internal"></div><div class="step-card internal">
 <div class="step-label internal">Internal</div>
-<div class="step-title">9. Kickoff Call (20 min)</div>
+<div class="step-title">11. Kickoff Call — Review Preview & Refine</div>
 <div class="step-detail">
-Checklist covered:
+Review the already-built preview together:
 <ul>
+<li>Feedback on design, copy, layout</li>
 <li><strong>Domain preference</strong> — show 3-5 available options (GoDaddy search)</li>
-<li><strong>Hours of operation</strong></li>
-<li><strong>Service area</strong> — cities, zip codes, radius</li>
-<li><strong>Photos/logo</strong> — customer sends or we use stock</li>
-<li><strong>Preferred contact method</strong> — call vs email vs form on site</li>
-<li><strong>Specific requests</strong> — colors, competitors they like, must-haves</li>
+<li><strong>Hours of operation, service area</strong></li>
+<li>Additional photos or logo</li>
+<li>Any changes or additions</li>
 </ul>
 </div>
-</div></div>
-
-<div class="step"><div class="step-dot internal"></div><div class="step-card internal">
-<div class="step-label internal">Manny Builds</div>
-<div class="step-title">10. Manny Builds the Site</div>
-<div class="step-detail">Using kickoff call info, Manny generates a full site: homepage, services, about, contact, reviews. Hosted as preview on GitHub Pages.</div>
-</div></div>
-
-<div class="step"><div class="step-dot email"></div><div class="step-card email">
-<div class="step-label email">Email Sent</div>
-<div class="step-title">11. Preview Link Sent to Customer</div>
-<div class="step-detail">Email with prominent green CTA: <span class="highlight">"View Your Website →"</span> pointing to <code>yoursitesdone.com/preview/[slug]</code></div>
 </div></div>
 
 <div class="step"><div class="step-dot user"></div><div class="step-card user">
@@ -303,7 +345,7 @@ Checklist covered:
 <span class="scenario-num" style="background:var(--green-dim);color:var(--green)">Scenario 2</span>
 <div>
 <div class="scenario-title">Growth Purchase — They Find Us, See Pricing</div>
-<div class="scenario-desc">Preview-first model · $79/mo, no setup fee · They see before they pay</div>
+<div class="scenario-desc">Form first → preview → payment · $79/mo (setup $500 waived for first 20) · Preview link in every email</div>
 </div>
 </div>
 <div class="flow">
@@ -317,21 +359,25 @@ Checklist covered:
 <div class="step"><div class="step-dot user"></div><div class="step-card user">
 <div class="step-label user">User Action</div>
 <div class="step-title">2. Browses Site & Reads Pricing</div>
-<div class="step-detail">Sees Growth plan highlighted — $79/mo, no setup fee. "Most Popular" badge. Includes SEO, review management, monthly reports.</div>
+<div class="step-detail">Sees Growth plan highlighted — $79/mo, "Most Popular" badge. Setup $500 waived for first 20. Includes SEO, review management, monthly reports.</div>
 </div></div>
 
 <div class="step"><div class="step-dot user"></div><div class="step-card user">
 <div class="step-label user">User Action</div>
 <div class="step-title">3. Clicks "Claim Your Spot" on Growth Plan</div>
-<div class="step-detail">CTA triggers intake form modal — <strong>NOT</strong> Stripe yet. We need their business info first.</div>
+<div class="step-detail">CTA button scrolls the page down to the <strong>contact form</strong> — does NOT go to Stripe directly.</div>
 </div></div>
 
 <div class="step"><div class="step-dot user"></div><div class="step-card user">
 <div class="step-label user">User Action</div>
-<div class="step-title">4. Fills Out Intake Form (Modal/Popup)</div>
+<div class="step-title">4. Fills Out Contact Form</div>
 <div class="step-detail">
 <strong>Required fields:</strong>
 <ul>
+<li><strong>Name</strong></li>
+<li><strong>Business Name</strong></li>
+<li><strong>Email</strong></li>
+<li><strong>Phone</strong></li>
 <li><strong>Business Type</strong> — dropdown: Plumbing, Electrical, HVAC, Landscaping, Cleaning, Handyman, Painting, Roofing, Auto Repair, Contractor/General, Other</li>
 <li>If "Other" selected → text input appears</li>
 <li><strong>Services Offered</strong> — text input, placeholder: <em>"e.g. drain cleaning, water heaters, emergency repairs"</em></li>
@@ -347,60 +393,73 @@ Checklist covered:
 </div>
 </div></div>
 
-<div class="step"><div class="step-dot payment"></div><div class="step-card payment">
-<div class="step-label payment">Payment</div>
-<div class="step-title">5. Form Submitted → Stripe Checkout Popup</div>
-<div class="step-detail">
-After form submission, Stripe Checkout opens:
+<div class="step"><div class="step-dot decision"></div><div class="step-card decision">
+<div class="step-label decision">Decision Point</div>
+<div class="step-title">5. Form Submitted → Success Screen</div>
+<div class="step-detail">After form submission, the success screen shows:</div>
+<div class="branches">
+<div class="branch yes">
+<div class="branch-label">✅ Preview Exists (Pre-Built)</div>
 <ul>
-<li><strong>$79/mo recurring</strong> — no setup fee</li>
-<li>Collects: name, email, card number</li>
-<li>Form data stored and associated with this Stripe customer</li>
+<li>🎉 "Your Website is Ready!" + preview link</li>
+<li>Both Stripe buy buttons shown below preview</li>
+</ul>
+</div>
+<div class="branch no" style="background:var(--yellow-dim);border-color:var(--yellow)">
+<div class="branch-label" style="color:var(--yellow)">⏳ No Preview Yet</div>
+<ul>
+<li>"We're building your custom site now!"</li>
+<li>Both Stripe buy buttons still shown</li>
+</ul>
+</div>
+</div>
+<div class="step-detail" style="margin-top:10px">
+<strong>Both buttons always visible:</strong>
+<ul>
+<li>🟢 <strong>Starter — $29/mo</strong> (setup $500 waived for first 20)</li>
+<li>🔵 <strong>Growth — $79/mo</strong> (setup $500 waived for first 20)</li>
 </ul>
 </div>
 </div></div>
 
 <div class="step"><div class="step-dot payment"></div><div class="step-card payment">
 <div class="step-label payment">Payment</div>
-<div class="step-title">6. Payment Succeeds</div>
-<div class="step-detail">Stripe subscription created. First charge: $149. Customer sees success confirmation.</div>
+<div class="step-title">6. Clicks Growth Buy → Stripe Checkout</div>
+<div class="step-detail">
+Customer clicks the Growth buy button → Stripe Checkout opens:
+<ul>
+<li><strong>$79/mo recurring</strong> (setup $500 waived for first 20)</li>
+<li>Collects: name, email, card number</li>
+<li>Form data already stored and associated with this Stripe customer</li>
+</ul>
+</div>
+</div></div>
+
+<div class="step"><div class="step-dot payment"></div><div class="step-card payment">
+<div class="step-label payment">Payment</div>
+<div class="step-title">7. Payment Succeeds</div>
+<div class="step-detail">Stripe subscription created. Customer sees confirmation.</div>
 </div></div>
 
 <div class="step"><div class="step-dot notify"></div><div class="step-card notify">
 <div class="step-label notify">Notifications</div>
-<div class="step-title">7. Notification Cascade</div>
+<div class="step-title">8. Notification Cascade</div>
 <div class="substeps">
 <div class="substep"><span class="substep-icon">💳</span>Stripe sends receipt to customer's email</div>
 <div class="substep"><span class="substep-icon">📧</span>Stripe webhook → <code>hello@yoursitesdone.com</code> receives "New Growth purchase" + form data</div>
-<div class="substep"><span class="substep-icon">🤖</span>Manny gets alert → <strong>immediately starts auto-generating preview site</strong> using form data</div>
+<div class="substep"><span class="substep-icon">🤖</span>Manny detects notification → auto-generates preview if not already built</div>
 <div class="substep"><span class="substep-icon">📱</span>Matt gets Telegram: "💰 New Growth purchase — [Business Name] — $79/mo"</div>
-</div>
-</div></div>
-
-<div class="step"><div class="step-dot internal"></div><div class="step-card internal">
-<div class="step-label internal">Manny Builds</div>
-<div class="step-title">8. Manny Auto-Generates Preview Site</div>
-<div class="step-detail">
-Within minutes, Manny builds a full preview using:
-<ul>
-<li>Business name & type from form</li>
-<li>Services list → generates service pages/sections</li>
-<li>Google/Yelp reviews pulled if links provided</li>
-<li>Phone, location from Stripe customer data</li>
-<li>Industry-specific stock photos & copy</li>
-</ul>
-Hosted at <code>yoursitesdone.com/preview/[business-slug]</code>
 </div>
 </div></div>
 
 <div class="step"><div class="step-dot email"></div><div class="step-card email">
 <div class="step-label email">Email Sent</div>
-<div class="step-title">9. Welcome Email — Growth</div>
+<div class="step-title">9. Welcome Email — Growth (includes preview link)</div>
 <div class="step-detail">
 From: <code>hello@yoursitesdone.com</code><br>
 <ul>
-<li>Big green CTA: <span class="highlight">"View Your Website →"</span> (preview link)</li>
-<li>Plan details: Growth — $79/mo, everything included</li>
+<li>Big green CTA: <span class="highlight">"View Your Website →"</span> — <strong>custom preview link always included</strong></li>
+<li>Plan details: Growth — $79/mo (setup $500 waived)</li>
 <li>"We'll schedule your kickoff call within 48 hours to finalize details"</li>
 <li>"A Google audit of your online presence is coming soon"</li>
 </ul>
