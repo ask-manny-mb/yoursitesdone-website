@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tony's Landscaping & Irrigation — Torrance CA | Professional Landscaping Services</title>
+    <meta name="description" content="Tony's Landscaping & Irrigation in Torrance, CA. Beautiful yards, smart irrigation, expert care. Call (310) 555-0789 today!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --primary: #d97706;
+            --primary-dark: #b45309;
+            --primary-light: #fbbf24;
+            --text: #1a1a2e;
+            --text-light: #555;
+            --bg: #ffffff;
+            --bg-alt: #f8f9fc;
+            --radius: 12px;
+        }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+
+        .preview-banner {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff; text-align: center; padding: 12px 20px; font-size: 0.9rem;
+            position: sticky; top: 0; z-index: 1000;
+            display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;
+        }
+        .preview-banner span { opacity: 0.9; }
+        .preview-banner a {
+            background: #fff; color: #1a1a2e; padding: 6px 18px; border-radius: 20px;
+            font-weight: 600; font-size: 0.85rem; transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .preview-banner a:hover { transform: scale(1.05); box-shadow: 0 4px 15px rgba(255,255,255,0.3); }
+
+        .header {
+            background: var(--bg); padding: 16px 24px;
+            display: flex; align-items: center; justify-content: space-between;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08); position: sticky; top: 48px; z-index: 999;
+        }
+        .logo { font-size: 1.3rem; font-weight: 800; color: var(--primary); }
+        .header-phone a {
+            background: var(--primary); color: #fff; padding: 10px 20px;
+            border-radius: 25px; font-weight: 600; font-size: 0.95rem; transition: background 0.2s;
+        }
+        .header-phone a:hover { background: var(--primary-dark); }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: #fff; padding: 80px 24px; text-align: center;
+        }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 16px; line-height: 1.15; }
+        .hero p { font-size: 1.25rem; opacity: 0.92; max-width: 600px; margin: 0 auto 32px; }
+        .hero-cta {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: #fff; color: var(--primary-dark); padding: 16px 36px;
+            border-radius: 50px; font-size: 1.15rem; font-weight: 700;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2); transition: transform 0.2s;
+        }
+        .hero-cta:hover { transform: translateY(-2px); }
+
+        .section { padding: 72px 24px; max-width: 1100px; margin: 0 auto; }
+        .section-alt { background: var(--bg-alt); }
+        .section-title { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .section-subtitle { text-align: center; color: var(--text-light); margin-bottom: 48px; font-size: 1.05rem; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .service-card {
+            background: var(--bg); border: 1px solid #e8eaf0; border-radius: var(--radius);
+            padding: 32px 24px; text-align: center; transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+        .service-icon { font-size: 2.5rem; margin-bottom: 16px; }
+        .service-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
+        .service-card p { color: var(--text-light); font-size: 0.95rem; }
+
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .review-card { background: var(--bg); border: 1px solid #e8eaf0; border-radius: var(--radius); padding: 28px; }
+        .review-stars { color: #ffd700; font-size: 1.1rem; margin-bottom: 12px; }
+        .review-text { font-size: 0.95rem; margin-bottom: 16px; line-height: 1.7; font-style: italic; }
+        .review-author { font-weight: 600; font-size: 0.9rem; color: var(--text-light); }
+
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: #fff; padding: 72px 24px; text-align: center;
+        }
+        .contact-section h2 { font-size: 2rem; font-weight: 800; margin-bottom: 12px; }
+        .contact-section > p { opacity: 0.9; margin-bottom: 32px; font-size: 1.05rem; }
+        .contact-info { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; margin-bottom: 32px; }
+        .contact-item { display: flex; align-items: center; gap: 10px; font-size: 1.05rem; }
+        .contact-cta {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: #fff; color: var(--primary-dark); padding: 16px 36px;
+            border-radius: 50px; font-size: 1.15rem; font-weight: 700;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2); transition: transform 0.2s;
+        }
+        .contact-cta:hover { transform: translateY(-2px); }
+
+        .contact-form-box {
+            background: rgba(255,255,255,0.1); border-radius: var(--radius);
+            padding: 32px; max-width: 500px; margin: 32px auto 0; text-align: left;
+        }
+        .contact-form-box h3 { text-align: center; margin-bottom: 20px; font-size: 1.1rem; }
+        .contact-form-box input, .contact-form-box textarea {
+            width: 100%; padding: 12px 16px; border: none; border-radius: 8px;
+            margin-bottom: 12px; font-size: 0.95rem; font-family: inherit;
+        }
+        .contact-form-box textarea { resize: vertical; min-height: 80px; }
+        .contact-form-box button {
+            width: 100%; padding: 14px; border: none; border-radius: 8px;
+            background: #fff; color: var(--primary-dark); font-size: 1rem;
+            font-weight: 700; cursor: pointer; transition: transform 0.2s;
+        }
+        .contact-form-box button:hover { transform: scale(1.02); }
+
+        .footer {
+            background: #1a1a2e; color: rgba(255,255,255,0.7);
+            text-align: center; padding: 32px 24px; font-size: 0.85rem;
+        }
+        .footer a { color: #fff; font-weight: 600; }
+        .footer-cta { margin-top: 12px; }
+        .footer-cta a {
+            display: inline-block; background: var(--primary); color: #fff;
+            padding: 8px 20px; border-radius: 20px; font-size: 0.85rem; margin-top: 8px;
+        }
+
+        .float-call {
+            position: fixed; bottom: 24px; right: 24px; background: var(--primary);
+            color: #fff; width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3); z-index: 998; transition: transform 0.2s;
+        }
+        .float-call:hover { transform: scale(1.1); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero { padding: 60px 20px; }
+            .section { padding: 48px 20px; }
+            .header { top: 60px; }
+            .preview-banner { font-size: 0.8rem; padding: 10px 16px; }
+            .services-grid, .reviews-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-banner">
+        <span>✨ This is a <strong>FREE preview</strong> of your website — Like what you see?</span>
+        <a href="https://yoursitesdone.com/#contact">Contact Us to Go Live →</a>
+    </div>
+
+    <header class="header">
+        <div class="logo">Tony's Landscaping & Irrigation</div>
+        <div class="header-phone">
+            <a href="tel:+13105550789">📞 (310) 555-0789</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Tony's Landscaping & Irrigation</h1>
+        <p>Beautiful yards and smart irrigation systems in Torrance, CA — transforming outdoor spaces since 2010.</p>
+        <a href="tel:+13105550789" class="hero-cta">📞 Call (310) 555-0789</a>
+    </section>
+
+    <section class="section-alt">
+        <div class="section">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Professional landscaping and irrigation services in Torrance and surrounding areas</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🌳</div>
+                    <h3>Landscape Design</h3>
+                    <p>Custom landscape design that transforms your yard into a beautiful outdoor living space.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌿</div>
+                    <h3>Lawn Maintenance</h3>
+                    <p>Regular mowing, edging, and maintenance to keep your lawn looking its best year-round.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💧</div>
+                    <h3>Irrigation Systems</h3>
+                    <p>Smart sprinkler and drip irrigation installation — save water and keep everything green.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌺</div>
+                    <h3>Planting & Gardens</h3>
+                    <p>Flower beds, shrubs, trees, and drought-tolerant native plantings.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🪨</div>
+                    <h3>Hardscaping</h3>
+                    <p>Patios, walkways, retaining walls, and decorative stone work.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌴</div>
+                    <h3>Tree Trimming & Removal</h3>
+                    <p>Professional tree care to keep your property safe and looking great.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-subtitle">Trusted by homeowners across Torrance</p>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Tony completely transformed our backyard. The new patio and landscaping look incredible. Our neighbors are jealous!"</div>
+                <div class="review-author">— Robert H.</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Best landscaping company in the South Bay. They installed a new irrigation system and our water bill dropped 40%."</div>
+                <div class="review-author">— Lisa M.</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Reliable, creative, and fairly priced. Tony's crew shows up every week and our yard always looks amazing."</div>
+                <div class="review-author">— Kevin W.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2>Ready to Transform Your Yard?</h2>
+        <p>Call us today for a free estimate — let's create something beautiful!</p>
+        <div class="contact-info">
+            <div class="contact-item">📞 (310) 555-0789</div>
+            <div class="contact-item">📍 Torrance, CA</div>
+        </div>
+        <a href="tel:+13105550789" class="contact-cta">📞 Call (310) 555-0789</a>
+        <div class="contact-form-box">
+            <h3>Or Send Us a Message</h3>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Email Address">
+            <input type="tel" placeholder="Phone Number">
+            <textarea placeholder="Tell us about your landscaping project"></textarea>
+            <button type="button">Send Message</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 Tony's Landscaping & Irrigation · Torrance, CA</p>
+        <p style="margin-top:8px;">Website by <a href="https://yoursitesdone.com" target="_blank">YourSitesDone.com</a></p>
+        <div class="footer-cta">
+            <p>Want a website like this for your business?</p>
+            <a href="https://yoursitesdone.com/#contact">Get Your Free Website →</a>
+        </div>
+    </footer>
+
+    <a href="tel:+13105550789" class="float-call">📞</a>
+</body>
+</html>
