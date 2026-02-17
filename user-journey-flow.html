@@ -517,7 +517,7 @@ Site deployed to custom domain. Ongoing Growth services begin:
 <span class="scenario-num" style="background:var(--cyan-dim);color:var(--cyan)">Scenario 3</span>
 <div>
 <div class="scenario-title">Inbound Form Submission — Curious, Not Ready to Buy</div>
-<div class="scenario-desc">Lead capture · Free preview as hook · Nurture into conversion</div>
+<div class="scenario-desc">Form first → preview + Stripe buttons on success screen · Free preview as hook · Nurture into conversion</div>
 </div>
 </div>
 <div class="flow">
@@ -551,23 +551,30 @@ Site deployed to custom domain. Ongoing Growth services begin:
 
 <div class="step"><div class="step-dot decision"></div><div class="step-card decision">
 <div class="step-label decision">Decision Point</div>
-<div class="step-title">5. Preview Already Exists?</div>
+<div class="step-title">5. Form Submitted → Success Screen</div>
+<div class="step-detail">After form submission, the success screen shows:</div>
 <div class="branches">
 <div class="branch yes">
-<div class="branch-label">✅ Yes — Pre-Built from Prospect DB</div>
+<div class="branch-label">✅ Preview Exists (Pre-Built)</div>
 <ul>
-<li>Instant redirect to preview page</li>
-<li>Banner: "🎉 Your Website is Ready!"</li>
-<li>Immediate wow factor</li>
+<li>🎉 "Your Website is Ready!" + preview link</li>
+<li>Both Stripe buy buttons shown below preview</li>
 </ul>
 </div>
-<div class="branch no">
-<div class="branch-label">⏳ No — Needs Building</div>
+<div class="branch no" style="background:var(--yellow-dim);border-color:var(--yellow)">
+<div class="branch-label" style="color:var(--yellow)">⏳ No Preview Yet</div>
 <ul>
-<li>Success message: "✅ Got it! We'll send you your free website preview within 48 hours!"</li>
-<li>Manny queued to build it</li>
+<li>"We're building your custom site now!"</li>
+<li>Both Stripe buy buttons still shown</li>
 </ul>
 </div>
+</div>
+<div class="step-detail" style="margin-top:10px">
+<strong>Both buttons always visible:</strong>
+<ul>
+<li>🟢 <strong>Starter — $29/mo</strong> (setup $500 waived for first 20)</li>
+<li>🔵 <strong>Growth — $79/mo</strong> (setup $500 waived for first 20)</li>
+</ul>
 </div>
 </div></div>
 
@@ -590,14 +597,14 @@ Site deployed to custom domain. Ongoing Growth services begin:
 
 <div class="step"><div class="step-dot email"></div><div class="step-card email">
 <div class="step-label email">Email Sent</div>
-<div class="step-title">8. Auto-Reply Email</div>
+<div class="step-title">8. Auto-Reply Email (includes preview link)</div>
 <div class="step-detail">
 <ul>
-<li>Preview link with green CTA: <span class="highlight">"View Your Website →"</span></li>
+<li>Big green CTA: <span class="highlight">"View Your Website →"</span> — <strong>custom preview link always included</strong></li>
 <li>"We already built your site!" messaging</li>
 <li>Both plan options with Stripe buy buttons:</li>
-<li style="list-style:none;margin-left:16px">→ Starter: $500 + $29/mo</li>
-<li style="list-style:none;margin-left:16px">→ Growth: $79/mo (recommended)</li>
+<li style="list-style:none;margin-left:16px">→ Starter: $29/mo (setup $500 waived for first 20)</li>
+<li style="list-style:none;margin-left:16px">→ Growth: $79/mo (setup $500 waived for first 20) — recommended</li>
 </ul>
 </div>
 </div></div>
@@ -635,7 +642,7 @@ Site deployed to custom domain. Ongoing Growth services begin:
 <span class="scenario-num" style="background:var(--orange-dim);color:var(--orange)">Scenario 4</span>
 <div>
 <div class="scenario-title">Cold Outreach — We Find Them</div>
-<div class="scenario-desc">Proactive prospecting · Pre-built preview · Approval required before send</div>
+<div class="scenario-desc">Proactive prospecting · Pre-built preview · Form first for purchase · Approval required before send</div>
 </div>
 </div>
 <div class="flow">
@@ -696,7 +703,8 @@ Hosted at <code>yoursitesdone.com/preview/[business-slug]</code>
 Subject: <em>"We built a free website for [Business Name]"</em>
 <ul>
 <li>Preview link front and center</li>
-<li>Both plan options with Stripe buy buttons</li>
+<li>CTA links to form on yoursitesdone.com (pre-filled if possible)</li>
+<li>Pricing: Starter $29/mo or Growth $79/mo (setup $500 waived for first 20)</li>
 <li>"No strings attached — it's yours to look at"</li>
 <li>Professional, non-spammy tone</li>
 </ul>
@@ -721,8 +729,9 @@ Subject: <em>"We built a free website for [Business Name]"</em>
 <div class="branch-label">👀 Opens & Clicks Preview</div>
 <ul>
 <li>Sees their custom site</li>
-<li>Same decision point as Scenario 3 step 9</li>
-<li>May buy, may need follow-up</li>
+<li>CTA on preview → contact form (pre-filled)</li>
+<li>Form submit → success screen w/ Stripe buttons</li>
+<li>Same flow: form → Stripe → welcome email w/ preview link</li>
 </ul>
 </div>
 <div class="branch no" style="background:var(--yellow-dim);border-color:var(--yellow)">
@@ -772,9 +781,9 @@ Subject: <em>"We built a free website for [Business Name]"</em>
 </tr>
 <tr>
 <td class="event-cell">💰 Starter Purchase</td>
-<td>Stripe receipt + Welcome email</td>
+<td>Stripe receipt + Welcome email w/ preview link</td>
 <td>Stripe webhook notification</td>
-<td>"💰 New Starter: [Name] — $500+$29/mo"</td>
+<td>"💰 New Starter: [Name] — $29/mo"</td>
 <td>Email notification</td>
 <td>Sends welcome email, queues for kickoff</td>
 </tr>
@@ -830,17 +839,17 @@ Subject: <em>"We built a free website for [Business Name]"</em>
 <div class="template-card">
 <div class="template-num">Template 1</div>
 <div class="template-name">Welcome — Starter</div>
-<div class="template-trigger">Trigger: <code>Stripe Starter purchase webhook</code><br>Plan details, kickoff call within 48hrs, what to prepare (domain ideas, logo, photos, services list).</div>
+<div class="template-trigger">Trigger: <code>Stripe Starter purchase webhook</code><br><strong>Custom preview link (green CTA)</strong>, plan details ($29/mo, setup waived), kickoff call within 48hrs, what to prepare.</div>
 </div>
 <div class="template-card">
 <div class="template-num">Template 2</div>
 <div class="template-name">Welcome — Growth</div>
-<div class="template-trigger">Trigger: <code>Stripe Growth purchase webhook</code><br>Preview link (green CTA), plan details, kickoff within 48hrs, Google audit coming.</div>
+<div class="template-trigger">Trigger: <code>Stripe Growth purchase webhook</code><br><strong>Custom preview link (green CTA)</strong>, plan details ($79/mo, setup waived), kickoff within 48hrs, Google audit coming.</div>
 </div>
 <div class="template-card">
 <div class="template-num">Template 3</div>
 <div class="template-name">Form Auto-Reply</div>
-<div class="template-trigger">Trigger: <code>Contact form submission</code><br>Preview link, both plan options w/ Stripe buttons, "We already built your site!" tone.</div>
+<div class="template-trigger">Trigger: <code>Contact form submission</code><br><strong>Custom preview link (green CTA)</strong>, both plan options w/ Stripe buttons ($29/mo & $79/mo, setup waived), "We already built your site!" tone.</div>
 </div>
 <div class="template-card">
 <div class="template-num">Template 4</div>
@@ -873,7 +882,7 @@ Subject: <em>"We built a free website for [Business Name]"</em>
 <div class="tool-icon">💳</div>
 <div>
 <div class="tool-name">Stripe</div>
-<div class="tool-desc">Payments, subscriptions, webhooks. Starter ($500 + $29/mo) and Growth ($79/mo) checkout flows. Sends receipts.</div>
+<div class="tool-desc">Payments, subscriptions, webhooks. Starter ($29/mo) and Growth ($79/mo) checkout flows. Setup $500 waived for first 20. Sends receipts.</div>
 </div>
 </div>
 <div class="tool-card">
