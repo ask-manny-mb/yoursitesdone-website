@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YourSitesDone — Profitability Projections</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+        h1 { font-size: 2.5rem; font-weight: 900; text-align: center; padding: 3rem 0 0.5rem; }
+        h1 span { color: #38bdf8; }
+        .subtitle { text-align: center; color: #94a3b8; font-size: 1.1rem; margin-bottom: 3rem; }
+        h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 1.25rem; color: #f8fafc; }
+        h2 .emoji { margin-right: 0.5rem; }
+        .section { margin-bottom: 3rem; }
+        .card { background: #1e293b; border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; border: 1px solid #334155; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+        .metric { text-align: center; padding: 1.25rem; }
+        .metric .value { font-size: 2rem; font-weight: 900; color: #34d399; }
+        .metric .value.blue { color: #38bdf8; }
+        .metric .label { font-size: 0.85rem; color: #94a3b8; margin-top: 0.25rem; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        th { background: #334155; color: #cbd5e1; font-weight: 600; text-align: left; padding: 0.75rem 1rem; white-space: nowrap; }
+        td { padding: 0.75rem 1rem; border-bottom: 1px solid #334155; }
+        tr:hover td { background: rgba(56, 189, 248, 0.05); }
+        .green { color: #34d399; font-weight: 700; }
+        .blue { color: #38bdf8; font-weight: 600; }
+        .orange { color: #fb923c; font-weight: 600; }
+        .milestone-row { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid #334155; }
+        .milestone-row:last-child { border-bottom: none; }
+        .milestone-label { font-weight: 500; }
+        .milestone-val { font-weight: 800; color: #34d399; font-size: 1.1rem; }
+        .note { color: #64748b; font-size: 0.8rem; margin-top: 1rem; font-style: italic; }
+        .highlight-row td { background: rgba(52, 211, 153, 0.08); }
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            .card { padding: 1.25rem; }
+            table { font-size: 0.78rem; }
+            th, td { padding: 0.5rem; }
+            .card-grid { grid-template-columns: 1fr; }
+        }
+        .overflow-x { overflow-x: auto; }
+        .tag { display: inline-block; background: #334155; color: #94a3b8; padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600; }
+        .footer { text-align: center; padding: 2rem 0 3rem; color: #475569; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>YourSitesDone <span>Profitability Model</span></h1>
+        <p class="subtitle">Internal projections — Matt & Philly · Updated Feb 2026</p>
+
+        <!-- 1. UNIT ECONOMICS -->
+        <div class="section">
+            <h2><span class="emoji">📊</span>Unit Economics</h2>
+            <div class="card card-grid">
+                <div class="metric">
+                    <div class="value">$27</div>
+                    <div class="label">Starter Profit / Customer / Mo<br><span class="tag">$29 − $2 cost = 93% margin</span></div>
+                </div>
+                <div class="metric">
+                    <div class="value">$74</div>
+                    <div class="label">Growth Profit / Customer / Mo<br><span class="tag">$79 − $5 cost = 94% margin</span></div>
+                </div>
+                <div class="metric">
+                    <div class="value blue">~$0</div>
+                    <div class="label">Customer Acquisition Cost<br><span class="tag">Outbound — we find them</span></div>
+                </div>
+            </div>
+            <div class="card card-grid">
+                <div class="metric">
+                    <div class="value">$348</div>
+                    <div class="label">Starter LTV (12 mo)</div>
+                </div>
+                <div class="metric">
+                    <div class="value">$948</div>
+                    <div class="label">Growth LTV (12 mo)</div>
+                </div>
+                <div class="metric">
+                    <div class="value">$696</div>
+                    <div class="label">Starter LTV (24 mo)</div>
+                </div>
+                <div class="metric">
+                    <div class="value">$1,896</div>
+                    <div class="label">Growth LTV (24 mo)</div>
+                </div>
+            </div>
+            <div class="card">
+                <h3 style="font-size:1rem;margin-bottom:0.75rem;color:#94a3b8;">Cost Breakdown per Customer/Mo</h3>
+                <table>
+                    <tr><td>GitHub Pages hosting</td><td class="green">Free</td></tr>
+                    <tr><td>Domain (~$12/yr)</td><td>~$1.00</td></tr>
+                    <tr><td>SSL certificate</td><td class="green">Free</td></tr>
+                    <tr><td>Email forwarding</td><td class="green">Free</td></tr>
+                    <tr><td>Manny (AI agent) marginal cost</td><td class="green">$0</td></tr>
+                    <tr><td>Review monitoring API (Growth only)</td><td>~$3-4</td></tr>
+                    <tr><td><strong>Total — Starter</strong></td><td><strong>~$2/mo</strong></td></tr>
+                    <tr><td><strong>Total — Growth</strong></td><td><strong>~$5/mo</strong></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- 2. REVENUE PROJECTIONS -->
+        <div class="section">
+            <h2><span class="emoji">💰</span>Revenue Projections</h2>
+            <p class="note" style="margin-bottom:1rem;">Assumptions: 70/30 Starter/Growth split · $2.50/mo avg cost/customer · $450/mo fixed AI costs · Stripe fees: 2.9% + $0.30/txn · No employee costs (Matt + Philly + Manny)</p>
+            <div class="card overflow-x">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customers</th>
+                            <th>Starter (70%)</th>
+                            <th>Growth (30%)</th>
+                            <th>Monthly Revenue</th>
+                            <th>Annual Revenue</th>
+                            <th>Monthly Costs</th>
+                            <th>Monthly Profit</th>
+                            <th>Annual Profit</th>
+                        </tr>
+                    </thead>
+                    <tbody id="projTable"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 3. MILESTONES -->
+        <div class="section">
+            <h2><span class="emoji">🎯</span>Milestone Timeline</h2>
+            <div class="card" id="milestones"></div>
+        </div>
+
+        <!-- 4. PRICING LADDER -->
+        <div class="section">
+            <h2><span class="emoji">📈</span>Pricing Ladder Projection</h2>
+            <p class="note" style="margin-bottom:1rem;">Prices increase as we grow. Early clients keep their locked-in rate. New clients pay current tier.</p>
+            <div class="card overflow-x">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quarter</th>
+                            <th>Starter</th>
+                            <th>Growth</th>
+                            <th>Blended ARPU</th>
+                            <th>At 100 Customers</th>
+                            <th>At 500 Customers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="blue">Q1 2026</td><td>$29</td><td>$79</td><td>$44.00</td><td>$4,400</td><td>$22,000</td></tr>
+                        <tr><td>Q2 2026</td><td>$39</td><td>$89</td><td>$54.00</td><td>$5,400</td><td>$27,000</td></tr>
+                        <tr><td>Q3 2026</td><td>$49</td><td>$99</td><td>$64.00</td><td>$6,400</td><td>$32,000</td></tr>
+                        <tr><td class="orange">Q4 2026+</td><td>$59</td><td>$119</td><td>$77.00</td><td>$7,700</td><td>$38,500</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="note">Blended ARPU = (70% × Starter) + (30% × Growth). Existing clients keep their locked-in rate — blended ARPU will be lower in practice during transition periods.</p>
+        </div>
+
+        <!-- 5. COMPARISON -->
+        <div class="section">
+            <h2><span class="emoji">⚔️</span>Comparison to Alternatives</h2>
+            <div class="card overflow-x">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th style="color:#34d399">YSD Starter</th>
+                            <th style="color:#38bdf8">YSD Growth</th>
+                            <th>Squarespace</th>
+                            <th>Wix</th>
+                            <th>Local Agency</th>
+                            <th>Hibu / Thryv</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Monthly Cost</strong></td><td class="green">$29</td><td class="green">$79</td><td>$16-49</td><td>$17-45</td><td>$150-500+</td><td>$300-1,000+</td></tr>
+                        <tr><td><strong>Setup Fee</strong></td><td class="green">$0*</td><td class="green">$0*</td><td>$0</td><td>$0</td><td>$2K-10K</td><td>$500-2K</td></tr>
+                        <tr><td><strong>DIY Required?</strong></td><td class="green">No — we do it all</td><td class="green">No — already built</td><td>Yes — 100% DIY</td><td>Yes — 100% DIY</td><td>No</td><td>No</td></tr>
+                        <tr><td><strong>Reviews Managed?</strong></td><td>No</td><td class="green">Yes — AI-powered</td><td>No</td><td>No</td><td>Sometimes</td><td>Yes (extra $)</td></tr>
+                        <tr><td><strong>Support Level</strong></td><td>Personal</td><td>Priority personal</td><td>Email / chat</td><td>Email / chat</td><td>Varies</td><td>Account manager</td></tr>
+                        <tr><td><strong>Contract</strong></td><td class="green">None</td><td class="green">None</td><td>Annual discount</td><td>Annual discount</td><td>Often 6-12 mo</td><td>12+ months</td></tr>
+                        <tr><td><strong>Time to Launch</strong></td><td>48 hrs</td><td class="green">Instant preview</td><td>Days-weeks (DIY)</td><td>Days-weeks (DIY)</td><td>2-8 weeks</td><td>2-4 weeks</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="note">*$500 setup fee waived for first 20 founding clients.</p>
+        </div>
+
+        <div class="footer">
+            <p>YourSitesDone Internal · Not for distribution · Updated February 2026</p>
+        </div>
+    </div>
+
+    <script>
+    // Revenue projection calculations
+    const customers = [10, 20, 50, 100, 250, 500, 1000];
+    const starterPrice = 29, growthPrice = 79;
+    const starterMix = 0.7, growthMix = 0.3;
+    const costPerCustomer = 2.50;
+    const fixedAICost = 450;
+    const domainCost = 1;
+
+    function fmt(n) { return n >= 1000 ? '$' + n.toLocaleString() : '$' + n.toFixed(0); }
+
+    const tbody = document.getElementById('projTable');
+    customers.forEach(c => {
+        const s = Math.round(c * starterMix), g = Math.round(c * growthMix);
+        const grossRev = s * starterPrice + g * growthPrice;
+        const stripeFees = c * (grossRev / c * 0.029 + 0.30); // per-txn
+        const monthlyCosts = c * costPerCustomer + c * domainCost + fixedAICost + stripeFees;
+        const monthlyProfit = grossRev - monthlyCosts;
+        const annualRev = grossRev * 12;
+        const annualProfit = monthlyProfit * 12;
+        const isHighlight = c === 100 || c === 500;
+        tbody.innerHTML += `<tr class="${isHighlight ? 'highlight-row' : ''}">
+            <td><strong>${c}</strong></td><td>${s}</td><td>${g}</td>
+            <td class="blue">${fmt(grossRev)}/mo</td>
+            <td>${fmt(annualRev)}</td>
+            <td>${fmt(monthlyCosts)}</td>
+            <td class="green">${fmt(monthlyProfit)}/mo</td>
+            <td class="green">${fmt(annualProfit)}</td>
+        </tr>`;
+    });
+
+    // Milestones
+    const milestones = [
+        ['Break-even on AI costs ($500/mo)', 500],
+        ['$5K/mo revenue', 5000],
+        ['$10K/mo revenue', 10000],
+        ['Matt can quit day job ($15K/mo profit)', 15000],
+        ['Both quit day jobs ($30K/mo profit)', 30000],
+        ['$100K/mo revenue', 100000],
+    ];
+    const arpu = starterMix * starterPrice + growthMix * growthPrice; // $44
+    const profitPerCustomer = arpu - costPerCustomer - domainCost - (arpu * 0.029 + 0.30); // ~$39.22
+
+    const mDiv = document.getElementById('milestones');
+    milestones.forEach(([label, target]) => {
+        let needed;
+        if (label.includes('revenue')) {
+            needed = Math.ceil(target / arpu);
+        } else if (label.includes('Break-even')) {
+            needed = Math.ceil(target / profitPerCustomer);
+        } else {
+            // profit-based: need to cover fixed AI cost too
+            needed = Math.ceil((target + fixedAICost) / profitPerCustomer);
+        }
+        mDiv.innerHTML += `<div class="milestone-row">
+            <span class="milestone-label">${label}</span>
+            <span class="milestone-val">~${needed} customers</span>
+        </div>`;
+    });
+    </script>
+</body>
+</html>
