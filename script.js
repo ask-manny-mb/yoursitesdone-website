@@ -18,6 +18,23 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     });
 });
 
+// Business Type "Other" toggle
+const bizTypeSelect = document.querySelector('select[name="business_type"]');
+const bizTypeOther = document.getElementById('businessTypeOther');
+if (bizTypeSelect && bizTypeOther) {
+    bizTypeSelect.addEventListener('change', function() {
+        if (this.value === 'Other') {
+            bizTypeOther.style.display = '';
+            bizTypeOther.required = true;
+            bizTypeOther.focus();
+        } else {
+            bizTypeOther.style.display = 'none';
+            bizTypeOther.required = false;
+            bizTypeOther.value = '';
+        }
+    });
+}
+
 // Contact form - FormSubmit.co (free, no signup)
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();

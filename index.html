@@ -383,13 +383,34 @@
                     </div>
                     <div class="form-row">
                         <input type="email" name="email" placeholder="Email Address" required>
-                        <input type="tel" name="phone" placeholder="Phone Number">
+                        <input type="tel" name="phone" placeholder="Phone Number" required>
                     </div>
+                    <div class="form-row">
+                        <div style="position:relative;width:100%">
+                            <select name="business_type" required style="width:100%;padding:1rem 1.25rem;border:2px solid rgba(255,255,255,0.1);border-radius:12px;background:rgba(255,255,255,0.05);color:#fff;font-size:1rem;font-family:inherit;appearance:none;-webkit-appearance:none;cursor:pointer;">
+                                <option value="" disabled selected style="color:#999">Business Type *</option>
+                                <option value="Plumbing">Plumbing</option>
+                                <option value="Electrical">Electrical</option>
+                                <option value="HVAC">HVAC</option>
+                                <option value="Landscaping">Landscaping</option>
+                                <option value="Cleaning">Cleaning</option>
+                                <option value="Handyman">Handyman</option>
+                                <option value="Painting">Painting</option>
+                                <option value="Roofing">Roofing</option>
+                                <option value="Auto Repair">Auto Repair</option>
+                                <option value="Contractor">Contractor / General</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <span style="position:absolute;right:1.25rem;top:50%;transform:translateY(-50%);color:rgba(255,255,255,0.4);pointer-events:none;font-size:0.8rem;">▼</span>
+                        </div>
+                        <input type="text" name="business_type_other" id="businessTypeOther" placeholder="What type of business?" style="display:none;">
+                    </div>
+                    <input type="text" name="services" placeholder="What services do you offer? (e.g. drain cleaning, water heaters, emergency repairs)" required>
+                    <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin:-0.5rem 0 0.75rem;text-align:left;">💡 Add your Google or Yelp link and we'll feature your real reviews on your site</p>
                     <div class="form-row">
                         <input type="url" name="google_link" placeholder="Google Business Link (optional)">
                         <input type="url" name="yelp_link" placeholder="Yelp Page Link (optional)">
                     </div>
-                    <textarea name="message" placeholder="Tell us about your business — services, years in business, anything helps! (optional)" rows="3"></textarea>
                     <div style="position:absolute;left:-9999px;top:-9999px;">
                         <input type="text" name="website_url" tabindex="-1" autocomplete="off">
                     </div>
