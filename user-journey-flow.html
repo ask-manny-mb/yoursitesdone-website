@@ -159,7 +159,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
 <span class="scenario-num" style="background:var(--blue-dim);color:var(--blue)">Scenario 1</span>
 <div>
 <div class="scenario-title">Starter Purchase — They Find Us</div>
-<div class="scenario-desc">Traditional agency model · $500 setup + $49/mo · We build after payment</div>
+<div class="scenario-desc">Traditional agency model · $29/mo (setup waived for founding clients) · We build after payment</div>
 </div>
 </div>
 <div class="flow">
@@ -188,8 +188,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-
 <div class="step-detail">
 Customer sees:
 <ul>
-<li><strong>$500 one-time setup fee</strong></li>
-<li><strong>$49/mo recurring</strong> (hosting + maintenance)</li>
+<li><strong>$29/mo recurring</strong></li>
+<li><strong>$29/mo recurring</strong> (hosting + maintenance)</li>
 <li>Collects: name, email, card number, billing address</li>
 <li>Powered by Stripe — PCI compliant, secure</li>
 </ul>
@@ -210,7 +210,7 @@ Customer sees:
 <div class="substep"><span class="substep-icon">💳</span>Stripe sends payment receipt to customer's email</div>
 <div class="substep"><span class="substep-icon">📧</span>Stripe webhook → <code>hello@yoursitesdone.com</code> receives "New Starter purchase" notification</div>
 <div class="substep"><span class="substep-icon">🤖</span>Manny's email monitor cron detects the Stripe notification → processes it</div>
-<div class="substep"><span class="substep-icon">📱</span>Manny sends Matt a Telegram message: "💰 New Starter purchase — [Customer Name] — $500 + $49/mo"</div>
+<div class="substep"><span class="substep-icon">📱</span>Manny sends Matt a Telegram message: "💰 New Starter purchase — [Customer Name] — $500 + $29/mo"</div>
 </div>
 </div></div>
 
@@ -221,7 +221,7 @@ Customer sees:
 From: <code>hello@yoursitesdone.com</code><br>
 Contents:
 <ul>
-<li>Plan confirmation: Starter — $500 setup + $49/mo</li>
+<li>Plan confirmation: Starter — $29/mo (setup waived for founding clients)</li>
 <li>"Your kickoff call will be scheduled within 48 hours"</li>
 <li>What to prepare: business name, logo, photos, domain ideas, service list</li>
 <li>Direct reply line if questions</li>
@@ -290,7 +290,7 @@ Checklist covered:
 
 <div class="step"><div class="step-dot internal"></div><div class="step-card internal">
 <div class="step-label internal">Ongoing</div>
-<div class="step-title">15. Ongoing Service ($49/mo)</div>
+<div class="step-title">15. Ongoing Service ($29/mo)</div>
 <div class="step-detail">Hosting, maintenance, security updates, content changes as needed. Monthly Stripe billing continues.</div>
 </div></div>
 
@@ -303,7 +303,7 @@ Checklist covered:
 <span class="scenario-num" style="background:var(--green-dim);color:var(--green)">Scenario 2</span>
 <div>
 <div class="scenario-title">Growth Purchase — They Find Us, See Pricing</div>
-<div class="scenario-desc">Preview-first model · $149/mo, no setup fee · They see before they pay</div>
+<div class="scenario-desc">Preview-first model · $79/mo, no setup fee · They see before they pay</div>
 </div>
 </div>
 <div class="flow">
@@ -317,7 +317,7 @@ Checklist covered:
 <div class="step"><div class="step-dot user"></div><div class="step-card user">
 <div class="step-label user">User Action</div>
 <div class="step-title">2. Browses Site & Reads Pricing</div>
-<div class="step-detail">Sees Growth plan highlighted — $149/mo, no setup fee. "Most Popular" badge. Includes SEO, review management, monthly reports.</div>
+<div class="step-detail">Sees Growth plan highlighted — $79/mo, no setup fee. "Most Popular" badge. Includes SEO, review management, monthly reports.</div>
 </div></div>
 
 <div class="step"><div class="step-dot user"></div><div class="step-card user">
@@ -353,7 +353,7 @@ Checklist covered:
 <div class="step-detail">
 After form submission, Stripe Checkout opens:
 <ul>
-<li><strong>$149/mo recurring</strong> — no setup fee</li>
+<li><strong>$79/mo recurring</strong> — no setup fee</li>
 <li>Collects: name, email, card number</li>
 <li>Form data stored and associated with this Stripe customer</li>
 </ul>
@@ -373,7 +373,7 @@ After form submission, Stripe Checkout opens:
 <div class="substep"><span class="substep-icon">💳</span>Stripe sends receipt to customer's email</div>
 <div class="substep"><span class="substep-icon">📧</span>Stripe webhook → <code>hello@yoursitesdone.com</code> receives "New Growth purchase" + form data</div>
 <div class="substep"><span class="substep-icon">🤖</span>Manny gets alert → <strong>immediately starts auto-generating preview site</strong> using form data</div>
-<div class="substep"><span class="substep-icon">📱</span>Matt gets Telegram: "💰 New Growth purchase — [Business Name] — $149/mo"</div>
+<div class="substep"><span class="substep-icon">📱</span>Matt gets Telegram: "💰 New Growth purchase — [Business Name] — $79/mo"</div>
 </div>
 </div></div>
 
@@ -400,7 +400,7 @@ Hosted at <code>yoursitesdone.com/preview/[business-slug]</code>
 From: <code>hello@yoursitesdone.com</code><br>
 <ul>
 <li>Big green CTA: <span class="highlight">"View Your Website →"</span> (preview link)</li>
-<li>Plan details: Growth — $149/mo, everything included</li>
+<li>Plan details: Growth — $79/mo, everything included</li>
 <li>"We'll schedule your kickoff call within 48 hours to finalize details"</li>
 <li>"A Google audit of your online presence is coming soon"</li>
 </ul>
@@ -537,8 +537,8 @@ Site deployed to custom domain. Ongoing Growth services begin:
 <li>Preview link with green CTA: <span class="highlight">"View Your Website →"</span></li>
 <li>"We already built your site!" messaging</li>
 <li>Both plan options with Stripe buy buttons:</li>
-<li style="list-style:none;margin-left:16px">→ Starter: $500 + $49/mo</li>
-<li style="list-style:none;margin-left:16px">→ Growth: $149/mo (recommended)</li>
+<li style="list-style:none;margin-left:16px">→ Starter: $500 + $29/mo</li>
+<li style="list-style:none;margin-left:16px">→ Growth: $79/mo (recommended)</li>
 </ul>
 </div>
 </div></div>
@@ -715,7 +715,7 @@ Subject: <em>"We built a free website for [Business Name]"</em>
 <td class="event-cell">💰 Starter Purchase</td>
 <td>Stripe receipt + Welcome email</td>
 <td>Stripe webhook notification</td>
-<td>"💰 New Starter: [Name] — $500+$49/mo"</td>
+<td>"💰 New Starter: [Name] — $500+$29/mo"</td>
 <td>Email notification</td>
 <td>Sends welcome email, queues for kickoff</td>
 </tr>
@@ -723,7 +723,7 @@ Subject: <em>"We built a free website for [Business Name]"</em>
 <td class="event-cell">💰 Growth Purchase</td>
 <td>Stripe receipt + Welcome email w/ preview</td>
 <td>Stripe webhook + form data</td>
-<td>"💰 New Growth: [Name] — $149/mo"</td>
+<td>"💰 New Growth: [Name] — $79/mo"</td>
 <td>Email notification</td>
 <td>Auto-generates preview, sends welcome email</td>
 </tr>
@@ -814,7 +814,7 @@ Subject: <em>"We built a free website for [Business Name]"</em>
 <div class="tool-icon">💳</div>
 <div>
 <div class="tool-name">Stripe</div>
-<div class="tool-desc">Payments, subscriptions, webhooks. Starter ($500 + $49/mo) and Growth ($149/mo) checkout flows. Sends receipts.</div>
+<div class="tool-desc">Payments, subscriptions, webhooks. Starter ($500 + $29/mo) and Growth ($79/mo) checkout flows. Sends receipts.</div>
 </div>
 </div>
 <div class="tool-card">

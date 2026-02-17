@@ -54,7 +54,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         '🎉 LOVE WHAT YOU SEE? Here\'s how to make it yours:\n\n' +
         '1. REVIEW your preview — click around, check it on your phone, show your team\n' +
         '2. CONFIRM your details — we\'ll verify your business info, phone, hours, and reviews\n' +
-        '3. CHOOSE A PLAN — pick Starter ($49/mo) or Growth ($149/mo with review management)\n' +
+        '3. CHOOSE A PLAN — pick Starter ($29/mo) or Growth ($79/mo with review management)\n' +
         '4. GO LIVE — we connect your custom domain, finalize your content, and launch. Typical turnaround: 3-5 business days.\n\n' +
         '💡 WHAT\'S INCLUDED WHEN YOU GO LIVE:\n' +
         '• Your own custom domain (e.g. yourbusiness.com)\n' +
