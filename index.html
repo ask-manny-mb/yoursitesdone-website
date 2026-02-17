@@ -416,8 +416,18 @@
                     <input type="text" name="services" placeholder="What services do you offer? (e.g. drain cleaning, water heaters, emergency repairs)" required>
                     <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin:-0.5rem 0 0.75rem;text-align:left;">💡 Add your Google or Yelp link and we'll feature your real reviews on your site</p>
                     <div class="form-row">
-                        <input type="url" name="google_link" placeholder="Google Business Link (optional)">
-                        <input type="url" name="yelp_link" placeholder="Yelp Page Link (optional)">
+                        <div style="position:relative;width:100%">
+                            <input type="url" name="google_link" placeholder="Google Business Link (optional)">
+                            <span class="form-tooltip" tabindex="0" aria-label="How to find your Google Business link">?
+                                <span class="form-tooltip-text">Search your business name on Google → Click your listing → Click "Share" → Copy the link. It usually looks like google.com/maps/place/...</span>
+                            </span>
+                        </div>
+                        <div style="position:relative;width:100%">
+                            <input type="url" name="yelp_link" placeholder="Yelp Page Link (optional)">
+                            <span class="form-tooltip" tabindex="0" aria-label="How to find your Yelp link">?
+                                <span class="form-tooltip-text">Go to yelp.com → Search your business name → Click on your page → Copy the URL from your browser's address bar.</span>
+                            </span>
+                        </div>
                     </div>
                     <div style="position:absolute;left:-9999px;top:-9999px;">
                         <input type="text" name="website_url" tabindex="-1" autocomplete="off">
