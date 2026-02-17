@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YourSitesDone — User Journey Flow Map</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; padding: 40px 20px; }
+h1 { text-align: center; font-size: 28px; margin-bottom: 10px; color: #60a5fa; }
+.subtitle { text-align: center; color: #94a3b8; margin-bottom: 40px; font-size: 14px; }
+.flow-container { max-width: 1200px; margin: 0 auto; }
+.section-title { font-size: 22px; font-weight: 700; margin: 40px 0 20px; padding: 10px 20px; border-left: 4px solid; border-radius: 4px; }
+.s1 { border-color: #f97316; color: #f97316; background: rgba(249,115,22,0.1); }
+.s2 { border-color: #22c55e; color: #22c55e; background: rgba(34,197,94,0.1); }
+.s3 { border-color: #a855f7; color: #a855f7; background: rgba(168,85,247,0.1); }
+
+.flow-row { display: flex; align-items: stretch; gap: 0; margin: 10px 0; flex-wrap: wrap; justify-content: center; }
+.step { background: #1e293b; border: 2px solid #334155; border-radius: 12px; padding: 16px; width: 200px; min-height: 100px; position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.step.entry { border-color: #f97316; background: rgba(249,115,22,0.08); }
+.step.action { border-color: #3b82f6; background: rgba(59,130,246,0.08); }
+.step.email { border-color: #22c55e; background: rgba(34,197,94,0.08); }
+.step.payment { border-color: #eab308; background: rgba(234,179,8,0.08); }
+.step.result { border-color: #a855f7; background: rgba(168,85,247,0.08); }
+.step.decision { border-color: #ef4444; background: rgba(239,68,68,0.08); border-radius: 12px; transform: rotate(0deg); }
+
+.step-icon { font-size: 28px; margin-bottom: 8px; }
+.step-title { font-size: 13px; font-weight: 700; color: #f1f5f9; margin-bottom: 4px; }
+.step-desc { font-size: 11px; color: #94a3b8; line-height: 1.4; }
+
+.arrow { display: flex; align-items: center; justify-content: center; width: 50px; font-size: 24px; color: #475569; }
+.arrow-down { text-align: center; font-size: 24px; color: #475569; margin: 5px 0; }
+
+.legend { display: flex; gap: 20px; justify-content: center; margin: 30px 0; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #94a3b8; }
+.legend-dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid; }
+
+.note { background: #1e293b; border: 1px dashed #475569; border-radius: 8px; padding: 12px 16px; margin: 10px auto; max-width: 600px; font-size: 12px; color: #94a3b8; text-align: center; }
+.note strong { color: #e2e8f0; }
+
+.divider { border: none; border-top: 1px solid #334155; margin: 30px 0; }
+</style>
+</head>
+<body>
+
+<h1>🗺️ YourSitesDone — User Journey Flow Map</h1>
+<p class="subtitle">All 3 scenarios: Website Visit → Form/Purchase → Email → Preview → Close</p>
+
+<div class="legend">
+<div class="legend-item"><div class="legend-dot" style="border-color:#f97316;background:rgba(249,115,22,0.3);"></div> Entry Point</div>
+<div class="legend-item"><div class="legend-dot" style="border-color:#3b82f6;background:rgba(59,130,246,0.3);"></div> User Action</div>
+<div class="legend-item"><div class="legend-dot" style="border-color:#22c55e;background:rgba(34,197,94,0.3);"></div> Email Sent</div>
+<div class="legend-item"><div class="legend-dot" style="border-color:#eab308;background:rgba(234,179,8,0.3);"></div> Payment</div>
+<div class="legend-item"><div class="legend-dot" style="border-color:#a855f7;background:rgba(168,85,247,0.3);"></div> Outcome</div>
+<div class="legend-item"><div class="legend-dot" style="border-color:#ef4444;background:rgba(239,68,68,0.3);"></div> Decision Point</div>
+</div>
+
+<div class="flow-container">
+
+<!-- SCENARIO 1 -->
+<div class="section-title s1">Scenario 1 — Direct Purchase: Starter Plan ($500 + $49/mo)</div>
+
+<div class="flow-row">
+<div class="step entry"><div class="step-icon">🌐</div><div class="step-title">Visits yoursitesdone.com</div><div class="step-desc">Finds us via Google, referral, or cold outreach email</div></div>
+<div class="arrow">→</div>
+<div class="step action"><div class="step-icon">📋</div><div class="step-title">Clicks "Get Started" on Starter Plan</div><div class="step-desc">Pricing section on homepage</div></div>
+<div class="arrow">→</div>
+<div class="step payment"><div class="step-icon">💳</div><div class="step-title">Stripe Checkout</div><div class="step-desc">$500 setup + $49/mo recurring<br>Collects: name, email, card</div></div>
+<div class="arrow">→</div>
+<div class="step action"><div class="step-icon">📝</div><div class="step-title">Intake Form</div><div class="step-desc">Business name, type, phone, city, services, anything special</div></div>
+<div class="arrow">→</div>
+<div class="step email"><div class="step-icon">📧</div><div class="step-title">Welcome Email (Starter)</div><div class="step-desc">Preview site link ✅<br>Plan details ✅<br>Next steps ✅<br>"Kickoff call in 48hrs"</div></div>
+</div>
+
+<div class="arrow-down">↓</div>
+
+<div class="flow-row">
+<div class="step result"><div class="step-icon">🎨</div><div class="step-title">Preview Site Built</div><div class="step-desc">Custom site with their info auto-generated within minutes</div></div>
+<div class="arrow">→</div>
+<div class="step action"><div class="step-icon">📞</div><div class="step-title">Kickoff Call (48hrs)</div><div class="step-desc">Walk through preview, get feedback, swap photos, tweak copy</div></div>
+<div class="arrow">→</div>
+<div class="step action"><div class="step-icon">✏️</div><div class="step-title">Revisions</div><div class="step-desc">Make changes based on call. 1-2 rounds included.</div></div>
+<div class="arrow">→</div>
+<div class="step result"><div class="step-icon">🚀</div><div class="step-title">SITE GOES LIVE</div><div class="step-desc">Domain setup, DNS, SSL. Customer's site is on the internet.</div></div>
+</div>
+
+<hr class="divider">
+
+<!-- SCENARIO 2 -->
+<div class="section-title s2">Scenario 2 — Direct Purchase: Growth Plan ($149/mo)</div>
+
+<div class="flow-row">
+<div class="step entry"><div class="step-icon">🌐</div><div class="step-title">Visits yoursitesdone.com</div><div class="step-desc">Finds us via Google, referral, or cold outreach email</div></div>
+<div class="arrow">→</div>
+<div class="step action"><div class="step-icon">📋</div><div class="step-title">Clicks "Get Started" on Growth Plan</div><div class="step-desc">Pricing section on homepage</div></div>
+<div class="arrow">→</div>
+<div class="step payment"><div class="step-icon">💳</div><div class="step-title">Stripe Checkout</div><div class="step-desc">$149/mo recurring (no setup fee)<br>Collects: name, email, card</div></div>
+<div class="arrow">→</div>
+<div class="step action"><div class="step-icon">📝</div><div class="step-title">Intake Form</div><div class="step-desc">Business name, type, phone, city, services, Google profile link, competitors</div></div>
+<div class="arrow">→</div>
+<div class="step email"><div class="step-icon">📧</div><div class="step-title">Welcome Email (Growth)</div><div class="step-desc">Preview site link ✅<br>Plan details ✅<br>Next steps ✅<br>Google audit coming ✅</div></div>
+</div>
+
+<div class="arrow-down">↓</div>
+
+<div class="flow-row">
+<div class="step result"><div class="step-icon">🎨</div><div class="step-title">Preview Site Built</div><div class="step-desc">Custom site auto-generated with their info</div></div>
+<div class="arrow">→</div>
+<div class="step action"><div class="step-icon">📞</div><div class="step-title">Kickoff Call (48hrs)</div><div class="step-desc">Deep-dive: business, competitors, goals. Review preview site.</div></div>
+<div class="arrow">→</div>
+<div class="step action"><div class="step-icon">🔍</div><div class="step-title">Google Audit</div><div class="step-desc">Audit online presence, Google Business Profile, quick wins</div></div>
+<div class="arrow">→</div>
+<div class="step result"><div class="step-icon">🚀</div><div class="step-title">SITE GOES LIVE</div><div class="step-desc">Launch + monthly SEO, review management, Google optimization begins</div></div>
+</div>
+
+<hr class="divider">
+
+<!-- SCENARIO 3 -->
+<div class="section-title s3">Scenario 3 — Form Submission / Inbound Inquiry</div>
+
+<div class="flow-row">
+<div class="step entry"><div class="step-icon">🌐</div><div class="step-title">Visits yoursitesdone.com</div><div class="step-desc">Finds us via Google, referral, or cold outreach</div></div>
+<div class="arrow">→</div>
+<div class="step action"><div class="step-icon">📝</div><div class="step-title">Fills Out Contact Form</div><div class="step-desc">Business name, type, phone, city, services, message</div></div>
+<div class="arrow">→</div>
+<div class="step result"><div class="step-icon">⚡</div><div class="step-title">Manny Auto-Generates Preview</div><div class="step-desc">Script builds custom site in seconds using form data</div></div>
+<div class="arrow">→</div>
+<div class="step email"><div class="step-icon">📧</div><div class="step-title">Auto-Reply Email</div><div class="step-desc">Preview site link ✅<br>Both plan options ✅<br>Stripe buy buttons ✅<br>"We already built your site!"</div></div>
+</div>
+
+<div class="arrow-down">↓</div>
+<div class="note">⚡ <strong>Decision Point:</strong> Prospect either clicks a buy button (→ Scenario 1 or 2) or doesn't respond</div>
+<div class="arrow-down">↓</div>
+
+<div class="flow-row">
+<div class="step decision"><div class="step-icon">🤔</div><div class="step-title">Clicks Buy?</div><div class="step-desc">YES → Stripe checkout → Welcome email → Kickoff call</div></div>
+<div class="arrow">→</div>
+<div class="step email"><div class="step-icon">📧</div><div class="step-title">No Response? Follow-Up (Day 2)</div><div class="step-desc">"Hey [name], just checking in — your preview site is still waiting for you!"</div></div>
+<div class="arrow">→</div>
+<div class="step email"><div class="step-icon">📧</div><div class="step-title">Final Follow-Up (Day 5)</div><div class="step-desc">"Last chance — we'll keep your preview live for 7 more days"</div></div>
+<div class="arrow">→</div>
+<div class="step result"><div class="step-icon">📁</div><div class="step-title">Archive or Nurture</div><div class="step-desc">Add to monthly newsletter or seasonal outreach list</div></div>
+</div>
+
+<hr class="divider">
+
+<!-- SCENARIO 4 -->
+<div class="section-title" style="border-color: #06b6d4; color: #06b6d4; background: rgba(6,182,212,0.1);">Scenario 4 — Cold Outreach (We Find Them)</div>
+
+<div class="flow-row">
+<div class="step entry"><div class="step-icon">🔍</div><div class="step-title">We Find Prospect</div><div class="step-desc">From our enriched prospect DB — no website, good reviews, local</div></div>
+<div class="arrow">→</div>
+<div class="step result"><div class="step-icon">⚡</div><div class="step-title">Manny Builds Preview</div><div class="step-desc">Using Google Maps data: name, phone, services, reviews, city</div></div>
+<div class="arrow">→</div>
+<div class="step email"><div class="step-icon">📧</div><div class="step-title">Cold Outreach Email</div><div class="step-desc">"We built a website for [biz name]"<br>Preview link ✅<br>Stripe buy buttons ✅<br>No commitment, free preview</div></div>
+<div class="arrow">→</div>
+<div class="step decision"><div class="step-icon">🤔</div><div class="step-title">They Open It?</div><div class="step-desc">YES → same flow as Scenario 3<br>NO → follow-up sequence</div></div>
+</div>
+
+<div class="arrow-down">↓</div>
+
+<div class="note">💡 <strong>The Magic:</strong> They never asked for a website. They open an email and their business already has one. That's the wow factor.</div>
+
+<hr class="divider">
+
+<!-- EMAIL SUMMARY -->
+<div class="section-title" style="border-color: #f43f5e; color: #f43f5e; background: rgba(244,63,94,0.1);">📧 Email Templates Needed (Summary)</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+
+<div class="step email" style="width:auto;">
+<div class="step-icon">1️⃣</div>
+<div class="step-title">Welcome — Starter</div>
+<div class="step-desc">Trigger: Stripe Starter purchase<br>Contains: Preview link, plan details, next steps, kickoff call scheduling</div>
+</div>
+
+<div class="step email" style="width:auto;">
+<div class="step-icon">2️⃣</div>
+<div class="step-title">Welcome — Growth</div>
+<div class="step-desc">Trigger: Stripe Growth purchase<br>Contains: Preview link, plan details, next steps, Google audit mention</div>
+</div>
+
+<div class="step email" style="width:auto;">
+<div class="step-icon">3️⃣</div>
+<div class="step-title">Form Auto-Reply</div>
+<div class="step-desc">Trigger: Contact form submission<br>Contains: Preview link, both plans, Stripe buy buttons</div>
+</div>
+
+<div class="step email" style="width:auto;">
+<div class="step-icon">4️⃣</div>
+<div class="step-title">Cold Outreach</div>
+<div class="step-desc">Trigger: We find them (outbound)<br>Contains: Preview link, intro to YSD, both plans, buy buttons</div>
+</div>
+
+<div class="step email" style="width:auto;">
+<div class="step-icon">5️⃣</div>
+<div class="step-title">Follow-Up #1 (Day 2)</div>
+<div class="step-desc">Trigger: No response to #3 or #4<br>Contains: Reminder, preview link again, soft nudge</div>
+</div>
+
+<div class="step email" style="width:auto;">
+<div class="step-icon">6️⃣</div>
+<div class="step-title">Follow-Up #2 (Day 5)</div>
+<div class="step-desc">Trigger: No response to #5<br>Contains: "Last chance" preview expires, FOMO</div>
+</div>
+
+</div>
+
+<hr class="divider">
+<div class="note">📅 Created: Feb 16, 2026 | 🦈 Built by Manny for Matt & Philly | Version 1.0</div>
+
+</div>
+</body>
+</html>
