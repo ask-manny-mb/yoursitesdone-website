@@ -79,6 +79,15 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         body: formData
     }).catch(() => {});
 
+    var buyButtons = '<div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);">' +
+        '<p style="font-size:0.95rem;color:rgba(255,255,255,0.7);margin-bottom:16px;">Ready to make it yours? Pick a plan:</p>' +
+        '<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">' +
+        '<a href="https://buy.stripe.com/4gMdR17aVe194H5esw5Ne04" target="_blank" style="display:inline-block;background:transparent;color:#f97316;border:2px solid #f97316;padding:12px 28px;border-radius:50px;font-size:0.95rem;font-weight:700;text-decoration:none;">Starter — $29/mo</a>' +
+        '<a href="https://buy.stripe.com/7sYaEP2UFbT15L97045Ne05" target="_blank" style="display:inline-block;background:#f97316;color:#fff;padding:12px 28px;border-radius:50px;font-size:0.95rem;font-weight:700;text-decoration:none;">Growth — $79/mo</a>' +
+        '</div>' +
+        '<p style="margin-top:12px;font-size:0.8rem;color:rgba(255,255,255,0.4);">$0 setup for founding clients · No contracts · Cancel anytime</p>' +
+        '</div>';
+
     // Check if we have a preview ready
     fetch('previews/index.json')
         .then(r => r.json())
@@ -88,17 +97,27 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
             if (slug) {
                 form.innerHTML = '<div style="padding:40px;text-align:center;">' +
                     '<p style="font-size:2rem;margin-bottom:12px;">🎉</p>' +
-                    '<p style="font-size:1.4rem;font-weight:700;margin-bottom:8px;">Your Website is Ready!</p>' +
-                    '<p style="font-size:1rem;color:#555;margin-bottom:24px;">We already built a free preview for <strong>' + businessName + '</strong></p>' +
-                    '<a href="previews/' + slug + '.html" style="display:inline-block;background:#2563eb;color:#fff;padding:16px 36px;border-radius:50px;font-size:1.1rem;font-weight:700;text-decoration:none;box-shadow:0 6px 20px rgba(37,99,235,0.3);transition:transform 0.2s;">View Your Website →</a>' +
-                    '<p style="margin-top:16px;font-size:0.85rem;color:#888;">No strings attached — it\'s yours to preview for free</p>' +
+                    '<p style="font-size:1.4rem;font-weight:700;margin-bottom:8px;color:#fff;">Your Website is Ready!</p>' +
+                    '<p style="font-size:1rem;color:rgba(255,255,255,0.7);margin-bottom:24px;">We already built a free preview for <strong style="color:#fff;">' + businessName + '</strong></p>' +
+                    '<a href="previews/' + slug + '.html" style="display:inline-block;background:#22c55e;color:#fff;padding:16px 36px;border-radius:50px;font-size:1.1rem;font-weight:700;text-decoration:none;box-shadow:0 6px 20px rgba(34,197,94,0.3);">View Your Website →</a>' +
+                    '<p style="margin-top:12px;font-size:0.85rem;color:rgba(255,255,255,0.5);">No strings attached — it\'s yours to preview for free</p>' +
+                    buyButtons +
                     '</div>';
             } else {
-                form.innerHTML = '<p style="padding:40px;font-size:1.2rem;text-align:center;">✅ <strong>Got it!</strong> We\'re building your free website preview now. You\'ll hear from us within 48 hours!</p>';
+                form.innerHTML = '<div style="padding:40px;text-align:center;">' +
+                    '<p style="font-size:2rem;margin-bottom:12px;">✅</p>' +
+                    '<p style="font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:8px;">Got it! We\'re building your website now.</p>' +
+                    '<p style="font-size:1rem;color:rgba(255,255,255,0.7);margin-bottom:4px;">You\'ll receive an email with your custom preview link within 48 hours.</p>' +
+                    buyButtons +
+                    '</div>';
             }
         })
         .catch(() => {
-            form.innerHTML = '<p style="padding:40px;font-size:1.2rem;text-align:center;">✅ <strong>Got it!</strong> We\'ll send you your free website preview within 48 hours.</p>';
+            form.innerHTML = '<div style="padding:40px;text-align:center;">' +
+                '<p style="font-size:2rem;margin-bottom:12px;">✅</p>' +
+                '<p style="font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:8px;">Got it! We\'ll send you your free website preview within 48 hours.</p>' +
+                buyButtons +
+                '</div>';
         });
 });
 
