@@ -54,7 +54,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         '🎉 LOVE WHAT YOU SEE? Here\'s how to make it yours:\n\n' +
         '1. REVIEW your preview — click around, check it on your phone, show your team\n' +
         '2. CONFIRM your details — we\'ll verify your business info, phone, hours, and reviews\n' +
-        '3. CHOOSE A PLAN — pick Starter ($29/mo) or Growth ($79/mo with review management)\n' +
+        '3. CHOOSE A PLAN — pick Starter ($29/mo) or Pro ($79/mo with review management)\n' +
         '4. GO LIVE — we connect your custom domain, finalize your content, and launch. Typical turnaround: 3-5 business days.\n\n' +
         '💡 WHAT\'S INCLUDED WHEN YOU GO LIVE:\n' +
         '• Your own custom domain (e.g. yourbusiness.com)\n' +
@@ -83,17 +83,17 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     var starterStyle = selPlan === 'starter'
         ? 'display:inline-block;background:#f97316;color:#fff;padding:14px 32px;border-radius:50px;font-size:1.05rem;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(249,115,22,0.3);'
         : 'display:inline-block;background:transparent;color:#f97316;border:2px solid #f97316;padding:12px 28px;border-radius:50px;font-size:0.95rem;font-weight:700;text-decoration:none;';
-    var growthStyle = selPlan === 'growth'
+    var proStyle = selPlan === 'pro'
         ? 'display:inline-block;background:#f97316;color:#fff;padding:14px 32px;border-radius:50px;font-size:1.05rem;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(249,115,22,0.3);'
         : 'display:inline-block;background:transparent;color:#f97316;border:2px solid #f97316;padding:12px 28px;border-radius:50px;font-size:0.95rem;font-weight:700;text-decoration:none;';
     var buyHeading = selPlan
-        ? 'Almost there! Complete your ' + (selPlan === 'starter' ? 'Starter' : 'Growth') + ' subscription:'
+        ? 'Almost there! Complete your ' + (selPlan === 'starter' ? 'Starter' : 'Pro') + ' subscription:'
         : 'Ready to make it yours? Pick a plan:';
     var buyButtons = '<div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);">' +
         '<p style="font-size:0.95rem;color:rgba(255,255,255,0.7);margin-bottom:16px;">' + buyHeading + '</p>' +
         '<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">' +
         '<a href="https://buy.stripe.com/4gMdR17aVe194H5esw5Ne04" target="_blank" style="' + starterStyle + '">Starter — $29/mo</a>' +
-        '<a href="https://buy.stripe.com/7sYaEP2UFbT15L97045Ne05" target="_blank" style="' + growthStyle + '">Growth — $79/mo</a>' +
+        '<a href="https://buy.stripe.com/7sYaEP2UFbT15L97045Ne05" target="_blank" style="' + proStyle + '">Pro — $79/mo</a>' +
         '</div>' +
         '<p style="margin-top:12px;font-size:0.8rem;color:rgba(255,255,255,0.4);">$0 setup for founding clients · No contracts · Cancel anytime</p>' +
         '</div>';
@@ -146,9 +146,9 @@ document.querySelectorAll('a[data-plan]').forEach(a => {
             bannerText.innerHTML = '🎉 Great choice — Starter Plan ($29/mo)';
             heading.textContent = "Let's Build Your Website";
             sub.textContent = "Fill out the basics below and we'll create a custom preview of your new site. Takes 30 seconds.";
-        } else if (plan === 'growth') {
+        } else if (plan === 'pro') {
             banner.style.display = 'block';
-            bannerText.innerHTML = '⚡ Great choice — Growth Plan ($79/mo)';
+            bannerText.innerHTML = '⚡ Great choice — Pro Plan ($79/mo)';
             heading.textContent = "Let's Build Your Website";
             sub.textContent = "Fill out the basics below and we'll create a custom preview of your new site. The more detail you add, the better it looks.";
         }

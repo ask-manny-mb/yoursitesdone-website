@@ -1,0 +1,192 @@
+<!--
+  BEFORE/AFTER SLIDER COMPONENT
+  Drop this into any client site. Just change the image paths.
+  No dependencies. Pure HTML/CSS/JS.
+  
+  Usage:
+  1. Copy the <div class="ba-slider-section"> block into the client's page
+  2. Replace image src paths with their before/after photos
+  3. Update the caption text
+-->
+
+<style>
+.ba-slider-section {
+    padding: 64px 0;
+    background: #faf8f5;
+}
+.ba-slider-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.ba-slider-section h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+.ba-slider-section .section-sub {
+    text-align: center;
+    color: #6b7280;
+    font-size: 17px;
+    margin-bottom: 48px;
+}
+.ba-sliders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 32px;
+}
+.ba-slider-wrapper {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    background: white;
+}
+.ba-slider {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    cursor: col-resize;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.ba-slider img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ba-slider .ba-after {
+    clip-path: inset(0 0 0 50%);
+}
+.ba-slider .ba-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: white;
+    transform: translateX(-50%);
+    z-index: 10;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+.ba-slider .ba-handle::before {
+    content: '◀ ▶';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: #333;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    letter-spacing: 2px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.ba-slider .ba-label {
+    position: absolute;
+    top: 16px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 5;
+}
+.ba-slider .ba-label-before {
+    left: 16px;
+    background: rgba(239,68,68,0.9);
+    color: white;
+}
+.ba-slider .ba-label-after {
+    right: 16px;
+    background: rgba(34,197,94,0.9);
+    color: white;
+}
+.ba-caption {
+    padding: 16px 20px;
+    font-size: 14px;
+    color: #6b7280;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+}
+.ba-caption strong {
+    color: #1a1a1a;
+}
+@media (max-width: 768px) {
+    .ba-sliders-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<!-- PASTE THIS SECTION INTO CLIENT SITES -->
+<section class="ba-slider-section">
+    <div class="container">
+        <h2>See the Difference</h2>
+        <p class="section-sub">Drag the slider to compare before and after</p>
+        <div class="ba-sliders-grid">
+            
+            <!-- Slider 1 — duplicate this block for more sliders -->
+            <div class="ba-slider-wrapper">
+                <div class="ba-slider" data-ba-slider>
+                    <img class="ba-before" src="before-1.jpg" alt="Before">
+                    <img class="ba-after" src="after-1.jpg" alt="After">
+                    <div class="ba-handle"></div>
+                    <span class="ba-label ba-label-before">Before</span>
+                    <span class="ba-label ba-label-after">After</span>
+                </div>
+                <div class="ba-caption"><strong>Living Room Repaint</strong> — Inglewood, CA</div>
+            </div>
+
+            <!-- Slider 2 -->
+            <div class="ba-slider-wrapper">
+                <div class="ba-slider" data-ba-slider>
+                    <img class="ba-before" src="before-2.jpg" alt="Before">
+                    <img class="ba-after" src="after-2.jpg" alt="After">
+                    <div class="ba-handle"></div>
+                    <span class="ba-label ba-label-before">Before</span>
+                    <span class="ba-label ba-label-after">After</span>
+                </div>
+                <div class="ba-caption"><strong>Exterior Full Repaint</strong> — Manhattan Beach, CA</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+// Before/After Slider — zero dependencies
+document.querySelectorAll('[data-ba-slider]').forEach(slider => {
+    const handle = slider.querySelector('.ba-handle');
+    const after = slider.querySelector('.ba-after');
+    let isDragging = false;
+
+    function updateSlider(x) {
+        const rect = slider.getBoundingClientRect();
+        let pct = ((x - rect.left) / rect.width) * 100;
+        pct = Math.max(5, Math.min(95, pct));
+        handle.style.left = pct + '%';
+        after.style.clipPath = `inset(0 0 0 ${pct}%)`;
+    }
+
+    slider.addEventListener('mousedown', e => { isDragging = true; updateSlider(e.clientX); });
+    window.addEventListener('mousemove', e => { if (isDragging) updateSlider(e.clientX); });
+    window.addEventListener('mouseup', () => { isDragging = false; });
+
+    slider.addEventListener('touchstart', e => { isDragging = true; updateSlider(e.touches[0].clientX); }, {passive: true});
+    window.addEventListener('touchmove', e => { if (isDragging) updateSlider(e.touches[0].clientX); }, {passive: true});
+    window.addEventListener('touchend', () => { isDragging = false; });
+});
+</script>

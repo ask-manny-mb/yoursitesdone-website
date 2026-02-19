@@ -1,0 +1,186 @@
+<!--
+  LOCATION/SERVICE AREA PAGE TEMPLATE
+  Generate 30+ of these per client. Just replace the variables.
+  
+  Variables to replace:
+  {{BUSINESS_NAME}}     — Mark Williams Painting
+  {{SERVICE}}           — Painting Contractor / Electrician / Pest Control
+  {{CITY}}              — Manhattan Beach
+  {{PHONE}}             — (310) 658-8436
+  {{PHONE_LINK}}        — +13106588436
+  {{PRIMARY_COLOR}}     — #8B4513
+  {{ACCENT_COLOR}}      — #D4A574
+  {{SERVICES_LIST}}     — Interior Painting, Exterior Painting, Remodels...
+  {{REVIEW_TEXT}}        — "Mark did an outstanding job..."
+  {{REVIEW_AUTHOR}}     — John D.
+  {{PARENT_URL}}        — /index.html (link back to main site)
+  {{NEARBY_CITIES}}     — El Segundo, Hermosa Beach, Redondo Beach...
+  
+  Manny's generation script will bulk-replace these for each city.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{SERVICE}} in {{CITY}} | {{BUSINESS_NAME}} — Free Estimates</title>
+    <meta name="description" content="Looking for a {{SERVICE}} in {{CITY}}? {{BUSINESS_NAME}} provides professional services with 5-star reviews. Free estimates. Call {{PHONE}} today.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: {{PRIMARY_COLOR}}; --accent: {{ACCENT_COLOR}}; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: #1a1a1a; background: #fff; line-height: 1.7; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        
+        /* Nav */
+        .loc-nav { background: #1a1a1a; padding: 14px 0; }
+        .loc-nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .loc-nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; font-weight: 500; }
+        .loc-nav .logo { color: #fff; font-weight: 800; font-size: 18px; }
+        .loc-nav .logo span { color: var(--accent); }
+        .loc-nav .cta { background: var(--accent); color: #1a1a1a; padding: 8px 18px; border-radius: 6px; font-weight: 700; }
+
+        /* Hero */
+        .loc-hero { background: linear-gradient(135deg, #1a1a1a, #2d2118); padding: 60px 0; color: white; text-align: center; }
+        .loc-hero h1 { font-size: 38px; font-weight: 900; margin-bottom: 12px; letter-spacing: -0.5px; }
+        .loc-hero h1 span { color: var(--accent); }
+        .loc-hero p { font-size: 18px; opacity: 0.8; max-width: 550px; margin: 0 auto 24px; }
+        .loc-hero .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 16px; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-accent { background: var(--accent); color: #1a1a1a; }
+        .btn-outline { border: 2px solid rgba(255,255,255,0.3); color: white; }
+
+        /* Content */
+        .loc-content { padding: 48px 0; }
+        .loc-content h2 { font-size: 28px; font-weight: 800; margin: 32px 0 12px; }
+        .loc-content p { color: #4b5563; font-size: 16px; margin-bottom: 16px; }
+        .loc-content ul { padding-left: 24px; margin-bottom: 16px; }
+        .loc-content li { color: #4b5563; padding: 4px 0; }
+
+        /* Services grid */
+        .loc-services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 24px 0; }
+        .loc-svc { background: #faf8f5; padding: 20px; border-radius: 10px; border-left: 4px solid var(--accent); }
+        .loc-svc h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .loc-svc p { font-size: 14px; color: #6b7280; margin: 0; }
+
+        /* Review */
+        .loc-review { background: #faf8f5; padding: 28px; border-radius: 12px; margin: 24px 0; border-left: 4px solid var(--accent); }
+        .loc-review .stars { color: #f59e0b; font-size: 20px; margin-bottom: 8px; }
+        .loc-review blockquote { font-style: italic; color: #374151; font-size: 16px; margin-bottom: 8px; }
+        .loc-review cite { font-weight: 600; font-size: 14px; color: #1a1a1a; font-style: normal; }
+
+        /* CTA bar */
+        .loc-cta { background: var(--primary); padding: 40px 0; text-align: center; color: white; }
+        .loc-cta h2 { font-size: 30px; font-weight: 900; margin-bottom: 12px; }
+        .loc-cta p { opacity: 0.9; margin-bottom: 20px; font-size: 17px; }
+        .loc-cta .phone { font-size: 28px; font-weight: 900; color: var(--accent); text-decoration: none; display: block; margin-bottom: 16px; }
+
+        /* Nearby */
+        .loc-nearby { padding: 40px 0; text-align: center; }
+        .loc-nearby h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; color: #6b7280; }
+        .loc-nearby .tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+        .loc-nearby .tag { background: #f3f4f6; color: #4b5563; padding: 8px 16px; border-radius: 50px; font-size: 14px; text-decoration: none; font-weight: 500; transition: all 0.2s; }
+        .loc-nearby .tag:hover { background: var(--accent); color: #1a1a1a; }
+
+        /* Footer */
+        .loc-footer { padding: 24px 0; text-align: center; color: #9ca3af; font-size: 13px; border-top: 1px solid #f3f4f6; }
+
+        @media (max-width: 768px) {
+            .loc-hero h1 { font-size: 28px; }
+            .loc-services { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="loc-nav">
+        <div class="container">
+            <a href="{{PARENT_URL}}" class="logo">{{BUSINESS_NAME}}</a>
+            <a href="tel:{{PHONE_LINK}}" class="cta">📞 {{PHONE}}</a>
+        </div>
+    </nav>
+
+    <section class="loc-hero">
+        <div class="container">
+            <h1>{{SERVICE}} in <span>{{CITY}}</span></h1>
+            <p>Professional, reliable, and locally trusted. Free estimates for {{CITY}} residents and businesses.</p>
+            <div class="cta-row">
+                <a href="tel:{{PHONE_LINK}}" class="btn btn-accent">📞 Call for Free Estimate</a>
+                <a href="{{PARENT_URL}}#contact" class="btn btn-outline">Request Online</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="loc-content">
+        <div class="container">
+            <h2>{{SERVICE}} Services in {{CITY}}</h2>
+            <p>Looking for a trusted {{SERVICE}} in {{CITY}}? {{BUSINESS_NAME}} has been serving {{CITY}} and the surrounding South Bay communities with professional, high-quality work. Whether you need a small repair or a complete project, we bring the same attention to detail to every job.</p>
+
+            <div class="loc-services">
+                <!-- REPLACE WITH CLIENT'S ACTUAL SERVICES -->
+                <div class="loc-svc">
+                    <h3>Service 1</h3>
+                    <p>Description of service for {{CITY}} customers.</p>
+                </div>
+                <div class="loc-svc">
+                    <h3>Service 2</h3>
+                    <p>Description of service for {{CITY}} customers.</p>
+                </div>
+                <div class="loc-svc">
+                    <h3>Service 3</h3>
+                    <p>Description of service for {{CITY}} customers.</p>
+                </div>
+                <div class="loc-svc">
+                    <h3>Service 4</h3>
+                    <p>Description of service for {{CITY}} customers.</p>
+                </div>
+            </div>
+
+            <h2>Why {{CITY}} Chooses {{BUSINESS_NAME}}</h2>
+            <ul>
+                <li>⭐ 5-star rated on Google and Yelp</li>
+                <li>🛡️ Licensed, bonded, and insured</li>
+                <li>📍 Local to the South Bay — we know {{CITY}}</li>
+                <li>💰 Free estimates with no obligation</li>
+                <li>👷 Owner-operated — the person you talk to does the work</li>
+            </ul>
+
+            <div class="loc-review">
+                <div class="stars">★★★★★</div>
+                <blockquote>"{{REVIEW_TEXT}}"</blockquote>
+                <cite>— {{REVIEW_AUTHOR}}</cite>
+            </div>
+
+            <h2>Serving All of {{CITY}}</h2>
+            <p>We provide {{SERVICE}} services throughout {{CITY}} and nearby areas. No job is too small or too large. Contact us today for a free, no-obligation estimate.</p>
+        </div>
+    </section>
+
+    <section class="loc-cta">
+        <div class="container">
+            <h2>Need a {{SERVICE}} in {{CITY}}?</h2>
+            <p>Call now for a free estimate — or request one online.</p>
+            <a href="tel:{{PHONE_LINK}}" class="phone">📞 {{PHONE}}</a>
+            <a href="{{PARENT_URL}}#contact" class="btn btn-accent">Request Free Estimate Online →</a>
+        </div>
+    </section>
+
+    <section class="loc-nearby">
+        <div class="container">
+            <h3>Also Serving Nearby Cities</h3>
+            <div class="tags">
+                <!-- REPLACE WITH ACTUAL NEARBY CITY LINKS -->
+                <!-- <a href="painting-el-segundo.html" class="tag">El Segundo</a> -->
+                <!-- <a href="painting-hermosa-beach.html" class="tag">Hermosa Beach</a> -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="loc-footer">
+        <div class="container">
+            <p>© 2026 {{BUSINESS_NAME}}. All rights reserved. | <a href="{{PARENT_URL}}" style="color:#9ca3af;">Back to Home</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
