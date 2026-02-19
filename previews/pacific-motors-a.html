@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacific Motors — Mercedes-Benz Specialist | Santa Monica, CA</title>
+    <meta name="description" content="Mercedes-Benz specialist in Santa Monica since 1977. Expert service and repair. Call for an appointment.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #1e293b; --primary-dark: #0f172a; --accent: #94a3b8; --accent-bright: #e2e8f0; --dark: #0f172a; --gray: #64748b; --light: #f8fafc; --white: #fff; --silver: #c0c0c0; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter',-apple-system,sans-serif; color:var(--dark); background:var(--white); }
+        .container { max-width:1000px; margin:0 auto; padding:0 24px; }
+        .nav { padding:16px 0; background:var(--dark); position:sticky; top:0; z-index:100; }
+        .nav .container { display:flex; justify-content:space-between; align-items:center; }
+        .nav-logo { font-size:20px; font-weight:800; color:var(--white); text-decoration:none; }
+        .nav-logo span { color:var(--silver); }
+        .nav-links { display:flex; gap:24px; list-style:none; align-items:center; }
+        .nav-links a { color:rgba(255,255,255,0.7); text-decoration:none; font-weight:500; font-size:14px; }
+        .nav-links a:hover { color:var(--white); }
+        .nav-cta { background:var(--silver); color:var(--dark)!important; padding:10px 20px; border-radius:8px; font-weight:700!important; }
+        .hero { background:linear-gradient(135deg,var(--dark) 0%,#1a2332 100%); padding:80px 0 60px; color:white; text-align:center; }
+        .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(192,192,192,0.12); color:var(--silver); padding:8px 20px; border-radius:50px; font-size:13px; font-weight:600; margin-bottom:20px; border:1px solid rgba(192,192,192,0.25); }
+        .hero h1 { font-size:48px; font-weight:900; line-height:1.1; margin-bottom:16px; letter-spacing:-1px; }
+        .hero h1 span { color:var(--silver); }
+        .hero p { font-size:19px; color:rgba(255,255,255,0.7); max-width:550px; margin:0 auto 32px; line-height:1.6; }
+        .hero-ctas { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+        .btn { padding:16px 32px; border-radius:10px; text-decoration:none; font-weight:700; font-size:16px; transition:all 0.2s; display:inline-flex; align-items:center; gap:8px; border:none; cursor:pointer; }
+        .btn-primary { background:var(--silver); color:var(--dark); }
+        .btn-primary:hover { background:#d4d4d4; transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.2); }
+        .btn-outline { background:transparent; color:white; border:2px solid rgba(255,255,255,0.3); }
+        .btn-outline:hover { border-color:var(--silver); color:var(--silver); }
+        .btn-block { width:100%; justify-content:center; }
+        .stats { display:flex; justify-content:center; gap:48px; margin-top:40px; padding-top:32px; border-top:1px solid rgba(255,255,255,0.1); }
+        .stat { text-align:center; }
+        .stat-num { font-size:28px; font-weight:800; color:var(--silver); }
+        .stat-label { font-size:13px; color:rgba(255,255,255,0.5); margin-top:4px; }
+        .section { padding:64px 0; }
+        .section-light { background:var(--light); }
+        .section-label { text-transform:uppercase; letter-spacing:2px; font-size:12px; font-weight:700; color:var(--gray); text-align:center; margin-bottom:8px; }
+        .section-title { text-align:center; font-size:36px; font-weight:800; margin-bottom:12px; letter-spacing:-0.5px; }
+        .section-sub { text-align:center; color:var(--gray); font-size:17px; margin-bottom:48px; max-width:550px; margin-left:auto; margin-right:auto; }
+        .info-card { max-width:500px; margin:0 auto; background:white; border:2px solid #e2e8f0; border-radius:16px; padding:32px; }
+        .info-row { display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid #f0f0f0; font-size:15px; }
+        .info-row:last-child { border-bottom:none; }
+        .info-label { font-weight:600; }
+        .info-value { color:var(--gray); }
+        .info-value a { color:var(--accent); text-decoration:none; font-weight:600; }
+        .legacy-box { max-width:600px; margin:0 auto; text-align:center; padding:40px; background:var(--light); border-radius:16px; border:2px solid #e2e8f0; }
+        .legacy-box .big-num { font-size:64px; font-weight:900; color:var(--dark); line-height:1; }
+        .legacy-box .big-label { font-size:18px; color:var(--gray); margin-top:8px; font-weight:500; }
+        .legacy-box p { margin-top:16px; color:var(--gray); font-size:15px; line-height:1.6; }
+        .cta-section { background:linear-gradient(135deg,var(--dark) 0%,#1a2332 100%); padding:80px 0; text-align:center; color:white; }
+        .cta-section h2 { font-size:40px; font-weight:900; margin-bottom:16px; letter-spacing:-0.5px; }
+        .cta-section p { font-size:18px; opacity:0.8; margin-bottom:32px; max-width:500px; margin-left:auto; margin-right:auto; }
+        .contact-form { max-width:500px; margin:0 auto; text-align:left; }
+        .form-row { display:flex; gap:12px; margin-bottom:12px; }
+        .form-row input,.form-row textarea { flex:1; padding:14px 16px; border:2px solid rgba(255,255,255,0.15); border-radius:8px; font-size:15px; font-family:inherit; background:rgba(255,255,255,0.08); color:white; }
+        .form-row input::placeholder,.form-row textarea::placeholder { color:rgba(255,255,255,0.4); }
+        .form-row input:focus,.form-row textarea:focus { outline:none; border-color:var(--silver); }
+        .form-row textarea { resize:vertical; min-height:80px; }
+        .footer { padding:32px 0; background:var(--dark); text-align:center; color:rgba(255,255,255,0.5); font-size:13px; }
+        .footer a { color:rgba(255,255,255,0.5); text-decoration:none; }
+        @media(max-width:768px) { .hero h1{font-size:32px;} .stats{gap:24px;flex-wrap:wrap;} .nav-links{display:none;} .form-row{flex-direction:column;} .legacy-box .big-num{font-size:48px;} }
+    </style>
+</head>
+<body>
+    <nav class="nav"><div class="container"><a href="#" class="nav-logo">Pacific <span>Motors</span></a><ul class="nav-links"><li><a href="#about">About</a></li><li><a href="#contact" class="nav-cta">Contact Us</a></li></ul></div></nav>
+
+    <section class="hero"><div class="container">
+        <div class="hero-badge">🔧 Mercedes-Benz Specialist — Santa Monica</div>
+        <h1>Mercedes-Benz.<br><span>Since 1977.</span></h1>
+        <p>Specialist Mercedes-Benz service and repair in Santa Monica, California.</p>
+        <div class="hero-ctas">
+            <a href="#contact" class="btn btn-primary">Contact Us</a>
+            <a href="#about" class="btn btn-outline">Learn More</a>
+        </div>
+        <div class="stats">
+            <div class="stat"><div class="stat-num">Since 1977</div><div class="stat-label">In Business</div></div>
+            <div class="stat"><div class="stat-num">Santa Monica</div><div class="stat-label">Location</div></div>
+        </div>
+    </div></section>
+
+    <section class="section" id="about"><div class="container">
+        <div class="section-label">Our Legacy</div>
+        <h2 class="section-title">Nearly 50 Years of Expertise</h2>
+        <p class="section-sub">Pacific Motors has been the trusted name in Mercedes-Benz service in Santa Monica since 1977.</p>
+        <div class="legacy-box">
+            <div class="big-num">48+</div>
+            <div class="big-label">Years Serving Santa Monica</div>
+            <p>Specializing in Mercedes-Benz vehicles since 1977. Trusted by generations of drivers.</p>
+        </div>
+    </div></section>
+
+    <section class="section section-light"><div class="container">
+        <div class="section-label">Details</div>
+        <h2 class="section-title">Visit Us</h2>
+        <div class="info-card">
+            <div class="info-row"><span class="info-label">📍 Location</span><span class="info-value">Santa Monica, CA</span></div>
+            <div class="info-row"><span class="info-label">🔧 Specialty</span><span class="info-value">Mercedes-Benz</span></div>
+            <div class="info-row"><span class="info-label">📅 Established</span><span class="info-value">1977</span></div>
+        </div>
+    </div></section>
+
+    <section class="cta-section" id="contact"><div class="container">
+        <h2>Schedule Service</h2>
+        <p>Fill out the form below and we'll get back to you.</p>
+        <form class="contact-form" action="https://formspree.io/f/placeholder" method="POST">
+            <div class="form-row"><input type="text" name="name" placeholder="Your Name" required><input type="tel" name="phone" placeholder="Phone Number" required></div>
+            <div class="form-row"><input type="email" name="email" placeholder="Email (optional)"></div>
+            <div class="form-row"><textarea name="message" placeholder="Vehicle details, year/model, what you need..."></textarea></div>
+            <button type="submit" class="btn btn-primary btn-block">Request Appointment →</button>
+        </form>
+    </div></section>
+
+    <footer class="footer"><div class="container">
+        <p style="margin-bottom:8px;"><strong style="color:rgba(255,255,255,0.8);">Pacific Motors</strong> — Mercedes-Benz Specialist</p>
+        <p>Santa Monica, CA · Since 1977</p>
+        <p style="margin-top:12px;">© 2026 Pacific Motors. All rights reserved.</p>
+    </div></footer>
+</body>
+</html>

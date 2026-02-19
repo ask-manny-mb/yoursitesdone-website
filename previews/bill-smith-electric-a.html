@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Smith Electric — Electrician | Westchester, Los Angeles</title>
+    <meta name="description" content="Professional electrical services in Westchester and greater Los Angeles. Family-owned business. Call (310) 410-9354.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #b45309; --primary-dark: #92400e; --accent: #f59e0b; --accent-light: #fef3c7; --dark: #1a1a1a; --gray: #6b7280; --light: #fffbeb; --white: #fff; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter',-apple-system,sans-serif; color:var(--dark); background:var(--white); }
+        .container { max-width:1000px; margin:0 auto; padding:0 24px; }
+        .nav { padding:16px 0; background:var(--dark); position:sticky; top:0; z-index:100; }
+        .nav .container { display:flex; justify-content:space-between; align-items:center; }
+        .nav-logo { font-size:20px; font-weight:800; color:var(--white); text-decoration:none; }
+        .nav-logo span { color:var(--accent); }
+        .nav-links { display:flex; gap:24px; list-style:none; align-items:center; }
+        .nav-links a { color:rgba(255,255,255,0.7); text-decoration:none; font-weight:500; font-size:14px; }
+        .nav-links a:hover { color:var(--white); }
+        .nav-cta { background:var(--accent); color:var(--dark)!important; padding:10px 20px; border-radius:8px; font-weight:700!important; }
+        .hero { background:linear-gradient(135deg,var(--dark) 0%,#2d2518 100%); padding:80px 0 60px; color:white; text-align:center; }
+        .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(245,158,11,0.15); color:var(--accent); padding:8px 20px; border-radius:50px; font-size:13px; font-weight:600; margin-bottom:20px; border:1px solid rgba(245,158,11,0.3); }
+        .hero h1 { font-size:48px; font-weight:900; line-height:1.1; margin-bottom:16px; letter-spacing:-1px; }
+        .hero h1 span { color:var(--accent); }
+        .hero p { font-size:19px; color:rgba(255,255,255,0.75); max-width:550px; margin:0 auto 32px; line-height:1.6; }
+        .hero-ctas { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+        .btn { padding:16px 32px; border-radius:10px; text-decoration:none; font-weight:700; font-size:16px; transition:all 0.2s; display:inline-flex; align-items:center; gap:8px; border:none; cursor:pointer; }
+        .btn-primary { background:var(--accent); color:var(--dark); }
+        .btn-primary:hover { background:#d97706; transform:translateY(-2px); box-shadow:0 8px 24px rgba(245,158,11,0.3); }
+        .btn-outline { background:transparent; color:white; border:2px solid rgba(255,255,255,0.3); }
+        .btn-outline:hover { border-color:var(--accent); color:var(--accent); }
+        .btn-block { width:100%; justify-content:center; }
+        .stats { display:flex; justify-content:center; gap:48px; margin-top:40px; padding-top:32px; border-top:1px solid rgba(255,255,255,0.1); }
+        .stat { text-align:center; }
+        .stat-num { font-size:28px; font-weight:800; color:var(--accent); }
+        .stat-label { font-size:13px; color:rgba(255,255,255,0.5); margin-top:4px; }
+        .section { padding:64px 0; }
+        .section-light { background:var(--light); }
+        .section-label { text-transform:uppercase; letter-spacing:2px; font-size:12px; font-weight:700; color:var(--primary); text-align:center; margin-bottom:8px; }
+        .section-title { text-align:center; font-size:36px; font-weight:800; margin-bottom:12px; letter-spacing:-0.5px; }
+        .section-sub { text-align:center; color:var(--gray); font-size:17px; margin-bottom:48px; max-width:550px; margin-left:auto; margin-right:auto; }
+        .highlight-box { max-width:600px; margin:0 auto; background:var(--accent-light); border:2px solid var(--accent); border-radius:16px; padding:32px; text-align:center; }
+        .highlight-box h3 { font-size:20px; font-weight:800; margin-bottom:8px; color:var(--primary-dark); }
+        .highlight-box p { color:var(--gray); font-size:15px; line-height:1.6; }
+        .info-card { max-width:500px; margin:0 auto; background:white; border:2px solid #e2e8f0; border-radius:16px; padding:32px; }
+        .info-row { display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid #f0f0f0; font-size:15px; }
+        .info-row:last-child { border-bottom:none; }
+        .info-label { font-weight:600; }
+        .info-value { color:var(--gray); }
+        .info-value a { color:var(--accent); text-decoration:none; font-weight:600; }
+        .reviews-grid { display:grid; grid-template-columns:repeat(1,1fr); gap:24px; max-width:600px; margin:0 auto; }
+        .review-card { background:white; border-radius:16px; padding:28px; border:1px solid #f0ebe4; }
+        .review-stars { color:#f59e0b; font-size:18px; margin-bottom:12px; }
+        .review-text { color:#374151; font-size:15px; line-height:1.6; margin-bottom:12px; font-style:italic; }
+        .review-meta { font-size:13px; color:var(--gray); }
+        .cta-section { background:linear-gradient(135deg,var(--dark) 0%,#2d2518 100%); padding:80px 0; text-align:center; color:white; }
+        .cta-section h2 { font-size:40px; font-weight:900; margin-bottom:16px; letter-spacing:-0.5px; }
+        .cta-section p { font-size:18px; opacity:0.8; margin-bottom:32px; max-width:500px; margin-left:auto; margin-right:auto; }
+        .cta-phone { font-size:32px; font-weight:900; color:var(--accent); text-decoration:none; display:block; margin-bottom:24px; }
+        .contact-form { max-width:500px; margin:0 auto; text-align:left; }
+        .form-row { display:flex; gap:12px; margin-bottom:12px; }
+        .form-row input,.form-row textarea { flex:1; padding:14px 16px; border:2px solid rgba(255,255,255,0.15); border-radius:8px; font-size:15px; font-family:inherit; background:rgba(255,255,255,0.08); color:white; }
+        .form-row input::placeholder,.form-row textarea::placeholder { color:rgba(255,255,255,0.4); }
+        .form-row input:focus,.form-row textarea:focus { outline:none; border-color:var(--accent); }
+        .form-row textarea { resize:vertical; min-height:80px; }
+        .footer { padding:32px 0; background:var(--dark); text-align:center; color:rgba(255,255,255,0.5); font-size:13px; }
+        .footer a { color:rgba(255,255,255,0.5); text-decoration:none; }
+        @media(max-width:768px) { .hero h1{font-size:32px;} .stats{gap:24px;flex-wrap:wrap;} .nav-links{display:none;} .form-row{flex-direction:column;} }
+    </style>
+</head>
+<body>
+    <nav class="nav"><div class="container"><a href="#" class="nav-logo">Bill Smith <span>Electric</span></a><ul class="nav-links"><li><a href="#about">About</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact" class="nav-cta">Call Now</a></li></ul></div></nav>
+
+    <section class="hero"><div class="container">
+        <div class="hero-badge">⚡ Electrician — Westchester & Los Angeles</div>
+        <h1>Family-Owned.<br><span>Trusted Electric.</span></h1>
+        <p>Professional electrical services in Westchester and greater Los Angeles. Family-owned business.</p>
+        <div class="hero-ctas">
+            <a href="tel:+13104109354" class="btn btn-primary">📞 (310) 410-9354</a>
+            <a href="#contact" class="btn btn-outline">Request Service</a>
+        </div>
+        <div class="stats">
+            <div class="stat"><div class="stat-num">4.1 ⭐</div><div class="stat-label">Yelp Rating</div></div>
+            <div class="stat"><div class="stat-num">13</div><div class="stat-label">Yelp Reviews</div></div>
+            <div class="stat"><div class="stat-num">Westchester</div><div class="stat-label">Based</div></div>
+        </div>
+    </div></section>
+
+    <section class="section section-light" id="about"><div class="container">
+        <div class="section-label">About Us</div>
+        <h2 class="section-title">Your Local Electrician</h2>
+        <p class="section-sub">Family-owned electrical business serving Westchester and the greater Los Angeles area.</p>
+        <div class="info-card">
+            <div class="info-row"><span class="info-label">📍 Location</span><span class="info-value">Westchester, Los Angeles</span></div>
+            <div class="info-row"><span class="info-label">📞 Phone</span><span class="info-value"><a href="tel:+13104109354">(310) 410-9354</a></span></div>
+            <div class="info-row"><span class="info-label">⭐ Yelp</span><span class="info-value">4.1 stars · 13 reviews</span></div>
+            <div class="info-row"><span class="info-label">🌐 Website</span><span class="info-value"><a href="https://billsmithelectrical.com">billsmithelectrical.com</a></span></div>
+        </div>
+    </div></section>
+
+    <section class="section" id="reviews"><div class="container">
+        <div class="section-label">Reputation</div>
+        <h2 class="section-title">Rated on Yelp</h2>
+        <p class="section-sub">13 reviews from real customers on Yelp.</p>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">★★★★☆</div>
+                <div class="review-text">Bill Smith Electric has 13 reviews on Yelp with a 4.1-star rating. Visit our Yelp page to see what customers are saying.</div>
+                <div class="review-meta">See all reviews on Yelp →</div>
+            </div>
+        </div>
+    </div></section>
+
+    <section class="cta-section" id="contact"><div class="container">
+        <h2>Need an Electrician?</h2>
+        <p>Call us directly or fill out the form below.</p>
+        <a href="tel:+13104109354" class="cta-phone">📞 (310) 410-9354</a>
+        <form class="contact-form" action="https://formspree.io/f/placeholder" method="POST">
+            <div class="form-row"><input type="text" name="name" placeholder="Your Name" required><input type="tel" name="phone" placeholder="Phone Number" required></div>
+            <div class="form-row"><input type="email" name="email" placeholder="Email (optional)"></div>
+            <div class="form-row"><textarea name="message" placeholder="Describe your electrical needs..."></textarea></div>
+            <button type="submit" class="btn btn-primary btn-block">Request Service →</button>
+        </form>
+    </div></section>
+
+    <footer class="footer"><div class="container">
+        <p style="margin-bottom:8px;"><strong style="color:rgba(255,255,255,0.8);">Bill Smith Electric</strong></p>
+        <p>Westchester, Los Angeles · <a href="tel:+13104109354">(310) 410-9354</a></p>
+        <p style="margin-top:12px;">© 2026 Bill Smith Electric. All rights reserved.</p>
+    </div></footer>
+</body>
+</html>

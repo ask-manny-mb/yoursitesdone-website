@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Williams Painting — Inglewood & South Bay</title>
+    <meta name="description" content="Professional residential painting in Inglewood and the South Bay. Interior and exterior. Free estimates. Call (310) 658-8436.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #1e3a5f; --primary-dark: #152c4a; --accent: #3b82f6; --accent-light: #dbeafe; --dark: #0f172a; --gray: #64748b; --light: #f8fafc; --white: #fff; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter',-apple-system,sans-serif; color:var(--dark); background:var(--white); }
+        .container { max-width:1000px; margin:0 auto; padding:0 24px; }
+        .nav { padding:16px 0; background:var(--white); position:sticky; top:0; z-index:100; border-bottom:1px solid #e2e8f0; }
+        .nav .container { display:flex; justify-content:space-between; align-items:center; }
+        .nav-logo { font-size:20px; font-weight:800; color:var(--dark); text-decoration:none; }
+        .nav-logo span { color:var(--accent); }
+        .nav-links { display:flex; gap:24px; list-style:none; align-items:center; }
+        .nav-links a { color:var(--gray); text-decoration:none; font-weight:500; font-size:14px; }
+        .nav-links a:hover { color:var(--dark); }
+        .nav-cta { background:var(--accent); color:var(--white)!important; padding:10px 20px; border-radius:8px; font-weight:700!important; }
+        .hero { background:linear-gradient(135deg,var(--dark) 0%,var(--primary) 100%); padding:80px 0 60px; color:white; text-align:center; }
+        .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(59,130,246,0.15); color:var(--accent); padding:8px 20px; border-radius:50px; font-size:13px; font-weight:600; margin-bottom:20px; border:1px solid rgba(59,130,246,0.3); }
+        .hero h1 { font-size:48px; font-weight:900; line-height:1.1; margin-bottom:16px; letter-spacing:-1px; }
+        .hero h1 span { color:var(--accent); }
+        .hero p { font-size:19px; color:rgba(255,255,255,0.75); max-width:550px; margin:0 auto 32px; line-height:1.6; }
+        .hero-ctas { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+        .btn { padding:16px 32px; border-radius:10px; text-decoration:none; font-weight:700; font-size:16px; transition:all 0.2s; display:inline-flex; align-items:center; gap:8px; border:none; cursor:pointer; }
+        .btn-primary { background:var(--accent); color:var(--white); }
+        .btn-primary:hover { background:#2563eb; transform:translateY(-2px); box-shadow:0 8px 24px rgba(59,130,246,0.3); }
+        .btn-outline { background:transparent; color:white; border:2px solid rgba(255,255,255,0.3); }
+        .btn-outline:hover { border-color:var(--accent); color:var(--accent); }
+        .btn-block { width:100%; justify-content:center; }
+        .stats { display:flex; justify-content:center; gap:48px; margin-top:40px; padding-top:32px; border-top:1px solid rgba(255,255,255,0.1); }
+        .stat { text-align:center; }
+        .stat-num { font-size:28px; font-weight:800; color:var(--accent); }
+        .stat-label { font-size:13px; color:rgba(255,255,255,0.5); margin-top:4px; }
+        .section { padding:64px 0; }
+        .section-light { background:var(--light); }
+        .section-label { text-transform:uppercase; letter-spacing:2px; font-size:12px; font-weight:700; color:var(--accent); text-align:center; margin-bottom:8px; }
+        .section-title { text-align:center; font-size:36px; font-weight:800; margin-bottom:12px; letter-spacing:-0.5px; }
+        .section-sub { text-align:center; color:var(--gray); font-size:17px; margin-bottom:48px; max-width:550px; margin-left:auto; margin-right:auto; }
+        .services-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+        .service-card { padding:32px 24px; border:2px solid #e2e8f0; border-radius:16px; text-align:center; transition:all 0.3s; background:white; }
+        .service-card:hover { border-color:var(--accent); transform:translateY(-4px); box-shadow:0 8px 32px rgba(59,130,246,0.08); }
+        .service-icon { font-size:36px; margin-bottom:12px; }
+        .service-card h3 { font-size:17px; font-weight:700; margin-bottom:8px; }
+        .service-card p { color:var(--gray); font-size:14px; line-height:1.5; }
+        .reviews-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+        .review-card { background:white; border-radius:16px; padding:28px; border:1px solid #e2e8f0; }
+        .review-stars { color:#f59e0b; font-size:18px; margin-bottom:12px; }
+        .review-text { color:#374151; font-size:15px; line-height:1.6; margin-bottom:12px; font-style:italic; }
+        .review-author { font-weight:600; font-size:14px; color:var(--dark); }
+        .review-source { font-size:12px; color:var(--gray); }
+        .cta-section { background:linear-gradient(135deg,var(--dark) 0%,var(--primary) 100%); padding:80px 0; text-align:center; color:white; }
+        .cta-section h2 { font-size:40px; font-weight:900; margin-bottom:16px; letter-spacing:-0.5px; }
+        .cta-section p { font-size:18px; opacity:0.8; margin-bottom:32px; max-width:500px; margin-left:auto; margin-right:auto; }
+        .cta-phone { font-size:32px; font-weight:900; color:var(--accent); text-decoration:none; display:block; margin-bottom:24px; }
+        .contact-form { max-width:500px; margin:0 auto; text-align:left; }
+        .form-row { display:flex; gap:12px; margin-bottom:12px; }
+        .form-row input,.form-row textarea { flex:1; padding:14px 16px; border:2px solid rgba(255,255,255,0.15); border-radius:8px; font-size:15px; font-family:inherit; background:rgba(255,255,255,0.08); color:white; }
+        .form-row input::placeholder,.form-row textarea::placeholder { color:rgba(255,255,255,0.4); }
+        .form-row input:focus,.form-row textarea:focus { outline:none; border-color:var(--accent); }
+        .form-row textarea { resize:vertical; min-height:80px; }
+        .footer { padding:32px 0; background:var(--dark); text-align:center; color:rgba(255,255,255,0.5); font-size:13px; }
+        .footer a { color:rgba(255,255,255,0.5); text-decoration:none; }
+        @media(max-width:768px) { .hero h1{font-size:32px;} .services-grid,.reviews-grid{grid-template-columns:1fr;} .stats{gap:24px;flex-wrap:wrap;} .nav-links{display:none;} .form-row{flex-direction:column;} }
+    </style>
+</head>
+<body>
+    <nav class="nav"><div class="container"><a href="#" class="nav-logo">Mark Williams <span>Painting</span></a><ul class="nav-links"><li><a href="#services">Services</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact" class="nav-cta">Free Estimate</a></li></ul></div></nav>
+
+    <section class="hero"><div class="container">
+        <div class="hero-badge">🎨 Professional Painting — Inglewood & South Bay</div>
+        <h1>Your Home.<br><span>Beautifully Painted.</span></h1>
+        <p>Professional residential painting serving Inglewood, El Segundo, and the South Bay area.</p>
+        <div class="hero-ctas">
+            <a href="tel:+13106588436" class="btn btn-primary">📞 (310) 658-8436</a>
+            <a href="#contact" class="btn btn-outline">Get a Free Estimate</a>
+        </div>
+        <div class="stats">
+            <div class="stat"><div class="stat-num">5.0 ⭐</div><div class="stat-label">Yelp Rating</div></div>
+            <div class="stat"><div class="stat-num">Inglewood</div><div class="stat-label">Based</div></div>
+        </div>
+    </div></section>
+
+    <section class="section" id="services"><div class="container">
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">Painting Services</h2>
+        <p class="section-sub">Interior and exterior painting for homes across the South Bay.</p>
+        <div class="services-grid">
+            <div class="service-card"><div class="service-icon">🏠</div><h3>Interior Painting</h3><p>Walls, ceilings, trim, and more. Careful prep and clean lines every time.</p></div>
+            <div class="service-card"><div class="service-icon">🏡</div><h3>Exterior Painting</h3><p>Full exterior repaints and touch-ups. Thorough prep so it lasts.</p></div>
+        </div>
+    </div></section>
+
+    <section class="section section-light" id="reviews"><div class="container">
+        <div class="section-label">What Customers Say</div>
+        <h2 class="section-title">5.0 Stars on Yelp</h2>
+        <p class="section-sub">Real reviews from real customers.</p>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Mark Williams did an excellent job painting both the interior and exterior of our home. The crew was professional, efficient and easy to work with. Always on time and upfront about cost, scheduling, and defined tasks. Quality work and materials at a reasonable price."</div>
+                <div class="review-author">— Leo L.</div><div class="review-source">via Yelp</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <div class="review-text">"Mark and his crew painted our home in El Segundo and did an excellent job! Would recommend him to anyone!"</div>
+                <div class="review-author">— Tyler M.</div><div class="review-source">via Yelp</div>
+            </div>
+        </div>
+    </div></section>
+
+    <section class="cta-section" id="contact"><div class="container">
+        <h2>Get a Free Estimate</h2>
+        <p>Call us directly or fill out the form below — no obligation.</p>
+        <a href="tel:+13106588436" class="cta-phone">📞 (310) 658-8436</a>
+        <form class="contact-form" action="https://formspree.io/f/placeholder" method="POST">
+            <div class="form-row"><input type="text" name="name" placeholder="Your Name" required><input type="tel" name="phone" placeholder="Phone Number" required></div>
+            <div class="form-row"><input type="email" name="email" placeholder="Email (optional)"></div>
+            <div class="form-row"><textarea name="message" placeholder="Tell us about your project..."></textarea></div>
+            <button type="submit" class="btn btn-primary btn-block">Send Request →</button>
+        </form>
+    </div></section>
+
+    <footer class="footer"><div class="container">
+        <p style="margin-bottom:8px;"><strong style="color:rgba(255,255,255,0.8);">Mark Williams Painting</strong></p>
+        <p>Inglewood, CA · <a href="tel:+13106588436">(310) 658-8436</a></p>
+        <p style="margin-top:12px;">© 2026 Mark Williams Painting. All rights reserved.</p>
+    </div></footer>
+</body>
+</html>
