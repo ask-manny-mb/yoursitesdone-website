@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Williams Painting — Professional Painting Contractor | Inglewood & South Bay</title>
+    <meta name="description" content="Expert residential and commercial painting in Inglewood, South Bay, and greater Los Angeles. Remodels, new construction, interior & exterior. Free estimates. Call (310) 658-8436.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8B4513;
+            --primary-dark: #6B3410;
+            --accent: #D4A574;
+            --accent-light: #F5E6D3;
+            --dark: #1a1a1a;
+            --gray: #6b7280;
+            --light: #faf8f5;
+            --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--dark); background: var(--white); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+        /* Nav */
+        .nav {
+            padding: 16px 0;
+            background: var(--dark);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-size: 20px; font-weight: 800; color: var(--white); text-decoration: none; letter-spacing: -0.5px; }
+        .nav-logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-weight: 500; font-size: 14px; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--white); }
+        .nav-cta {
+            background: var(--accent);
+            color: var(--dark) !important;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700 !important;
+            transition: all 0.2s;
+        }
+        .nav-cta:hover { background: #c4955a; }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--dark) 0%, #2d2118 100%);
+            padding: 80px 0 60px;
+            color: white;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212,165,116,0.15);
+            color: var(--accent);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(212,165,116,0.3);
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+        .hero h1 span { color: var(--accent); }
+        .hero p {
+            font-size: 19px;
+            color: rgba(255,255,255,0.75);
+            max-width: 550px;
+            margin: 0 auto 32px;
+            line-height: 1.6;
+        }
+        .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            padding: 16px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary { background: var(--accent); color: var(--dark); }
+        .btn-primary:hover { background: #c4955a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(139,69,19,0.3); }
+        .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); }
+        .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+        .btn-block { width: 100%; justify-content: center; }
+
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .stat { text-align: center; }
+        .stat-num { font-size: 28px; font-weight: 800; color: var(--accent); }
+        .stat-label { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+
+        /* Section */
+        .section { padding: 64px 0; }
+        .section-light { background: var(--light); }
+        .section-label {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .section-sub {
+            text-align: center;
+            color: var(--gray);
+            font-size: 17px;
+            margin-bottom: 48px;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .service-card {
+            padding: 32px 24px;
+            border: 2px solid #f0ebe4;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s;
+            background: white;
+        }
+        .service-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 8px 32px rgba(139,69,19,0.08); }
+        .service-icon { font-size: 36px; margin-bottom: 12px; }
+        .service-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+        .service-card p { color: var(--gray); font-size: 14px; line-height: 1.5; }
+
+        /* Why Choose */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .why-card {
+            display: flex;
+            gap: 16px;
+            padding: 24px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #f0ebe4;
+        }
+        .why-icon { font-size: 28px; flex-shrink: 0; }
+        .why-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .why-card p { color: var(--gray); font-size: 14px; line-height: 1.5; }
+
+        /* Reviews */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .review-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid #f0ebe4;
+        }
+        .review-stars { color: #f59e0b; font-size: 18px; margin-bottom: 12px; }
+        .review-text { color: #374151; font-size: 15px; line-height: 1.6; margin-bottom: 12px; font-style: italic; }
+        .review-author { font-weight: 600; font-size: 14px; color: var(--dark); }
+        .review-source { font-size: 12px; color: var(--gray); }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--dark) 0%, #2d2118 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+        .cta-section h2 { font-size: 40px; font-weight: 900; margin-bottom: 16px; letter-spacing: -0.5px; }
+        .cta-section p { font-size: 18px; opacity: 0.8; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .cta-phone {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--accent);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 24px;
+        }
+        .cta-phone:hover { color: #c4955a; }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .form-row { display: flex; gap: 12px; margin-bottom: 12px; }
+        .form-row input, .form-row textarea, .form-row select {
+            flex: 1;
+            padding: 14px 16px;
+            border: 2px solid rgba(255,255,255,0.15);
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            background: rgba(255,255,255,0.08);
+            color: white;
+            transition: border-color 0.2s;
+        }
+        .form-row input::placeholder, .form-row textarea::placeholder { color: rgba(255,255,255,0.4); }
+        .form-row input:focus, .form-row textarea:focus { outline: none; border-color: var(--accent); }
+        .form-row textarea { resize: vertical; min-height: 80px; }
+
+        /* Hours */
+        .hours-grid {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0ebe4;
+            font-size: 15px;
+        }
+        .hours-day { font-weight: 600; }
+        .hours-time { color: var(--gray); }
+
+        /* Footer */
+        .footer {
+            padding: 32px 0;
+            background: var(--dark);
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 13px;
+        }
+        .footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+
+        /* Areas */
+        .areas-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .area-tag {
+            background: var(--accent-light);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .reviews-grid { grid-template-columns: 1fr; }
+            .stats { gap: 24px; flex-wrap: wrap; }
+            .nav-links { display: none; }
+            .form-row { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav class="nav">
+        <div class="container">
+            <a href="#" class="nav-logo">Mark Williams <span>Painting</span></a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why">Why Us</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#areas">Service Areas</a></li>
+                <li><a href="#contact" class="nav-cta">Free Estimate</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">🎨 Professional Painting Contractor — Inglewood & South Bay</div>
+            <h1>Quality Craftsmanship.<br><span>Every Brush Stroke.</span></h1>
+            <p>Expert residential and commercial painting for remodels, new construction, and everything in between. Serving the South Bay and greater Los Angeles for years.</p>
+            <div class="hero-ctas">
+                <a href="tel:+13106588436" class="btn btn-primary">📞 (310) 658-8436</a>
+                <a href="#contact" class="btn btn-outline">Get a Free Estimate</a>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-num">5.0 ⭐</div>
+                    <div class="stat-label">Yelp Rating</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">100%</div>
+                    <div class="stat-label">Satisfaction</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">Licensed</div>
+                    <div class="stat-label">& Insured</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-label">What We Do</div>
+            <h2 class="section-title">Painting Services</h2>
+            <p class="section-sub">From a single room to an entire new construction — we handle projects of all sizes with the same attention to detail.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Interior Painting</h3>
+                    <p>Walls, ceilings, trim, cabinets, and accent walls. Clean lines, smooth finishes, and careful prep every time.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏡</div>
+                    <h3>Exterior Painting</h3>
+                    <p>Full exterior repaints, stucco, wood siding, trim, and weatherproofing. We prep thoroughly so it lasts.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔨</div>
+                    <h3>Remodels</h3>
+                    <p>Kitchen and bathroom remodels, room additions, and renovation projects. We work alongside your contractor or independently.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>New Construction</h3>
+                    <p>Full painting packages for new builds — from primer to final coat. Commercial and residential.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🪵</div>
+                    <h3>Staining & Finishing</h3>
+                    <p>Deck staining, wood finishing, and specialty coatings. Protect and beautify natural wood surfaces.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Color Consultation</h3>
+                    <p>Not sure what color to go with? We'll help you choose the perfect palette for your space and style.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section section-light" id="why">
+        <div class="container">
+            <div class="section-label">Why Mark Williams Painting</div>
+            <h2 class="section-title">Built on Reputation</h2>
+            <p class="section-sub">No flashy ads. No gimmicks. Just quality work and happy customers who keep coming back.</p>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">⭐</div>
+                    <div>
+                        <h3>5-Star Reputation</h3>
+                        <p>Perfect rating on Yelp. Our work speaks for itself — and our customers speak for us.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🛡️</div>
+                    <div>
+                        <h3>Licensed & Insured</h3>
+                        <p>Fully licensed painting contractor. You're protected from start to finish.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">👷</div>
+                    <div>
+                        <h3>Owner-Operated</h3>
+                        <p>Mark is on every job. No random subcontractors — the guy you talk to is the guy who paints.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🧹</div>
+                    <div>
+                        <h3>Clean & Respectful</h3>
+                        <p>We protect your furniture and floors, prep meticulously, and leave the site cleaner than we found it.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">💰</div>
+                    <div>
+                        <h3>Free Estimates</h3>
+                        <p>No pressure, no obligation. We'll walk through the project and give you an honest quote.</p>
+                    </div>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🏘️</div>
+                    <div>
+                        <h3>South Bay Local</h3>
+                        <p>Based in Inglewood, serving the South Bay and greater LA. We know the neighborhoods and the homes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section" id="reviews">
+        <div class="container">
+            <div class="section-label">What Customers Say</div>
+            <h2 class="section-title">5.0 Stars on Yelp</h2>
+            <p class="section-sub">Real reviews from real customers.</p>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-text">"Mark did an outstanding job painting our entire house — interior and exterior. Incredibly detailed, clean work, and finished on schedule. Can't recommend him enough."</div>
+                    <div class="review-author">— Verified Customer</div>
+                    <div class="review-source">via Yelp</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <div class="review-text">"Professional from start to finish. Mark showed up on time, prepped everything carefully, and the results were beautiful. Fair price for excellent work."</div>
+                    <div class="review-author">— Verified Customer</div>
+                    <div class="review-source">via Yelp</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="section section-light" id="areas">
+        <div class="container">
+            <div class="section-label">Where We Work</div>
+            <h2 class="section-title">Serving the South Bay & Beyond</h2>
+            <p class="section-sub">Based in Inglewood, proudly serving all of these communities.</p>
+            <div class="areas-list">
+                <span class="area-tag">Inglewood</span>
+                <span class="area-tag">Manhattan Beach</span>
+                <span class="area-tag">Hermosa Beach</span>
+                <span class="area-tag">Redondo Beach</span>
+                <span class="area-tag">El Segundo</span>
+                <span class="area-tag">Hawthorne</span>
+                <span class="area-tag">Torrance</span>
+                <span class="area-tag">Gardena</span>
+                <span class="area-tag">Lawndale</span>
+                <span class="area-tag">Westchester</span>
+                <span class="area-tag">Playa del Rey</span>
+                <span class="area-tag">Marina del Rey</span>
+                <span class="area-tag">Culver City</span>
+                <span class="area-tag">Ladera Heights</span>
+                <span class="area-tag">View Park</span>
+                <span class="area-tag">Baldwin Hills</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours -->
+    <section class="section">
+        <div class="container">
+            <div class="section-label">Hours</div>
+            <h2 class="section-title">When to Reach Us</h2>
+            <p class="section-sub">Call anytime — if we're on a job, leave a message and we'll call you right back.</p>
+            <div class="hours-grid">
+                <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">7:00 AM – 5:00 PM</span></div>
+                <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">7:00 AM – 5:00 PM</span></div>
+                <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">7:00 AM – 5:00 PM</span></div>
+                <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">7:00 AM – 5:00 PM</span></div>
+                <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">7:00 AM – 5:00 PM</span></div>
+                <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">By Appointment</span></div>
+                <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">Closed</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Ready to Transform<br>Your Space?</h2>
+            <p>Get a free, no-obligation estimate. Call us directly or fill out the form below.</p>
+            <a href="tel:+13106588436" class="cta-phone">📞 (310) 658-8436</a>
+            <form class="contact-form" action="https://formspree.io/f/placeholder" method="POST">
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="form-row">
+                    <input type="email" name="email" placeholder="Email (optional)">
+                </div>
+                <div class="form-row">
+                    <select name="service" style="width:100%;">
+                        <option value="">What do you need?</option>
+                        <option value="interior">Interior Painting</option>
+                        <option value="exterior">Exterior Painting</option>
+                        <option value="remodel">Remodel</option>
+                        <option value="new-construction">New Construction</option>
+                        <option value="staining">Staining & Finishing</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <textarea name="message" placeholder="Tell us about your project (rooms, sqft, timeline, etc.)"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Send Request →</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p style="margin-bottom: 8px;"><strong style="color: rgba(255,255,255,0.8);">Mark Williams Painting</strong> — Professional Painting Contractor</p>
+            <p>Inglewood, CA · Serving the South Bay & Greater Los Angeles · <a href="tel:+13106588436">(310) 658-8436</a></p>
+            <p style="margin-top: 12px;">© 2026 Mark Williams Painting. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
