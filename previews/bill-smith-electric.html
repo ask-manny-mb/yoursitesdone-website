@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Smith Electric — Licensed Electrician | Westchester & South Bay</title>
+    <meta name="description" content="Licensed electrical contractor in Westchester and the South Bay. Residential & commercial. Panel upgrades, rewiring, EV chargers, lighting & more. Free estimates. Call (310) 410-9354.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1565C0;
+            --primary-dark: #0D47A1;
+            --accent: #FFC107;
+            --accent-light: #FFF8E1;
+            --dark: #1a1a1a;
+            --gray: #6b7280;
+            --light: #f8f9fc;
+            --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--dark); background: var(--white); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+        .nav { padding: 16px 0; background: var(--dark); position: sticky; top: 0; z-index: 100; }
+        .nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-size: 20px; font-weight: 800; color: var(--white); text-decoration: none; }
+        .nav-logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-weight: 500; font-size: 14px; }
+        .nav-links a:hover { color: var(--white); }
+        .nav-cta { background: var(--accent); color: var(--dark) !important; padding: 10px 20px; border-radius: 8px; font-weight: 700 !important; }
+        .hero { background: linear-gradient(135deg, var(--dark) 0%, #1a1a2e 100%); padding: 80px 0 60px; color: white; text-align: center; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,193,7,0.15); color: var(--accent); padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 600; margin-bottom: 20px; border: 1px solid rgba(255,193,7,0.3); }
+        .hero h1 { font-size: 48px; font-weight: 900; line-height: 1.1; margin-bottom: 16px; letter-spacing: -1px; }
+        .hero h1 span { color: var(--accent); }
+        .hero p { font-size: 19px; color: rgba(255,255,255,0.75); max-width: 550px; margin: 0 auto 32px; line-height: 1.6; }
+        .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 16px 32px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; border: none; cursor: pointer; }
+        .btn-primary { background: var(--accent); color: var(--dark); }
+        .btn-primary:hover { background: #FFB300; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,193,7,0.3); }
+        .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); }
+        .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+        .btn-block { width: 100%; justify-content: center; }
+        .stats { display: flex; justify-content: center; gap: 48px; margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .stat { text-align: center; }
+        .stat-num { font-size: 28px; font-weight: 800; color: var(--accent); }
+        .stat-label { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+        .section { padding: 64px 0; }
+        .section-light { background: var(--light); }
+        .section-label { text-transform: uppercase; letter-spacing: 2px; font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; margin-bottom: 8px; }
+        .section-title { text-align: center; font-size: 36px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px; }
+        .section-sub { text-align: center; color: var(--gray); font-size: 17px; margin-bottom: 48px; max-width: 550px; margin-left: auto; margin-right: auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .service-card { padding: 32px 24px; border: 2px solid #e3f2fd; border-radius: 16px; text-align: center; transition: all 0.3s; background: white; }
+        .service-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 8px 32px rgba(21,101,192,0.08); }
+        .service-icon { font-size: 36px; margin-bottom: 12px; }
+        .service-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+        .service-card p { color: var(--gray); font-size: 14px; line-height: 1.5; }
+        .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .why-card { display: flex; gap: 16px; padding: 24px; background: white; border-radius: 12px; border: 1px solid #e3f2fd; }
+        .why-icon { font-size: 28px; flex-shrink: 0; }
+        .why-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .why-card p { color: var(--gray); font-size: 14px; line-height: 1.5; }
+        .reviews-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .review-card { background: white; border-radius: 16px; padding: 28px; border: 1px solid #e3f2fd; }
+        .review-stars { color: #f59e0b; font-size: 18px; margin-bottom: 12px; }
+        .review-text { color: #374151; font-size: 15px; line-height: 1.6; margin-bottom: 12px; font-style: italic; }
+        .review-author { font-weight: 600; font-size: 14px; }
+        .review-source { font-size: 12px; color: var(--gray); }
+        .cta-section { background: linear-gradient(135deg, var(--dark) 0%, #1a1a2e 100%); padding: 80px 0; text-align: center; color: white; }
+        .cta-section h2 { font-size: 40px; font-weight: 900; margin-bottom: 16px; }
+        .cta-section p { font-size: 18px; opacity: 0.8; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .cta-phone { font-size: 32px; font-weight: 900; color: var(--accent); text-decoration: none; display: block; margin-bottom: 24px; }
+        .contact-form { max-width: 500px; margin: 0 auto; text-align: left; }
+        .form-row { display: flex; gap: 12px; margin-bottom: 12px; }
+        .form-row input, .form-row textarea, .form-row select { flex: 1; padding: 14px 16px; border: 2px solid rgba(255,255,255,0.15); border-radius: 8px; font-size: 15px; font-family: inherit; background: rgba(255,255,255,0.08); color: white; }
+        .form-row input::placeholder, .form-row textarea::placeholder { color: rgba(255,255,255,0.4); }
+        .form-row input:focus, .form-row textarea:focus { outline: none; border-color: var(--accent); }
+        .form-row textarea { resize: vertical; min-height: 80px; }
+        .areas-list { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .area-tag { background: var(--accent-light); color: #F57F17; padding: 8px 16px; border-radius: 50px; font-size: 14px; font-weight: 500; }
+        .hours-grid { max-width: 400px; margin: 0 auto; }
+        .hours-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #e3f2fd; font-size: 15px; }
+        .hours-day { font-weight: 600; }
+        .hours-time { color: var(--gray); }
+        .footer { padding: 32px 0; background: var(--dark); text-align: center; color: rgba(255,255,255,0.5); font-size: 13px; }
+        .footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+        .emergency-bar { background: #FFF3E0; padding: 12px; text-align: center; font-weight: 600; font-size: 14px; color: #E65100; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .reviews-grid { grid-template-columns: 1fr; }
+            .stats { gap: 24px; flex-wrap: wrap; }
+            .nav-links { display: none; }
+            .form-row { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="emergency-bar">⚡ Emergency electrical service available — Call <a href="tel:+13104109354" style="color:#E65100;text-decoration:underline;">(310) 410-9354</a></div>
+
+    <nav class="nav">
+        <div class="container">
+            <a href="#" class="nav-logo">Bill Smith <span>Electric</span></a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why">Why Us</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#areas">Service Areas</a></li>
+                <li><a href="#contact" class="nav-cta">Free Estimate</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">⚡ Licensed Electrical Contractor — Westchester & South Bay</div>
+            <h1>Electrical Work<br><span>Done Right.</span></h1>
+            <p>Family-owned electrical contractor serving Westchester and the South Bay. From panel upgrades to EV chargers — we do it all. Free estimates.</p>
+            <div class="hero-ctas">
+                <a href="tel:+13104109354" class="btn btn-primary">📞 (310) 410-9354</a>
+                <a href="#contact" class="btn btn-outline">Get a Free Estimate</a>
+            </div>
+            <div class="stats">
+                <div class="stat"><div class="stat-num">4.1 ⭐</div><div class="stat-label">Google Rating</div></div>
+                <div class="stat"><div class="stat-num">Family</div><div class="stat-label">Owned & Operated</div></div>
+                <div class="stat"><div class="stat-num">Licensed</div><div class="stat-label">& Insured</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-label">What We Do</div>
+            <h2 class="section-title">Electrical Services</h2>
+            <p class="section-sub">Residential and commercial electrical work. No job too small or too large.</p>
+            <div class="services-grid">
+                <div class="service-card"><div class="service-icon">🔌</div><h3>Panel Upgrades</h3><p>Upgrade your electrical panel to handle modern loads. 100-amp to 200-amp and beyond. Essential for older homes.</p></div>
+                <div class="service-card"><div class="service-icon">💡</div><h3>Lighting Installation</h3><p>Recessed lighting, chandeliers, outdoor lighting, landscape lights. LED upgrades to save on your electric bill.</p></div>
+                <div class="service-card"><div class="service-icon">🔧</div><h3>Rewiring</h3><p>Whole-home and partial rewiring. Upgrade old knob-and-tube or aluminum wiring to modern, safe copper.</p></div>
+                <div class="service-card"><div class="service-icon">🚗</div><h3>EV Charger Installation</h3><p>Level 2 home charging stations for Tesla, Rivian, and all EVs. Proper circuit and panel capacity assessment.</p></div>
+                <div class="service-card"><div class="service-icon">🏠</div><h3>Outlet & Switch Work</h3><p>New outlets, GFCI outlets, USB outlets, dimmer switches. Additions, replacements, and troubleshooting.</p></div>
+                <div class="service-card"><div class="service-icon">⚡</div><h3>Electrical Troubleshooting</h3><p>Flickering lights? Tripping breakers? Buzzing sounds? We diagnose and fix electrical issues fast.</p></div>
+                <div class="service-card"><div class="service-icon">🏗️</div><h3>New Construction</h3><p>Complete electrical for new builds and additions. Rough-in, finish, and final inspection. We handle permits.</p></div>
+                <div class="service-card"><div class="service-icon">🔥</div><h3>Smoke & CO Detectors</h3><p>Hardwired smoke and carbon monoxide detectors. California code-compliant installation.</p></div>
+                <div class="service-card"><div class="service-icon">🏢</div><h3>Commercial Electrical</h3><p>Office build-outs, retail spaces, restaurants. Tenant improvements, data wiring, and emergency service.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light" id="why">
+        <div class="container">
+            <div class="section-label">Why Bill Smith Electric</div>
+            <h2 class="section-title">Family Business. Professional Results.</h2>
+            <p class="section-sub">Started by Bill Sr., now run by the next generation. Same values, modern expertise.</p>
+            <div class="why-grid">
+                <div class="why-card"><div class="why-icon">👨‍👦</div><div><h3>Family-Owned</h3><p>Bill Smith Electric has been a family business from day one. Chad is carrying on his dad's legacy with the same commitment to quality.</p></div></div>
+                <div class="why-card"><div class="why-icon">🛡️</div><div><h3>Licensed & Insured</h3><p>Fully licensed electrical contractor. Permits pulled properly. Inspections passed. Everything by the book.</p></div></div>
+                <div class="why-card"><div class="why-icon">📍</div><div><h3>Westchester Local</h3><p>Based in Westchester, serving the whole South Bay. We know these homes — the wiring, the common issues, the solutions.</p></div></div>
+                <div class="why-card"><div class="why-icon">💰</div><div><h3>Free Estimates</h3><p>Honest, upfront pricing. No surprises. We explain what needs to be done and why before we start.</p></div></div>
+                <div class="why-card"><div class="why-icon">🧹</div><div><h3>Clean & Professional</h3><p>We protect your home, clean up after ourselves, and treat your property with respect.</p></div></div>
+                <div class="why-card"><div class="why-icon">⚡</div><div><h3>Emergency Service</h3><p>Electrical emergencies can't wait. Call us for same-day service when you need it most.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="reviews">
+        <div class="container">
+            <div class="section-label">What Customers Say</div>
+            <h2 class="section-title">Trusted by Homeowners</h2>
+            <div class="reviews-grid">
+                <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Had Bill Smith Electric do a full panel upgrade and add circuits for our new kitchen. Professional, on time, and the price was fair. Highly recommend."</div><div class="review-author">— Verified Customer</div><div class="review-source">via Google</div></div>
+                <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Needed an EV charger installed ASAP. They came out within days, assessed the panel, and had everything done in an afternoon. Great experience."</div><div class="review-author">— Verified Customer</div><div class="review-source">via Google</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light" id="areas">
+        <div class="container">
+            <div class="section-label">Where We Work</div>
+            <h2 class="section-title">Serving Westchester & the South Bay</h2>
+            <div class="areas-list">
+                <span class="area-tag">Westchester</span><span class="area-tag">Playa del Rey</span><span class="area-tag">El Segundo</span><span class="area-tag">Manhattan Beach</span><span class="area-tag">Hermosa Beach</span><span class="area-tag">Redondo Beach</span><span class="area-tag">Hawthorne</span><span class="area-tag">Inglewood</span><span class="area-tag">Torrance</span><span class="area-tag">Gardena</span><span class="area-tag">Lawndale</span><span class="area-tag">Marina del Rey</span><span class="area-tag">Culver City</span><span class="area-tag">LAX Area</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-label">Hours</div>
+            <h2 class="section-title">When to Reach Us</h2>
+            <div class="hours-grid">
+                <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">7:00 AM – 5:00 PM</span></div>
+                <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">7:00 AM – 5:00 PM</span></div>
+                <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">7:00 AM – 5:00 PM</span></div>
+                <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">7:00 AM – 5:00 PM</span></div>
+                <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">7:00 AM – 5:00 PM</span></div>
+                <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">By Appointment</span></div>
+                <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">Closed</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Need an Electrician?<br>Call Us.</h2>
+            <p>Free estimates. Licensed work. Family values.</p>
+            <a href="tel:+13104109354" class="cta-phone">📞 (310) 410-9354</a>
+            <form class="contact-form" action="https://formspree.io/f/placeholder" method="POST">
+                <div class="form-row"><input type="text" name="name" placeholder="Your Name" required><input type="tel" name="phone" placeholder="Phone Number" required></div>
+                <div class="form-row"><input type="email" name="email" placeholder="Email (optional)"></div>
+                <div class="form-row">
+                    <select name="service" style="width:100%;"><option value="">What do you need?</option><option value="panel">Panel Upgrade</option><option value="lighting">Lighting Installation</option><option value="rewiring">Rewiring</option><option value="ev-charger">EV Charger</option><option value="outlets">Outlets / Switches</option><option value="troubleshooting">Troubleshooting</option><option value="new-construction">New Construction</option><option value="commercial">Commercial</option><option value="other">Other</option></select>
+                </div>
+                <div class="form-row"><textarea name="message" placeholder="Tell us about the job"></textarea></div>
+                <button type="submit" class="btn btn-primary btn-block">Request Free Estimate →</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p style="margin-bottom:8px;"><strong style="color:rgba(255,255,255,0.8);">Bill Smith Electric</strong> — Licensed Electrical Contractor</p>
+            <p>Westchester, CA · Serving the South Bay & Greater LA · <a href="tel:+13104109354">(310) 410-9354</a></p>
+            <p style="margin-top:12px;">© 2026 Bill Smith Electric. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
