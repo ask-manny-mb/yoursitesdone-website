@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToiletRus | Commercial & Residential Toilet Services</title>
+    <meta name="description" content="ToiletRus — expert toilet services for commercial buildings and large residential properties. Installation, repair, maintenance, and emergency service.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: #1a1a2e; line-height: 1.6; }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 10px; }
+        .hero .tagline { font-size: 1.2rem; color: #93c5fd; margin-bottom: 30px; }
+        .hero .cta-btn {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: background 0.2s;
+        }
+        .hero .cta-btn:hover { background: #1d4ed8; }
+        
+        /* Services */
+        .services { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
+        .services h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .service-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+        }
+        .service-card .icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .service-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+        .service-card p { color: #64748b; font-size: 0.95rem; }
+        
+        /* About */
+        .about { background: #f1f5f9; padding: 60px 20px; }
+        .about-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+        .about h2 { font-size: 2rem; margin-bottom: 20px; }
+        .about p { color: #475569; font-size: 1.05rem; }
+        
+        /* CTA */
+        .cta-section { padding: 60px 20px; text-align: center; background: #0f172a; color: white; }
+        .cta-section h2 { font-size: 2rem; margin-bottom: 15px; }
+        .cta-section p { color: #94a3b8; margin-bottom: 25px; }
+        .cta-section .cta-btn {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer { background: #020617; color: #64748b; padding: 30px 20px; text-align: center; font-size: 0.85rem; }
+        
+        /* Preview banner */
+        .preview-banner {
+            background: #fef3c7;
+            color: #92400e;
+            text-align: center;
+            padding: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .services-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-banner">🚧 This is a preview — built by YourSitesDone.com</div>
+    
+    <section class="hero">
+        <h1>🚽 ToiletRus</h1>
+        <p class="tagline">Commercial & Residential Toilet Services — All of Them.</p>
+        <a href="#contact" class="cta-btn">Get a Free Quote →</a>
+    </section>
+    
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon">🔧</div>
+                <h3>Installation</h3>
+                <p>New toilet installations for commercial buildings, offices, restaurants, and large residential properties. All major brands.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🛠️</div>
+                <h3>Repair & Maintenance</h3>
+                <p>Running toilets, leaks, clogs, flapper valves, fill valves — we fix it all. Same-day service available.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🏢</div>
+                <h3>Commercial Contracts</h3>
+                <p>Ongoing maintenance for commercial buildings, property managers, and HOAs. Scheduled service at scale.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🚨</div>
+                <h3>Emergency Service</h3>
+                <p>Overflows, backups, and urgent repairs. We respond fast because we know you can't wait.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">♻️</div>
+                <h3>Upgrades & Water Efficiency</h3>
+                <p>Swap old high-flow toilets for modern low-flow units. Save water, save money, stay compliant.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🏗️</div>
+                <h3>New Construction</h3>
+                <p>Rough-in and finish plumbing for new builds. We work with general contractors on projects of any size.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about">
+        <div class="about-inner">
+            <h2>Why ToiletRus?</h2>
+            <p>We specialize in one thing and we do it better than anyone: toilets. From commercial high-rises to large residential properties, our team handles every toilet service imaginable — installation, repair, maintenance, emergency response, and efficiency upgrades. When it comes to toilets, we've seen it all.</p>
+        </div>
+    </section>
+    
+    <section class="cta-section" id="contact">
+        <h2>Ready to Work With Us?</h2>
+        <p>Get a free quote for your commercial or residential project.</p>
+        <a href="mailto:hello@toiletrUs.com" class="cta-btn">Contact Us Today</a>
+    </section>
+    
+    <footer>
+        <p>&copy; 2026 ToiletRus. All rights reserved. | Built by <a href="https://yoursitesdone.com" style="color: #93c5fd;">YourSitesDone.com</a></p>
+    </footer>
+</body>
+</html>
