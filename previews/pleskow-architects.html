@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pleskow Architects | Los Angeles Architecture & Design Firm</title>
+    <meta name="description" content="Pleskow Architects — award-winning Los Angeles architecture firm led by Tony Pleskow, AIA. Residential, commercial, public, and hospitality design since 1993. Harvard GSD. Licensed in CA, TX, NY, GA.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: #1a1a1a; line-height: 1.7; background: #fff; }
+        
+        /* Preview Banner */
+        .preview-banner {
+            background: #fef3c7; color: #92400e; text-align: center;
+            padding: 10px; font-size: 0.85rem; font-weight: 600;
+        }
+        
+        /* Nav */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 25px 60px; background: #fff; position: sticky; top: 0; z-index: 100;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        nav .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; letter-spacing: 1px; color: #1a1a1a; }
+        nav .logo span { font-weight: 400; color: #888; }
+        nav ul { list-style: none; display: flex; gap: 35px; }
+        nav ul li a { text-decoration: none; color: #555; font-size: 0.85rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.2s; }
+        nav ul li a:hover { color: #1a1a1a; }
+        
+        /* Hero */
+        .hero {
+            height: 85vh; display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #2d2d44 100%);
+            color: white; text-align: center; position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><line x1="0" y1="50" x2="100" y2="50" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/><line x1="50" y1="0" x2="50" y2="100" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></svg>');
+            background-size: 80px 80px;
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 800px; padding: 0 30px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 400; letter-spacing: 2px; margin-bottom: 20px; line-height: 1.2; }
+        .hero .subtitle { font-size: 1.1rem; color: rgba(255,255,255,0.6); font-weight: 300; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
+        .hero .tagline { font-size: 1rem; color: rgba(255,255,255,0.4); margin-top: 25px; font-weight: 300; font-style: italic; }
+        
+        /* Section Base */
+        section { padding: 100px 60px; }
+        section h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 400; margin-bottom: 15px; }
+        section .section-sub { color: #888; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 40px; }
+        
+        /* About */
+        .about { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+        .about-text p { color: #555; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.8; }
+        .about-credentials { background: #fafafa; padding: 40px; border-radius: 4px; }
+        .about-credentials h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 20px; }
+        .credential-item { padding: 12px 0; border-bottom: 1px solid #eee; }
+        .credential-item:last-child { border-bottom: none; }
+        .credential-item .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #999; }
+        .credential-item .value { font-size: 0.95rem; color: #333; margin-top: 4px; }
+        
+        /* Portfolio */
+        .portfolio-section { background: #fafafa; }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
+        .project-card { background: #fff; border-radius: 4px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .project-img { height: 220px; background: linear-gradient(135deg, #e8e8e8, #d0d0d0); display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.85rem; }
+        .project-info { padding: 25px; }
+        .project-info h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 8px; }
+        .project-meta { display: flex; gap: 15px; font-size: 0.8rem; color: #888; }
+        .project-meta span { display: flex; align-items: center; gap: 4px; }
+        .project-description { font-size: 0.85rem; color: #666; margin-top: 10px; line-height: 1.6; }
+        
+        /* Services */
+        .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-top: 50px; }
+        .service-item { text-align: center; }
+        .service-icon { width: 60px; height: 60px; border: 1px solid #ddd; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.5rem; }
+        .service-item h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 8px; }
+        .service-item p { font-size: 0.85rem; color: #777; }
+        
+        /* Awards */
+        .awards-section { background: #0a0a0a; color: white; text-align: center; }
+        .awards-section h2 { color: white; }
+        .awards-section .section-sub { color: rgba(255,255,255,0.4); }
+        .awards-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 40px; }
+        .award-item { max-width: 200px; }
+        .award-item .pub { font-size: 0.95rem; font-weight: 500; margin-bottom: 5px; }
+        .award-item .detail { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+        
+        /* Contact */
+        .contact-section { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+        .contact-info h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 25px; }
+        .contact-detail { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .contact-detail .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #999; }
+        .contact-detail .value { font-size: 1rem; color: #333; margin-top: 4px; }
+        .contact-detail .value a { color: #1a1a2e; text-decoration: none; }
+        .contact-form input, .contact-form textarea {
+            width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 4px;
+            font-family: 'Inter', sans-serif; font-size: 0.95rem; margin-bottom: 15px;
+            transition: border-color 0.2s;
+        }
+        .contact-form input:focus, .contact-form textarea:focus { border-color: #1a1a2e; outline: none; }
+        .contact-form textarea { height: 120px; resize: vertical; }
+        .contact-form button {
+            background: #1a1a2e; color: white; padding: 15px 45px; border: none;
+            font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; cursor: pointer;
+            transition: background 0.2s; font-family: 'Inter', sans-serif;
+        }
+        .contact-form button:hover { background: #2d2d44; }
+        
+        /* Footer */
+        footer {
+            background: #0a0a0a; color: rgba(255,255,255,0.4); padding: 40px 60px;
+            display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem;
+        }
+        footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+        
+        /* Licensed States Bar */
+        .states-bar {
+            display: flex; justify-content: center; gap: 60px; padding: 30px 60px;
+            border-top: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0;
+        }
+        .states-bar .state { text-align: center; }
+        .states-bar .state .abbrev { font-size: 1.5rem; font-weight: 600; color: #1a1a2e; }
+        .states-bar .state .name { font-size: 0.75rem; color: #999; text-transform: uppercase; letter-spacing: 1px; }
+        
+        @media (max-width: 900px) {
+            nav { padding: 20px 25px; }
+            nav ul { gap: 20px; }
+            section { padding: 60px 25px; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero { height: 60vh; }
+            .about { grid-template-columns: 1fr; gap: 40px; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
+            .contact-section { grid-template-columns: 1fr; gap: 40px; }
+            .states-bar { gap: 30px; flex-wrap: wrap; }
+            footer { flex-direction: column; gap: 10px; text-align: center; }
+        }
+        @media (max-width: 600px) {
+            nav ul { display: none; }
+            .services-grid { grid-template-columns: 1fr; }
+            .awards-grid { gap: 25px; }
+        }
+    </style>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Architect",
+        "name": "Pleskow Architects",
+        "description": "Award-winning Los Angeles architecture and design firm led by Tony Pleskow, AIA. Residential, commercial, public sector, and hospitality design since 1993.",
+        "founder": {
+            "@type": "Person",
+            "name": "Tony Pleskow",
+            "jobTitle": "Principal/Founder",
+            "alumniOf": { "@type": "CollegeOrUniversity", "name": "Harvard Graduate School of Design" }
+        },
+        "foundingDate": "1993",
+        "url": "https://www.pleskowarchitects.com",
+        "areaServed": ["Los Angeles", "California", "New York", "Texas", "Georgia"],
+        "knowsAbout": ["Residential Architecture", "Commercial Architecture", "Public Sector Architecture", "Hospitality Design", "Restaurant Design", "Mixed-Use Development"],
+        "award": ["AIA Design Award", "Architectural League Prize (New York)", "John Lawrence Memorial Award (Tulane)", "Fast Company Next Big Things", "ID Magazine", "Westside Urban Forum"],
+        "hasCredential": "AIA Member",
+        "sameAs": ["https://www.pleskowarchitects.com"]
+    }
+    </script>
+</head>
+<body>
+    <div class="preview-banner">🚧 This is a preview — built by <a href="https://yoursitesdone.com" style="color: #92400e;">YourSitesDone.com</a></div>
+    
+    <nav>
+        <div class="logo">PLESKOW <span>ARCHITECTS</span></div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#recognition">Recognition</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <div class="subtitle">Architecture &middot; Design &middot; Since 1993</div>
+            <h1>Pleskow Architects</h1>
+            <p class="tagline">"The enhancement of one's experience through the improvement of the urban and natural landscape"</p>
+        </div>
+    </section>
+    
+    <!-- Licensed States -->
+    <div class="states-bar">
+        <div class="state"><div class="abbrev">CA</div><div class="name">California</div></div>
+        <div class="state"><div class="abbrev">NY</div><div class="name">New York</div></div>
+        <div class="state"><div class="abbrev">TX</div><div class="name">Texas</div></div>
+        <div class="state"><div class="abbrev">GA</div><div class="name">Georgia</div></div>
+    </div>
+    
+    <section id="about">
+        <div class="about">
+            <div class="about-text">
+                <p class="section-sub">About the Firm</p>
+                <h2>Design With Intent</h2>
+                <p>Established in 1993, Pleskow Architects is a progressive architecture and design firm led by Tony Pleskow, AIA. The company's primary concern is the enhancement of one's experience through the improvement of the urban and natural landscape and the creation of protective, immersive, sheltering environments through design.</p>
+                <p>As Principal, Tony develops close working relationships with the firm's clients and is directly involved in each commission. Every project is viewed as a collaboration, with the client's operational, economic and aesthetic objectives at the forefront.</p>
+                <p>The firm employs a rigorous, model-driven design process that enables clients to experience and visualize their project. In addition to its strong design and production reputation, the firm is known for its attention to detail in the construction administration phase. These methods result in designs that are innovative and fulfill budget and schedule expectations. Clients often return with new commissions.</p>
+                <p>Based in Los Angeles, but licensed to design architecture in several states, the firm's work is diverse and widespread — from residential and commercial to public sector commissions. Places of worship, housing, restaurants, office space, cinemas, animal shelters, retail, hospitality and municipal infrastructure are just a few of the building types in the firm's portfolio.</p>
+            </div>
+            <div class="about-credentials">
+                <h3>Tony Pleskow, AIA</h3>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 25px;">Principal / Founder</p>
+                <div class="credential-item">
+                    <div class="label">Education</div>
+                    <div class="value">Master's Degree — Harvard Graduate School of Design</div>
+                </div>
+                <div class="credential-item">
+                    <div class="label">Undergraduate</div>
+                    <div class="value">Tulane School of Architecture — John Lawrence Memorial Award (Top Undergraduate Designer)</div>
+                </div>
+                <div class="credential-item">
+                    <div class="label">Recognition</div>
+                    <div class="value">Architectural League Prize (New York)</div>
+                </div>
+                <div class="credential-item">
+                    <div class="label">Teaching</div>
+                    <div class="value">Tulane University, Woodbury University, Art Center College of Design</div>
+                </div>
+                <div class="credential-item">
+                    <div class="label">Civic</div>
+                    <div class="value">Former Chair, AIA/LA Urban Design Committee · Former Planning Commissioner, City of Culver City · Westside Urban Forum Board Member</div>
+                </div>
+                <div class="credential-item">
+                    <div class="label">Licensed In</div>
+                    <div class="value">California · New York · Texas · Georgia</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="portfolio" class="portfolio-section">
+        <p class="section-sub">Selected Work</p>
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="project-card">
+                <div class="project-img">📷 Project Photo</div>
+                <div class="project-info">
+                    <h3>Venice Church of Christ</h3>
+                    <div class="project-meta"><span>📍 Los Angeles, CA</span><span>🏛️ Worship</span></div>
+                    <p class="project-description">Steel frame chapel structure in Harvard Heights. A spiritual space defined by light, form, and material honesty. Currently under construction.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">📷 Project Photo</div>
+                <div class="project-info">
+                    <h3>The Landmark Theatre</h3>
+                    <div class="project-meta"><span>📍 Los Angeles, CA</span><span>🎬 Entertainment</span></div>
+                    <p class="project-description">Renovation and expansion of the iconic Landmark Theatre on Pico, transforming the cinema experience for Los Angeles audiences.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">📷 Project Photo</div>
+                <div class="project-info">
+                    <h3>Hotel Coronado</h3>
+                    <div class="project-meta"><span>📍 San Diego, CA</span><span>🏨 Hospitality</span></div>
+                    <p class="project-description">Design work for the legendary Hotel del Coronado, one of America's most iconic beachfront hotels.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">📷 Project Photo</div>
+                <div class="project-info">
+                    <h3>"The Cut" — Sunset Blvd</h3>
+                    <div class="project-meta"><span>📍 Silver Lake, LA</span><span>🏗️ Public</span></div>
+                    <p class="project-description">Major infrastructure project stabilizing a 700ft hillside breach created by 1800s railroad construction. Phase 1 retaining wall design for the City of Los Angeles.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">📷 Project Photo</div>
+                <div class="project-info">
+                    <h3>Dallas Film Center</h3>
+                    <div class="project-meta"><span>📍 Dallas, TX</span><span>🎬 Entertainment</span></div>
+                    <p class="project-description">A cultural landmark in the Dallas Arts District, designed to celebrate and advance the art of film in North Texas.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">📷 Project Photo</div>
+                <div class="project-info">
+                    <h3>J. Lindeberg Flagship</h3>
+                    <div class="project-meta"><span>📍 West Hollywood, CA</span><span>🛍️ Retail</span></div>
+                    <p class="project-description">Flagship retail experience for the Swedish fashion brand on the Sunset Strip. Bold materiality meets Scandinavian minimalism.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">📷 Project Photo</div>
+                <div class="project-info">
+                    <h3>Pinwheel Pasta</h3>
+                    <div class="project-meta"><span>📍 Rancho Cucamonga, CA</span><span>🍝 Restaurant</span></div>
+                    <p class="project-description">First location for Pinwheel Pasta — a fresh, handmade pasta restaurant designed to feel welcoming and elevated.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">📷 Project Photo</div>
+                <div class="project-info">
+                    <h3>Marshall Islands Eco Surf Resort</h3>
+                    <div class="project-meta"><span>📍 Beran Island</span><span>🏨 Hospitality</span></div>
+                    <p class="project-description">Sustainable resort design on a remote Pacific atoll — where architecture meets ecology and adventure.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">📷 Project Photo</div>
+                <div class="project-info">
+                    <h3>Beverley House</h3>
+                    <div class="project-meta"><span>📍 Santa Monica, CA</span><span>🏠 Residential</span></div>
+                    <p class="project-description">A single-family residence exploring space, light, and the relationship between interior living and the Santa Monica landscape.</p>
+                </div>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 40px; color: #888; font-size: 0.9rem;">Showing 9 of 35+ projects · <a href="#contact" style="color: #1a1a2e;">Get in touch</a> to see our full portfolio</p>
+    </section>
+    
+    <section id="services">
+        <p class="section-sub">What We Do</p>
+        <h2>Services</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-icon">🏠</div>
+                <h4>Residential</h4>
+                <p>Custom homes, renovations, additions, and multi-family housing across Los Angeles and beyond.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🏢</div>
+                <h4>Commercial</h4>
+                <p>Office, retail, restaurant, and mixed-use projects designed for function, experience, and return.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🏛️</div>
+                <h4>Public & Civic</h4>
+                <p>Municipal infrastructure, parks, shelters, and community facilities for city and county agencies.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🎬</div>
+                <h4>Entertainment</h4>
+                <p>Cinemas, theatres, and cultural venues — including work with Landmark and LOOK Cinemas.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🏨</div>
+                <h4>Hospitality</h4>
+                <p>Hotels, resorts, and restaurants where design creates memorable guest experiences.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">⛪</div>
+                <h4>Places of Worship</h4>
+                <p>Sacred spaces designed with reverence for light, material, and the spiritual experience.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">📐</div>
+                <h4>Master Planning</h4>
+                <p>Urban design strategy and planning for complex multi-phase developments.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-icon">🔍</div>
+                <h4>Construction Admin</h4>
+                <p>Known for rigorous attention to detail through construction — ensuring design intent is realized.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="recognition" class="awards-section">
+        <p class="section-sub" style="color: rgba(255,255,255,0.4);">Press & Recognition</p>
+        <h2>Published & Awarded</h2>
+        <div class="awards-grid">
+            <div class="award-item"><div class="pub">The New York Times</div><div class="detail">Featured project</div></div>
+            <div class="award-item"><div class="pub">Los Angeles Times</div><div class="detail">Featured project</div></div>
+            <div class="award-item"><div class="pub">AIA</div><div class="detail">Design Awards</div></div>
+            <div class="award-item"><div class="pub">Harvard Architecture Review</div><div class="detail">Published work</div></div>
+            <div class="award-item"><div class="pub">Progressive Architecture</div><div class="detail">Published work</div></div>
+            <div class="award-item"><div class="pub">Metropolis</div><div class="detail">Published work</div></div>
+            <div class="award-item"><div class="pub">Form Magazine</div><div class="detail">Published work</div></div>
+            <div class="award-item"><div class="pub">ID Magazine</div><div class="detail">Design Award</div></div>
+            <div class="award-item"><div class="pub">Robert Stern's NY 2000</div><div class="detail">Published work</div></div>
+            <div class="award-item"><div class="pub">Westside Urban Forum</div><div class="detail">Design Award</div></div>
+            <div class="award-item"><div class="pub">Architectural League</div><div class="detail">Prize (New York)</div></div>
+            <div class="award-item"><div class="pub">Fast Company</div><div class="detail">Next Big Things in Tech</div></div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="contact-section">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p style="color: #666; margin-bottom: 30px;">Every project begins with a conversation. Tell us about your vision and we'll explore how we can bring it to life.</p>
+                <div class="contact-detail">
+                    <div class="label">Location</div>
+                    <div class="value">Los Angeles, California</div>
+                </div>
+                <div class="contact-detail">
+                    <div class="label">Email</div>
+                    <div class="value"><a href="mailto:info@pleskowarchitects.com">info@pleskowarchitects.com</a></div>
+                </div>
+                <div class="contact-detail">
+                    <div class="label">Website</div>
+                    <div class="value"><a href="https://www.pleskowarchitects.com">pleskowarchitects.com</a></div>
+                </div>
+                <div class="contact-detail">
+                    <div class="label">Licensed In</div>
+                    <div class="value">California · New York · Texas · Georgia</div>
+                </div>
+            </div>
+            <div>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 25px;">Start a Conversation</h3>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="text" placeholder="Project Type (Residential, Commercial, etc.)">
+                    <input type="text" placeholder="Project Location">
+                    <textarea placeholder="Tell us about your project..."></textarea>
+                    <button type="submit">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div>&copy; 2026 Pleskow Architects. All rights reserved.</div>
+        <div>Built by <a href="https://yoursitesdone.com">YourSitesDone.com</a></div>
+    </footer>
+</body>
+</html>
