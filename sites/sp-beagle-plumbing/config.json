@@ -1,0 +1,29 @@
+{
+  "business_name": "S.P. Beagle Plumbing",
+  "owner_name": "Sage Beagle",
+  "phone": "(310) 650-5590",
+  "email": "",
+  "address": "",
+  "service_area": "Hermosa Beach & South Bay",
+  "hours": "Available by appointment",
+  "services": [
+    "Residential Plumbing Repair",
+    "Drain Cleaning & Unclogging",
+    "Water Heater Service",
+    "Leak Detection & Repair",
+    "Bathroom & Kitchen Plumbing",
+    "Sewer Line Service",
+    "Emergency Plumbing"
+  ],
+  "tagline": "Hermosa Beach's Trusted Plumber Since 2007",
+  "years": "19",
+  "license": "",
+  "color_primary": "#1565C0",
+  "color_accent": "#0D47A1",
+  "slug": "sp-beagle-plumbing",
+  "logo_path": "",
+  "photos": [],
+  "yelp_url": "",
+  "google_url": "",
+  "facebook_url": ""
+}

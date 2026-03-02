@@ -1,0 +1,26 @@
+{
+  "business_name": "G A Roofing & Repair Specialist",
+  "owner_name": "",
+  "phone": "(310) 938-2724",
+  "email": "",
+  "address": "306 N Pacific Coast Hwy, Redondo Beach, CA 90277",
+  "service_area": "Redondo Beach & South Bay",
+  "hours": "Mon-Sat 7am-6pm",
+  "services": [
+    "Lightweight Concrete Tile Roofing",
+    "Roof Repair & Maintenance",
+    "Leak Detection & Repair",
+    "Roof Replacement",
+    "Gutter Installation & Repair",
+    "Commercial Roofing",
+    "Emergency Roof Service"
+  ],
+  "tagline": "165 Five-Star Reviews — Redondo Beach's Top-Rated Roofer",
+  "years": "",
+  "license": "",
+  "color_primary": "#2E7D32",
+  "color_accent": "#1B5E20",
+  "slug": "ga-roofing",
+  "logo_path": "",
+  "photos": []
+}

@@ -1,0 +1,26 @@
+{
+  "business_name": "Mardikian Automotive Center",
+  "owner_name": "Peter",
+  "phone": "(310) 376-4906",
+  "email": "",
+  "address": "1431 Aviation Blvd, Redondo Beach, CA 90278",
+  "service_area": "South Bay & Greater Los Angeles",
+  "hours": "Mon-Fri 8am-5:30pm, Sat 8am-2pm",
+  "services": [
+    "BMW Service & Repair",
+    "Mercedes-Benz Service & Repair",
+    "European Auto Specialist",
+    "Engine Diagnostics",
+    "Brake Service",
+    "Oil Change & Maintenance",
+    "Pre-Purchase Inspections"
+  ],
+  "tagline": "South Bay's Trusted BMW & Mercedes Specialist",
+  "years": "20+",
+  "license": "",
+  "color_primary": "#212121",
+  "color_accent": "#424242",
+  "slug": "mardikian-automotive",
+  "logo_path": "",
+  "photos": []
+}

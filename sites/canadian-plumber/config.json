@@ -1,0 +1,26 @@
+{
+  "business_name": "The Canadian Plumber & Handyman",
+  "owner_name": "James",
+  "phone": "(310) 000-0000",
+  "email": "",
+  "address": "",
+  "service_area": "Hermosa Beach & South Bay",
+  "hours": "7am - 8pm, 7 Days a Week",
+  "services": [
+    "Plumbing Repair & Installation",
+    "Drain Cleaning",
+    "Water Heater Service",
+    "Handyman Services",
+    "Bathroom Remodeling",
+    "Kitchen Plumbing",
+    "Emergency Service Available"
+  ],
+  "tagline": "Hermosa Beach's Favorite Plumber — 42 Five-Star Reviews",
+  "years": "",
+  "license": "",
+  "color_primary": "#D32F2F",
+  "color_accent": "#B71C1C",
+  "slug": "canadian-plumber",
+  "logo_path": "",
+  "photos": []
+}
