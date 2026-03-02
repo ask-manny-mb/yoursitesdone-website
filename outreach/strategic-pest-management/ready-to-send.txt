@@ -1,0 +1,36 @@
+=== YSD OUTREACH PACKAGE: Strategic Pest Management ===
+Generated: Mon Mar  2 02:00:10 PST 2026
+
+Owner: Bo
+Business: Strategic Pest Management
+City: El Segundo
+Preview URL: https://ask-manny-mb.github.io/yoursitesdone-website/previews/strategic-pest-management.html
+GIF URL: https://ask-manny-mb.github.io/yoursitesdone-website/outreach/strategic-pest-management/preview.gif
+
+--- EMAIL B SUBJECT LINE ---
+I built Strategic Pest Management a website — want to see it?
+
+--- EMAIL C SUBJECT LINE ---
+Quick question about Strategic Pest Management
+
+--- EMAIL C PLAIN TEXT (copy/paste if HTML doesn't work) ---
+Hey Bo 👋
+
+I build websites for local businesses here in the South Bay, and I noticed Strategic Pest Management doesn't have one yet.
+
+So I went ahead and mocked one up — just to show you what's possible.
+
+Want to see the full thing? I'd love to walk you through it — takes 5 minutes.
+
+Reply to this email or text me at (310) 990-0526.
+
+No pressure at all — if it's not a fit, no worries. Just thought you'd want to see what your business could look like online.
+
+— Matt
+YourSitesDone.com | Hermosa Beach, CA
+
+--- NEXT STEPS ---
+1. If GIF not generated yet: use browser to capture scrolling GIF of the preview site
+2. Open email-b.html or email-c.html in browser to preview
+3. Copy HTML into Gmail compose (or use plain text above)
+4. Send from matt@yoursitesdone.com
