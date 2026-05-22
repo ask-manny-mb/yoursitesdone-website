@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strategic Pest Management — Creative Solutions | Pest Control in South Bay & West LA</title>
-    <meta name="description" content="Strategic Pest Management — Creative Solutions. Professional pest control serving Pacific Palisades, Beverly Hills, Manhattan Beach, Hermosa Beach, Torrance, Palos Verdes & more. Licensed OPR9966. Free inspections. Call (310) 322-5001.">
+    <meta name="description" content="Strategic Pest Management — Creative Solutions. Professional pest control serving Pacific Palisades, Beverly Hills, Manhattan Beach, Hermosa Beach, Torrance, Palos Verdes & more. Ants, roaches, rodents, spiders & more (no termite work). Licensed OPR9966. Free inspections. Call (310) 322-5001.">
     <meta property="og:title" content="Strategic Pest Management — Creative Solutions">
     <meta property="og:description" content="Professional pest control serving South Bay & West LA. Licensed & insured. Free inspections.">
     <meta property="og:type" content="website">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1B5E20;
-            --primary-dark: #0D3B0F;
-            --accent: #4CAF50;
-            --accent-light: #E8F5E9;
+            --primary: #0B3D7A;
+            --primary-dark: #062654;
+            --accent: #1565C0;
+            --accent-light: #E3F2FD;
             --dark: #1a1a1a;
             --gray: #6b7280;
-            --light: #f8faf8;
+            --light: #f6f8fc;
             --white: #ffffff;
             --warning: #E65100;
         }
@@ -30,8 +30,13 @@
         .emergency-bar a { color: var(--warning); text-decoration: underline; }
         .nav { padding: 16px 0; background: var(--dark); position: sticky; top: 0; z-index: 100; }
         .nav .container { display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { font-size: 20px; font-weight: 800; color: var(--white); text-decoration: none; }
-        .nav-logo span { color: var(--accent); }
+        .nav-logo { font-size: 20px; font-weight: 800; color: var(--white); text-decoration: none; display: inline-flex; align-items: center; }
+        .nav-logo > span.brand-accent { color: var(--accent); }
+        .nav-logo-img { height: 40px; width: auto; display: block; }
+        .nav-logo-text { display: inline-flex; flex-direction: column; line-height: 1.05; }
+        .nav-logo-text .row { display: inline-block; }
+        .nav-logo-text .accent { color: var(--accent); }
+        .nav-logo-text small { font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.55); letter-spacing: 0.5px; font-style: italic; margin-top: 2px; }
         .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
         .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-weight: 500; font-size: 14px; transition: color 0.2s; }
         .nav-links a:hover { color: var(--white); }
@@ -39,15 +44,15 @@
         .mobile-menu { display: none; background: none; border: none; color: white; font-size: 28px; cursor: pointer; }
 
         /* HERO */
-        .hero { background: linear-gradient(135deg, var(--dark) 0%, #1a2e1a 100%); padding: 80px 0 60px; color: white; text-align: center; }
-        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(76,175,80,0.15); color: var(--accent); padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 600; margin-bottom: 20px; border: 1px solid rgba(76,175,80,0.3); }
+        .hero { background: linear-gradient(135deg, var(--dark) 0%, #0A1929 100%); padding: 80px 0 60px; color: white; text-align: center; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(21,101,192,0.15); color: var(--accent); padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 600; margin-bottom: 20px; border: 1px solid rgba(21,101,192,0.3); }
         .hero h1 { font-size: 48px; font-weight: 900; line-height: 1.1; margin-bottom: 16px; letter-spacing: -1px; }
         .hero h1 span { color: var(--accent); }
         .hero p { font-size: 19px; color: rgba(255,255,255,0.75); max-width: 600px; margin: 0 auto 32px; line-height: 1.6; }
         .hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
         .btn { padding: 16px 32px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; border: none; cursor: pointer; }
         .btn-primary { background: var(--accent); color: white; }
-        .btn-primary:hover { background: #43A047; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(76,175,80,0.3); }
+        .btn-primary:hover { background: #0D47A1; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(21,101,192,0.3); }
         .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); }
         .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
         .btn-block { width: 100%; justify-content: center; }
@@ -70,8 +75,8 @@
 
         /* SERVICES */
         .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .service-card { padding: 32px 24px; border: 2px solid #e8f5e9; border-radius: 16px; text-align: center; transition: all 0.3s; background: white; }
-        .service-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 8px 32px rgba(27,94,32,0.08); }
+        .service-card { padding: 32px 24px; border: 2px solid #E3F2FD; border-radius: 16px; text-align: center; transition: all 0.3s; background: white; }
+        .service-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 8px 32px rgba(11,61,122,0.10); }
         .service-icon { font-size: 36px; margin-bottom: 12px; }
         .service-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
         .service-card p { color: var(--gray); font-size: 14px; line-height: 1.5; }
@@ -85,14 +90,14 @@
 
         /* WHY US */
         .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-        .why-card { display: flex; gap: 16px; padding: 24px; background: white; border-radius: 12px; border: 1px solid #e8f5e9; }
+        .why-card { display: flex; gap: 16px; padding: 24px; background: white; border-radius: 12px; border: 1px solid #E3F2FD; }
         .why-icon { font-size: 28px; flex-shrink: 0; }
         .why-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
         .why-card p { color: var(--gray); font-size: 14px; line-height: 1.5; }
 
         /* REVIEWS */
         .reviews-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-        .review-card { background: white; border-radius: 16px; padding: 28px; border: 1px solid #e8f5e9; }
+        .review-card { background: white; border-radius: 16px; padding: 28px; border: 1px solid #E3F2FD; }
         .review-stars { color: #f59e0b; font-size: 18px; margin-bottom: 12px; }
         .review-text { color: #374151; font-size: 15px; line-height: 1.6; margin-bottom: 12px; font-style: italic; }
         .review-author { font-weight: 600; font-size: 14px; }
@@ -105,18 +110,18 @@
 
         /* PESTS GALLERY */
         .pests-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; text-align: center; }
-        .pest-item { padding: 20px 12px; background: white; border-radius: 12px; border: 1px solid #e8f5e9; }
+        .pest-item { padding: 20px 12px; background: white; border-radius: 12px; border: 1px solid #E3F2FD; }
         .pest-item .pest-icon { font-size: 40px; margin-bottom: 8px; }
         .pest-item h4 { font-size: 13px; font-weight: 600; }
 
         /* HOURS */
         .hours-grid { max-width: 400px; margin: 0 auto; }
-        .hours-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #e8f5e9; font-size: 15px; }
+        .hours-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #E3F2FD; font-size: 15px; }
         .hours-day { font-weight: 600; }
         .hours-time { color: var(--gray); }
 
         /* CTA / CONTACT */
-        .cta-section { background: linear-gradient(135deg, var(--dark) 0%, #1a2e1a 100%); padding: 80px 0; text-align: center; color: white; }
+        .cta-section { background: linear-gradient(135deg, var(--dark) 0%, #0A1929 100%); padding: 80px 0; text-align: center; color: white; }
         .cta-section h2 { font-size: 40px; font-weight: 900; margin-bottom: 16px; }
         .cta-section p { font-size: 18px; opacity: 0.8; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
         .cta-phone { font-size: 32px; font-weight: 900; color: var(--accent); text-decoration: none; display: block; margin-bottom: 24px; }
@@ -131,7 +136,7 @@
 
         /* FAQ */
         .faq-list { max-width: 700px; margin: 0 auto; }
-        .faq-item { border-bottom: 1px solid #e8f5e9; padding: 20px 0; }
+        .faq-item { border-bottom: 1px solid #E3F2FD; padding: 20px 0; }
         .faq-q { font-weight: 700; font-size: 16px; margin-bottom: 8px; cursor: pointer; }
         .faq-a { color: var(--gray); font-size: 15px; line-height: 1.6; }
 
@@ -169,7 +174,11 @@
 
     <nav class="nav">
         <div class="container">
-            <a href="#" class="nav-logo">Strategic <span>Pest Management</span></a>
+            <a href="#" class="nav-logo">
+                <!-- LOGO SWAP: Once you drop logo.png in /previews/, comment out the .nav-logo-text block and uncomment the <img> line. -->
+                <!-- <img src="logo.png" alt="Strategic Pest Management" class="nav-logo-img"> -->
+                <span class="nav-logo-text"><span class="row">Strategic <span class="accent">Pest Management</span></span><small>Creative Solutions</small></span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#process">How It Works</a></li>
@@ -226,7 +235,6 @@
                 <div class="pest-item"><div class="pest-icon">🐀</div><h4>Rats & Mice</h4></div>
                 <div class="pest-item"><div class="pest-icon">🕷️</div><h4>Spiders</h4></div>
                 <div class="pest-item"><div class="pest-icon">🦗</div><h4>Crickets</h4></div>
-                <div class="pest-item"><div class="pest-icon">🪲</div><h4>Termites</h4></div>
                 <div class="pest-item"><div class="pest-icon">🐛</div><h4>Silverfish</h4></div>
                 <div class="pest-item"><div class="pest-icon">🪱</div><h4>Earwigs</h4></div>
             </div>
@@ -254,11 +262,6 @@
                     <div class="service-icon">🐀</div>
                     <h3>Rodent Control & Exclusion</h3>
                     <p>Rats and mice don't just leave on their own. We trap, bait, and seal every entry point. Complete exclusion so they don't come back.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🪲</div>
-                    <h3>Termite Inspections & Treatment</h3>
-                    <p>Drywood and subterranean termites. Free inspections, Termidor SC treatments, and real estate transaction reports. Protect your biggest investment.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🔄</div>
@@ -443,7 +446,7 @@
             <p class="section-sub">Call anytime — same-day service available for emergencies.</p>
             <div class="hours-grid">
                 <div class="hours-row"><span class="hours-day">Monday – Friday</span><span class="hours-time">8:00 AM – 5:00 PM</span></div>
-                <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">By Appointment</span></div>
+                <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">Closed</span></div>
                 <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">Closed</span></div>
             </div>
             <p style="text-align:center; margin-top:16px; color:var(--gray); font-size:14px;">📧 <a href="mailto:strategicpest@aol.com" style="color:var(--primary);">strategicpest@aol.com</a> · 📠 (310) 322-2697</p>
@@ -472,7 +475,6 @@
                         <option value="roaches">Cockroaches</option>
                         <option value="rodents">Rats / Mice</option>
                         <option value="spiders">Spiders</option>
-                        <option value="termites">Termites</option>
                         <option value="crickets">Crickets / Earwigs</option>
                         <option value="silverfish">Silverfish / Waterbugs</option>
                         <option value="other">Other / Not Sure</option>
@@ -485,7 +487,6 @@
                         <option value="quarterly">Quarterly Prevention Plan</option>
                         <option value="monthly">Monthly Service Plan</option>
                         <option value="inspection">Just a Free Inspection</option>
-                        <option value="termite-report">Termite Inspection / Report</option>
                         <option value="commercial">Commercial Service</option>
                     </select>
                 </div>
